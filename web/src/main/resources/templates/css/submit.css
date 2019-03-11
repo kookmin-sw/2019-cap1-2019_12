@@ -27,6 +27,12 @@ body .main-wrapper {
   color: #000000;
 }
 
+#submit-guide {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  line-height: 2.0em;
+}
+
 .collapse .nav .navbar-menu {
   color: #424242;
   font-weight: bold;
@@ -44,20 +50,28 @@ body .main-wrapper {
   padding-top: 30px;
 }
 
-#dropdown-job {
+.enterprise-select {
+  padding-top: 30px;
+}
+
+.dropdown .selectbox-dropdown {
   display:inline-block;
-  width: 600px;
+  width: 300px;
   border-color: #4a8ac8;
   margin-top: 20px;
-  margin-bottom: 160px;
+  margin-bottom: 60px;
 }
 
-#dropdown-job:visited {
+.dropdown .selectbox-dropdown:visited {
   border-color: #4a8ac8;
 }
 
-#dropdown-job:hover {
+.dropdown .selectbox-dropdown:hover {
   background-color: #fff;
+}
+
+#box-enter {
+  margin-bottom: 160px;
 }
 
 #test::placeholder {
@@ -67,10 +81,10 @@ body .main-wrapper {
 .submitbutton {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 60px;
   font-size: 18px;
   width: 160px;
   height: 60px;
-  margin-top: 60px;
   color: #ffffff;
   background-color: #4a8ac8;
 }
