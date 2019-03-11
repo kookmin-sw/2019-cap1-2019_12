@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/submit.css">
+
+        <!-- Theme initialization -->
+        <script>
+            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+            {};
+            var themeName = themeSettings.themeName || '';
+            if (themeName)
+            {
+                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+            }
+            else
+            {``
+                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+            }
+        </script>
+    </head>
+
+    <body>
+      <div class="main-wrapper">
+          <div class="container">
+
+    <nav class="navbar navbar-default navbar-fixed-top " role="navigation" id="navbar-scroll">
+      <div class="container">
+
+      <div class="row">
+      <div class="navbar-header col-xs-4">
+        <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="brand">
+            <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길잡이</div>
+      </div>
+
+
+      <div class="collapse col-xs-4  navbar-collapse navbar-center navbar-ex1-collapse" id="menu-center">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-menu">홈 </a></li>
+          <li><a class="navbar-menu">제출하기 </a></li>
+          <li><a class="navbar-menu">비교하기 </a></li>
+        </ul>
+      </div>
+
+      <div class="collapse col-xs-4 navbar-collapse navbar-right navbar-ex1-collapse ">
+        <ul class="nav navbar-nav pull-right">
+          <li><a class="navbar-menu">로그인 </a></li>
+          <li><a class="navbar-menu">회원가입 </a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+    </nav>
+
+    <div class="container" id="page">
+      <div class="job-select text-center">
+        <strong><h3>직무를 선택하세요</strong><br><h5><small>지원하는 직무에 해당하는 분야를 선택하세요.</small></h5></h3>
+      </div>
+
+
+
+        <div class="dropdown" style="text-align:center;">
+
+          <select class="form-control" id="dropdown-job">
+        	  <option>분석 직무 선택</option>
+        	  <option>2</option>
+        	  <option>3</option>
+        	  <option>4</option>
+        	  <option>5</option>
+        	</select>
+
+  <!-- 드롭다운 메뉴 위치 에러 발생 -->
+  <!--
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+    분석 직무 선택
+
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+-->
+
+<div class="textarea">
+<textarea class="form-control" rows="15" placeholder="자기소개서를 입력하세요(최소 300자 이상)" id="test"></textarea>
+<center>
+<button class="btn btn-default submitbutton" type="submit">분석하기</button>
+</center>
+</div>
+
+      </div>
+    </div>
+
+
+
+
+
+</div>
+</div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- 자바스크립트 충돌
+        <script src="js/bootstrap.min.js"></script>
+        -->
+        <script src="js/vendor.js"></script>
+        <script src="js/app.js"></script>
+
+    </body>
+
+</html>
