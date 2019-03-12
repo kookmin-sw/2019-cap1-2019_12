@@ -2,6 +2,7 @@
 
 body .main-wrapper {
   padding-top: 80px;
+  padding-bottom: 100px;
 }
 
 /*******************************
@@ -160,7 +161,8 @@ body .main-wrapper {
 }
 
 .compare-select .select-job {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .result-list {
