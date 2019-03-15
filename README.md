@@ -1,68 +1,72 @@
-# Welcome to GitHub
+# 길JOB이
 
-캡스톤 팀 생성을 축하합니다.
+### 1. 프로젝트 소개
 
-## 팀소개 및 페이지를 꾸며주세요.
+<b>자연어 처리 기반의 자기소개서 분석 웹서비스
 
-- readme.md 수정.
+저희 <길JOB이> 프로젝트는 자연어 처리를 활용한 자기소개서 분석을 해주는 웹서비스입니다. 현재 자기소개서 컨설팅 시장은 취업준비생들에게 과도한 부담을 주는 등 여러 문제가 있습니다. 
+저희는 프로젝트를 진행하며 보다 저렴하고 객관적이며 타겟 지향적 분석을 통해 현재의 과도화된 고액 시스템을 개선하고 구직자들의 자기소개서 작성에 도움을 줄 수 있는 자기소개서 종합적 분석 시스템을 개발하는 것을 목표로 합니다.
+저희는 길JOB이를 통해 누구나 부담없이 쉽게 자기소개서를 작성하여 외부 요인에 영향받지 않고 자신의 역량을 최대한 펼칠 수 있도록 도움을 줄 것입니다
 
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
-**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
-
-**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
-
-## readme파일에 아래와 같은 내용들을 추가하세요.
-
-### 1. 프로잭트 소개
-
-프로젝트
 
 ### 2. 소개 영상
 
-프로젝트 소개하는 영상을 추가하세요
+[![Video Label](http://img.youtube.com/vi/UCKvnSsVXas/0.jpg)](https://youtu.be/UCKvnSsVXas) 
+
 
 ### 3. 팀 소개
 
-팀을 소개하세요.
+```
+이름 : 고현경 (팀장)
+학번 : 20153149
+역할 : Web Interface 개발 / Web Server와 자연어 처리 Application 간 연동
+```
+```
+이름 : 김혜인
+학번 : 20153169
+역할 : 데이터 수집 / 수집 데이터 벡터화 / 사용자 데이터 처리
+```
+```
+이름 : 김희주
+학번 : 20153171
+역할 : 데이터 수집 / 수집 데이터 벡터화 / 사용자 데이터 처리
+```
+```
+이름 : 이선홍
+학번 : 20123400
+역할 : 데이터 전처리 / 수집 데이터 벡터화 / 사용자 데이터 처리
+```
+```
+이름 : 이수민
+학번 : 20143089
+역할 : Spring API 개발 / DB 설계 및 DB Query 시스템 개발
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+```
 
 ### 4. 사용법
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
 
-### 5. 기타
+![Imgur](https://i.imgur.com/OaLEPT2.jpg)
 
-추가적인 내용은 자유롭게 작성하세요.
+시작하기 버튼을 통해 분석을 시작합니다. 
+
+![Imgur](https://i.imgur.com/kUpLkCX.png)
+
+사용자가 희망하는 직무와 기업을 선택합니다.
+
+![Imgur](https://i.imgur.com/acsXs8y.png)
+
+분석하고자하는 자기소개서를 입력하고 분석하기 버튼을 누릅니다
+
+![Imgur](https://i.imgur.com/BluRm3u.png)
+
+분석이 완료 되면 결과리포트를 보여줍니다.
+
+### 5. Abstract
+
+Our ‘길JOB이’  project is a web service that analyzes self-introduction document using natural language processing. Currently, the market for self-introduction document consulting has a number of problems, such as overburdening job seekers. 
+We aim to develop a self-introduction document comprehensive analysis system that can improve the current over-transient high-value system through cheaper, objective, and target-oriented analysis as we progress the project and help job seekers write self-introduction document statements.
+With ‘길JOB이’, we'll help everyone easily create a self-introduction document form and maximize their capabilities without being affected by external factors.
 
 
-## Markdown을 사용하여 내용꾸미기
 
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Support or Contact
-
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
