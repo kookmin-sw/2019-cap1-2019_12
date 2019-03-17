@@ -28,10 +28,19 @@ body .main-wrapper {
   color: #000000;
 }
 
+#submit-select {
+  margin-top: 30px;
+  width: auto;
+  height: 250px;
+}
+
 #submit-guide {
   margin-top: 30px;
   margin-bottom: 30px;
   line-height: 2.0em;
+  color:#011C3F;
+  text-align: center;
+  opacity:0.6;
 }
 
 .collapse .nav .navbar-menu {
@@ -48,11 +57,11 @@ body .main-wrapper {
 }
 
 .job-select {
-  padding-top: 30px;
+  padding-top: 27px;
 }
 
 .enterprise-select {
-  padding-top: 30px;
+  padding-top: 27px;
 }
 
 .dropdown .selectbox-dropdown {
@@ -151,17 +160,14 @@ body .main-wrapper {
 
 
 .container .compare-select {
-  margin-top: 20px;
   margin-bottom: 30px;
-  padding-top: 50px;
+  padding-top: 30px;
   width: 100%;
   height: 920px;
-  box-shadow: 1px 1px 1px 1px gray;
-  background-color: #fff;
 }
 
 .compare-select .select-job {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
 }
 
@@ -195,6 +201,7 @@ input[class="result-check"] {
 	width: 20px;
 	height: 20px;
 	border: 2px solid #bcbcbc;
+  margin-top: 15px;
   color: #fff;
 	cursor: pointer;
 }

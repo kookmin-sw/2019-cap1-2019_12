@@ -93,10 +93,10 @@
         </div>
 
       <div class="row">
-        <div class="col-xs-offset-1 col-xs-5">
+        <div class="col-xs-offset-2 col-xs-8">
           <div class="result-list card-block" id="list1">
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -106,7 +106,7 @@
               </div>
             </div>
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -126,7 +126,7 @@
               </div>
             </div>
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -136,7 +136,7 @@
               </div>
             </div>
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -146,7 +146,7 @@
               </div>
             </div>
             <div class="result-item card-block row">
-              <div class="col-xs-2">
+              <div class="col-xs-1">
                 <input type="checkbox" aria-label="..." class="result-check" name="check">
               </div>
               <div class="col-xs-10">
@@ -156,70 +156,6 @@
               </div>
             </div>
 
-          </div>
-        </div>
-        <div class="col-xs-5">
-          <div class="result-list card-block" id="list2">
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">삼성 영업 자소서 3</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-10 19:07</h6>
-              </div>
-            </div>
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">삼성 영업 자소서 2</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-10 14:07</h6>
-              </div>
-            </div>
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">삼성 영업 자소서 1</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-08 11:47</h6>
-              </div>
-            </div>
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">롯데 영업마케팅 자소서 1</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-10 19:07</h6>
-              </div>
-            </div>
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">현대 영업 자소서 1</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-10 19:07</h6>
-              </div>
-            </div>
-            <div class="result-item card-block row">
-              <div class="col-xs-2">
-                <input type="checkbox" aria-label="..." class="result-check" name="check2">
-              </div>
-              <div class="col-xs-10">
-                <h5 style="text-align:left;">삼성 영업 자소서 1</h5>
-                <h6 class="result-text pull-left">영업</h6>
-                <h6 class="result-text pull-right">2019-03-10 19:07</h6>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -278,24 +214,11 @@
         $(document).ready(function() {
           $('input[type="checkbox"][name="check"]').click(function(){
             if ($(this).prop('checked')) {
-              $('input[type="checkbox"][name="check"]').prop('checked', false);
-              $('#list1').children('.result-item').css('border-color', '#F2F2F2');
               $(this).prop('checked', true);
               $(this).parents('.result-item').css('border-color', '#4a8ac8');
-
             }
-          });
-        });
-        </script>
-
-        <script type="text/javascript">
-        $(document).ready(function() {
-          $('input[type="checkbox"][name="check2"]').click(function(){
-            if ($(this).prop('checked')) {
-              $('input[type="checkbox"][name="check2"]').prop('checked', false);
-              $('#list2').children('.result-item').css('border-color', '#F2F2F2');
-              $(this).prop('checked', true);
-              $(this).parents('.result-item').css('border-color', '#4a8ac8');
+            else if($(this).prop('checked', false)) {
+              $(this).parents('.result-item').css('border-color', '#F2F2F2');
             }
           });
         });
