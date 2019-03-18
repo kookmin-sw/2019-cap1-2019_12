@@ -222,3 +222,80 @@ input[class="result-check"] {
   color: #ffffff;
   background-color: #4a8ac8;
 }
+
+/*******************************
+
+        result.html
+
+*******************************/
+
+#resultpage {
+  
+  background-color: #F2F2F2;
+  padding-bottom: 30px;
+  
+}
+
+.result-container {
+  
+  height : auto ;
+  width : 1080px;
+  background-color : #fff;
+}
+.result-txt-container{
+  padding-top : 15px;
+}
+.result-container .header-text{
+  padding-top : 15px;
+  padding-left : 15px;
+  color : #000000;
+}
+
+.result-main-text{
+  
+  padding-left : 15px;
+  color : #000000;
+}
+
+.result-text{
+  padding-top : 30px;
+  padding-left : 15px;
+  height : auto;
+  font-size: 15px;
+}
+
+.result-chart-container{
+  padding-top : 15px;
+  padding-left : 15px;
+  height : 400px ;
+
+}
+
+.company-chart-container{
+  padding-top : 15px;
+  padding-left : 15px;
+}
+.chart-explain-container{
+  margin-left : 30px;
+  margin-right : 30px;
+  padding-left : 15px;
+  padding-top:15px;
+  padding-right : 15px;
+  padding-bottom:15px;
+  border: 1px solid #e7e7e7;
+}
+
+.result{
+  color : #4a8ac8; 
+  font-size : medium;
+}
+
+
+.gray-box{
+  padding-left : 15px;
+  padding-top : 15px;
+  padding-bottom: 1px;
+  background-color : #F2F2F2;
+  height : auto;
+  
+}

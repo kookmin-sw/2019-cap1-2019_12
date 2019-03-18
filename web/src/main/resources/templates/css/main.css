@@ -1,0 +1,89 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
+
+body .main-wrapper {
+  padding-top: 80px;
+}
+
+/*******************************
+
+        submit.html
+
+*******************************/
+
+#navbar-scroll {
+  background-color: transparent;
+}
+
+.content.dashboard-page {
+    padding-top: 80px;
+    background-color: transparent;
+  }
+
+
+
+.brand {
+  padding-top: 6px;
+  font-weight: bold;
+  font-size: 23px;
+  color: #fff;
+}
+
+.collapse .nav .navbar-menu {
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-inner {
+    background:transparent;
+}
+
+
+.collapse .nav .navbar-menu:hover {
+  color: #4a8ac8;
+}
+
+#menu-center {
+  padding-left: 90px;
+}
+
+.job-select {
+  padding-top: 30px;
+}
+
+#dropdown-job {
+  display:inline-block;
+  width: 600px;
+  border-color: #4a8ac8;
+  margin-top: 20px;
+  margin-bottom: 160px;
+}
+
+#dropdown-job:visited {
+  border-color: #4a8ac8;
+}
+
+#dropdown-job:hover {
+  background-color: #fff;
+}
+
+#test::placeholder {
+  font-style: normal;
+}
+
+.main-btn {
+    background: #4a8ac8;
+    color: #FFF;
+}
+
+.navbar-default{
+    background-color:#f8f8f8;
+    border-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #4a8ac8; }
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #4a8ac8; }
+
