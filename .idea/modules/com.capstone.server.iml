@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="server" external.linked.project.path="$MODULE_DIR$/../../src/server_gradle" external.root.project.path="$MODULE_DIR$/../../src/server_gradle" external.system.id="GRADLE" external.system.module.group="com.capstone" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/server_gradle">
+      <excludeFolder url="file://$MODULE_DIR$/../../src/server_gradle/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/server_gradle/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/server_gradle/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
