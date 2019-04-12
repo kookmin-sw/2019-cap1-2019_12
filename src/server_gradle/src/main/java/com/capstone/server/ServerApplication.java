@@ -9,10 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ServerApplication implements CommandLineRunner {
 
     @Autowired
-    private UserMongoDBRepository repository ;
+    private UserDTOMongoDBRepository repository ;
 
     public static void main(String[] args) {
-
         SpringApplication.run(ServerApplication.class, args);
     }
 
