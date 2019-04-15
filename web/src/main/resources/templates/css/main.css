@@ -40,9 +40,11 @@ body .main-wrapper {
 
 .collapse .nav .navbar-menu:hover {
   color: #4a8ac8;
-  cursor:pointer;
 }
 
+#menu-center {
+  padding-left: 140px;
+}
 
 .job-select {
   padding-top: 30px;
@@ -84,3 +86,4 @@ body .main-wrapper {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #4a8ac8; }
+
