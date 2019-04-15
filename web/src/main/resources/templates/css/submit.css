@@ -50,11 +50,10 @@ body .main-wrapper {
 
 .collapse .nav .navbar-menu:hover {
   color: #4a8ac8;
-  cursor: pointer;
 }
 
 #menu-center {
-  padding-left: 0px;
+  padding-left: 140px;
 }
 
 .job-select {
@@ -220,7 +219,7 @@ input[class="result-check"] {
 }
 
 .result-item .result-text {
-  margin-top: -15px;
+  margin-top: 10px;
   color: #bcbcbc;
 }
 
@@ -243,14 +242,14 @@ input[class="result-check"] {
 *******************************/
 
 #resultpage {
-
+  
   background-color: #F2F2F2;
   padding-bottom: 30px;
-
+  
 }
 
 .result-container {
-
+  
   height : auto ;
   width : 1080px;
   background-color : #fff;
@@ -265,7 +264,7 @@ input[class="result-check"] {
 }
 
 .result-main-text{
-
+  
   padding-left : 15px;
   color : #000000;
 }
@@ -299,7 +298,7 @@ input[class="result-check"] {
 }
 
 .result{
-  color : #4a8ac8;
+  color : #4a8ac8; 
   font-size : medium;
 }
 
@@ -310,5 +309,5 @@ input[class="result-check"] {
   padding-bottom: 1px;
   background-color : #F2F2F2;
   height : auto;
-
+  
 }
