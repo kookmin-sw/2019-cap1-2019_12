@@ -100,6 +100,18 @@ body .main-wrapper {
   background-color: #4a8ac8;
 }
 
+.submitbutton:hover {
+  color: #ffffff;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
+.submitbutton:focus {
+  color: #ffffff;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
 
 
 /*******************************
