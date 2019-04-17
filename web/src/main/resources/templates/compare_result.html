@@ -88,7 +88,7 @@
                         </div>
                         <hr>
                         <div class = "result-main-text">
-                            <strong><h6>2019-03-30 와 2019-04-12의 결과 비교 </h6></strong>
+                            <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
                         </div>
                         <div class = "result-text">
                             <p>대부분의 상황에서 성실하고 화합을 중시하는 행동을 할 가능성이 높은 인재입니다.</p>
@@ -103,19 +103,22 @@
                     <!-- <p>차트 영역</p> -->
                     <!-- 적합도 차트 -->
 
-                    <div class="row">
-                            <div class="col-md-6">
-                                <p id= "com">[적합 기업 그래프]</p>
-                                    <div id = "BarChart">
-                                        </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                    <p id= "job">[직무 적합도 그래프]</p>
-                                <div id = "RadarChart">
+                    <!-- <div class="row"> -->
+                            <!-- <div class="col-md-6"> -->
+                                <div class = "bar-chart">
+                                        <p id= "com">[적합 기업 그래프]</p>
+                                        <div id = "lineChart">
+                                            </div>
                                 </div>
-                            </div>
-                    </div>
+                                
+                            <!-- </div> -->
+
+                            <!-- <div class="col-md-6">
+                                    <p id= "job">[직무 적합도 그래프]</p> -->
+                                        <!-- <div id = "RadarChart"> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                    <!-- </div> -->
 
                 </div>
 
@@ -135,9 +138,43 @@
                     </div>
 
                 </div> -->
+
+                <div class = "bar-chart-container">  
+                    <div class = "row">
+                        <div class = "col-md-6">
+                                <div class = "bubble-chart-compare">
+                                        <div id = "BarChart"></div>
+                                    </div>
+                        </div>
+
+                        <div class = "col-md-6">
+                                <div class = "result-text">
+                                        <p>- 정확성과 객관성이 요구되는 환경</p>
+                                        <p> - 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경</p>
+                                        <p> - 혼자 생각할 시간이 충분한 환경</p>
+                                    </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
                 <div>
                     <div class  = "chart-compare">
-
+                            <div class = "result-txt-container">
+                                    <div class = "header-text">
+                                           <!-- <strong><p>비교 분석</p></strong> -->
+                                        </div>
+                                        <hr>
+                                        <div class = "result-main-text">
+                                            <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
+                                        </div>
+                                        <div class = "result-text">
+                                            <p>- 정확성과 객관성이 요구되는 환경</p>
+                                            <p> - 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경</p>
+                                            <p> - 혼자 생각할 시간이 충분한 환경</p>
+                                        </div>
+                                </div>
                     </div>
                 </div>
 
@@ -147,7 +184,19 @@
 
 
                 <div class = "company-chart-container">
-                    <div id = "AarChart"></div>
+                                <div class = "row">
+                                    <div class = "col-md-6">
+                                            <div class = "bubble-chart-compare">
+                                                    <div id = "RadarChart1"></div>
+                                                </div>
+                                    </div>
+            
+                                    <div class = "col-md-6">
+                                            <div class = "bubble-chart-compare">
+                                                    <div id = "RadarChart2"></div>
+                                                </div>
+                                    </div>
+                                </div> 
                 </div>
 
 
@@ -170,8 +219,54 @@
         <script src="js/progress.js"></script>
 
     </body>
+
     <script>
-        var chart = bb.generate({
+
+        var chart1 = bb.generate({
+            bindto: "#BarChart",
+            data: {
+                type: "bar",
+                columns: [
+                    ["2019-03-30", 80, 68, 30],
+                    ["2019-04-12", 70, 98, 60]
+                ],
+                colors : {
+                    "2019-03-30" : "#4a8ac8",
+                    "2019-04-12" : "#fdd3de"
+                },
+                labels: true
+            },
+            axis: {
+            x: {
+            type: "category",
+            categories: [
+                "삼성",
+                "LG",
+                "SK",]
+            }
+            },
+
+            bar: {
+                width: {
+                ratio: 0.4,
+
+                }
+            },
+
+        });        
+
+            var chart = bb.generate({
+            data: {
+                columns: [
+                ["2019-03-31", 330, 350, 200, 380, 150,130,200,30,280],
+                ["2019-03-30", 130, 100, 30, 200, 80,180,240,170,350],
+                ["2019-04-12", 180, 160, 320, 120, 90,100,200,190,230]
+                ]
+            },
+            bindto: "#lineChart"
+            });
+
+            var chart = bb.generate({
             data: {
                 x: "x",
                 columns: [
@@ -186,6 +281,47 @@
                 "글로벌"],
                 ["data1", 330, 350, 200, 380, 150,130,200,30,280],
                 ["2019-03-30", 130, 100, 300, 200, 80,180,240,170,350],
+                
+                ],
+                type: "radar",
+                labels: true,
+                colors : {
+                    data1 : "#4a8ac8",
+                    data2 : "#fdd3de"
+                },
+            },
+            radar: {
+                axis: {
+                max: 400,
+                },
+                level: {
+                depth: 4,
+                text: {
+                    show: false
+                }
+                },
+                direction: {
+                clockwise: true
+                }
+            },
+
+            bindto: "#RadarChart1"
+            });
+
+            var chart = bb.generate({
+            data: {
+                x: "x",
+                columns: [
+                ["x", "소통",
+                "팀워크",
+                "도전",
+                "능동",
+                "성실",
+                "정직",
+                "인내심",
+                "창의",
+                "글로벌"],
+                ["data1", 330, 350, 200, 380, 150,130,200,30,280],
                 ["2019-04-12", 180, 160, 320, 120, 90,100,200,190,230],
                 ],
                 type: "radar",
@@ -210,76 +346,11 @@
                 }
             },
 
-            bindto: "#RadarChart"
+            bindto: "#RadarChart2"
             });
 
-        var chart1 = bb.generate({
-            bindto: "#BarChart",
-            data: {
-                type: "bar",
-                columns: [
-                    ["2019-03-30", 80, 68, 30],
-                    ["2019-04-12", 70, 98, 60]
-                ],
-                colors : {
-                    "2019-03-30" : "#4a8ac8",
-                    "2019-04-12" : "#fdd3de"
-                },
-                labels: true
-            },
-            axis: {
-            x: {
-            type: "category",
-            categories: [
-                "삼성",
-                "LG",
-                "SK",
-            ]
-            }
-            },
 
-            bar: {
-                width: {
-                ratio: 0.4,
-
-                }
-            },
-
-        });
-
-
-        var chart = bb.generate({
-            bindto: "#AarChart",
-            data: {
-                type: "bar",
-                columns: [
-
-                ["data1", 330, 350, 200, 380, 150,130,200,30,280],
-                ["2019-03-30", 130, 100, 30, 200, 80,180,240,170,350],
-                ["2019-04-12", 180, 160, 320, 120, 90,100,200,190,230],
-                ],
-                colors : {
-                    data1 : "#4a8ac8",
-                    "2019-03-30" : "#fdd3de"
-                },
-            },
-            axis: {
-            x: {
-            type: "category",
-            categories: [
-                "소통",
-                "팀워크",
-                "도전",
-                "능동",
-                "성실",
-                "정직",
-                "인내심",
-                "창의",
-                "글로벌"
-            ]
-            }
-        },
-        });
+        
 </script>
 
 </html>
