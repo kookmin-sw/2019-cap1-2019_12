@@ -17,7 +17,7 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/snapshot' }
+//    maven { url 'https://repo.spring.io/snapshot' }
 }
 
 dependencies {
@@ -34,9 +34,12 @@ dependencies {
 //    compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE')
     compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE')
 //    compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.4.BUILD-SNAPSHOT')
+    
+//    compile('org.springframework.session:spring-session-jdbc')
+///*    compile('org.springframework.boot:spring-boot-starter-jdbc')*/
 
-    compile('org.springframework.session:spring-session:spring-session-jdbc')
-/*    compile('org.springframework.boot:spring-boot-starter-jdbc')*/
+//    compile('org.springframework.session:spring-session')
+//    compile('org.springframework.boot:spring-boot-starter-jdbc')
     
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

@@ -1,8 +1,7 @@
-package com.capstone.server.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
-@EnableJdbcHttpSession
-public class HttpSessionConfig {
-}
+//package com.capstone.server.config;
+//
+//import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
+//
+//@EnableJdbcHttpSession
+//public class HttpSessionConfig {
+//}

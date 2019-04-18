@@ -22,10 +22,8 @@ import javax.servlet.Filter;
 
 @Configuration
 @EnableOAuth2Client
-
 public class OAuthConfig {
 
-    @Autowired
     @Qualifier("oauth2ClientContext")
     private final OAuth2ClientContext oauth2ClientContext;
 

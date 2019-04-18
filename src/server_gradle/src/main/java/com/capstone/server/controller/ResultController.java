@@ -12,4 +12,9 @@ public class ResultController {
         return "result";
     }
 
+    @GetMapping("/result_login")
+    public String result_login(){
+        return "result_login";
+    }
+
 }
