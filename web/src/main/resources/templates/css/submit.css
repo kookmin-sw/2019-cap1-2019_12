@@ -312,3 +312,14 @@ input[class="result-check"] {
   height : auto;
 
 }
+
+/*******************************
+
+        compare_result.html
+
+*******************************/
+
+.result-text{
+  padding-left : 15px;
+  padding-right: 15px;
+}
