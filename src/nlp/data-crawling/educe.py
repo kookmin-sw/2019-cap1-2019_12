@@ -1,4 +1,6 @@
 import json
+
+from urllib import parse
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 
@@ -50,6 +52,8 @@ IT 1026 / scrollPos1008
  - 건설사무.감리.안전.검사
  
 '''
+#"http://u.educe.co.kr/jobkookmin/?mod=passReport&m_idx=17&cno=&gCode=0&gMode=1&searchStr=%EC%82%BC%EC%84%B1&page=2#list"
+
 
 #로그인 셋팅
 driver = webdriver.Chrome("/Users/hyeinkim/desktop/capstone/chromedriver")
@@ -78,7 +82,7 @@ driver.refresh()
 jasoseo_list = []  # type , company, document
 
 
-def page_number_parsing(category_list): #page number 정보 수집
+def page_number_parsing(category_list, type): #page number 정보 수집
 
     page_num = int((category_list["page_number"] / 15) + 1)
     current_page_num = 1
@@ -86,7 +90,12 @@ def page_number_parsing(category_list): #page number 정보 수집
     for i in range (1, page_num):
         #link = 'http://u.educe.co.kr/jobkookmin/?mod=passReport&m_idx=19&gMode=1&mno=' + category_list["id"] + '#category&page='+ str(i) + '#list'
         link = 'http://u.educe.co.kr/jobkookmin/?mod=passReport&m_idx=19&gMode=1&bno=' + category_list["id"] + '&chk_mno=Y&page=' + str(i) + '#list'
-        driver.get(link)
+        link_company = 'http://u.educe.co.kr/jobkookmin/?mod=passReport&m_idx=17&cno=&gCode=0&gMode=1&searchStr='+category_list["id"]+'&page='+ str(i)  +'#list'
+
+        if (type == 'job') :
+            driver.get(link)
+        else :
+            driver.get(link_company)
 
         for j in range (1, 16) :
             jasoseo_dic = {}
@@ -127,22 +136,18 @@ def jasoseo_parsing(jasoseo_list):
     return jasoseo_list
 
 
-def main(jasoseo_list):
+def main(jasoseo_list, category_list, type):
 
     #{"category": "영업", "id": "1005", "page_number": 2202}
     #{"category": "생산", "id": "1006", "page_number": 7837}
     #{"category": "IT", "id": "1008", "page_number": 1026}
     #{"category": "건축", "id": "1007", "page_number": 1526}
 
-    category_list = [{"category": "건축", "id": "1007", "page_number": 1526},
-                     {"category": "영업", "id": "1005", "page_number": 2202},
-                     {"category": "생산", "id": "1006", "page_number": 7837},
-                     {"category": "IT", "id": "1008", "page_number": 1026}]
 
     for i in range (0, len(category_list)):
 
         try:
-            page_number_parsing(category_list[i])
+            page_number_parsing(category_list[i],type)
             jasoseo_parsing(jasoseo_list)
 
 
@@ -162,4 +167,17 @@ def main(jasoseo_list):
 
 
 
-main(jasoseo_list)
+job_list = [{"category": "건축", "id": "1007", "page_number": 1526},
+            {"category": "영업", "id": "1005", "page_number": 2202},
+            {"category": "생산", "id": "1006", "page_number": 7837},
+            {"category": "IT", "id": "1008", "page_number": 1026}]
+
+company_list = [{"category": "삼성", "id": "%EC%82%BC%EC%84%B1", "page_number": 2398},
+                {"category": "현대", "id": "%ED%98%84%EB%8C%80", "page_number": 1486},
+                {"category": "LG", "id": "LG", "page_number": 1577},
+                {"category": "SK", "id": "SK", "page_number": 1132},
+                {"category": "CJ", "id": "CJ", "page_number": 584}]
+
+
+main(jasoseo_list, job_list, "job")
+main(jasoseo_list, company_list, "company")
