@@ -236,6 +236,19 @@ input[class="result-check"] {
   background-color: #4a8ac8;
 }
 
+
+.comparebutton:hover {
+  color: #ffffff;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
+.comparebutton:focus {
+  color: #ffffff;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
 /*******************************
 
         result.html
@@ -311,4 +324,8 @@ input[class="result-check"] {
   background-color : #F2F2F2;
   height : auto;
 
+}
+
+.bubble-chart-compare {
+  padding-left : 15px;
 }

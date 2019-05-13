@@ -29,9 +29,9 @@ dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-web-services'
 //    implementation 'org.springframework.session:spring-session-core'
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-//    compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE')
+//    compile("org.springframework.boot:spring-boot-starter-security")
+//    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE')
     compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.0.0.RELEASE')
 //    compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.4.BUILD-SNAPSHOT')
     
@@ -40,12 +40,15 @@ dependencies {
 
 //    compile('org.springframework.session:spring-session')
 //    compile('org.springframework.boot:spring-boot-starter-jdbc')
+
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.34'
+    compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version: '4.3.1'
     
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    runtime('org.springframework.boot:spring-boot-devtools')
-    runtime('com.h2database:h2')
+//    runtime('org.springframework.boot:spring-boot-devtools')
+//    runtime('com.h2database:h2')
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
