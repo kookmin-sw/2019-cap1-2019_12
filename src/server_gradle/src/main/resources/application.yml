@@ -21,10 +21,3 @@ google :
       - profile
   resource:
     userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
-
-amazon:
-  dynamodb:
-    endpoint: http://localhost:8000
-  aws:
-    accesskey: AKIAIBSRI52NR7WSOLBQ
-    secretkey: 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
