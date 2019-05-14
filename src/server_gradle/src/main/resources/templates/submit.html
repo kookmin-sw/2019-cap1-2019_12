@@ -131,38 +131,19 @@
                 </div>
             </div>
 
+          <div id="pre_set">
 
-            <!-- 드롭다운 메뉴 위치 에러 발생 -->
-            <!--
-            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
-              분석 직무 선택
-
-            </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-            </ul>
-          </div>
-          -->
-
+            <input type="text" placeholder="문항을 입력하세요."/>
             <div class="textarea">
                 <textarea class="form-control" rows="15" placeholder="자기소개서를 입력하세요(최소 300자 이상)" id="test"></textarea>
-                <form action="/result" method="GET">
-                    <center>
-                        <button class="btn btn-default submitbutton" type="submit">분석하기</button>
-                    </center>
-                </form>
             </div>
+          </div>
+          
+          <div id="field"></div>
+
+          <center>
+              <button class="btn btn-default submitbutton" type="submit">분석하기</button>
+          </center>
 
         </div>
     </div>
@@ -183,6 +164,20 @@
 <script th:src="@{/js/app.js}"></script>
 
 <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+<script type="text/javascript">
+    function add_item(){
+        // pre_set 에 있는 내용을 읽어와서 처리..
+        var div = document.createElement('div');
+        div.innerHTML = document.getElementById('pre_set').innerHTML;
+        document.getElementById('field').appendChild(div);
+    }
+
+    function remove_item(obj){
+        // obj.parentNode 를 이용하여 삭제
+        document.getElementById('field').removeChild(obj.parentNode);
+    }
+</script>
 
 </body>
 
