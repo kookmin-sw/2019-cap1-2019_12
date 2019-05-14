@@ -7,27 +7,28 @@ from bs4 import BeautifulSoup
 import csv
 
 '''
-1 글로벌역량
-2 능동
-3 도전
-4 성실
-5 소통
-6 인내심
-7 정직
-8 주인의식
-9 창의
-10 팀워크
+1 글로벌역량 / 문화(문화상품권) 국제적 외국어
+2 능동 / 능동적 열정적 적극적
+3 도전 / 도전적(무한도전) 모험 담력
+4 성실 / 성실한 근면한 충실한
+5 소통 / 소통 대화 교류
+6 인내심 / 인내심 끈기 근성
+7 정직 / 정직한 진실 솔직
+8 주인의식 / 책임 의무 자기주도
+9 창의 / 창의적 창조 독창
+10 팀워크 / 팀워크 협력 협동
+
 '''
-keyword_1 = ["문화", "국제", "외국어"] #글로벌 역량
-keyword_2 = ["능동", "열정", "적극"] #능동
-keyword_3 = ["도전", "모험", "용기"] #도전
-keyword_4 = ["성실", "근면","충실"] #성실
-keyword_5 = ["소통", "대화", "교류"] #소통 대화 교류
-keyword_6 = ["인내심", "끈기", "근성"] #인내심
-keyword_7 = ["정직","진실", "솔직"] #정직
-keyword_8 = ["책임","의무", "자기주도"] #주인의식
-keyword_9 = ["창의", "창조","독창"] #창의
-keyword_10 = ["팀워크", "협력", "협동"] #팀워크
+keyword_1 = ["글로벌역량","문화", "국제적", "외국어"] #글로벌 역량
+keyword_2 = ["능동","능동적", "열정적", "적극적"] #능동
+keyword_3 = ["도전","도전적", "모험", "담력"] #도전
+keyword_4 = ["성실","성실한", "근면한","충실한"] #성실
+keyword_5 = ["소통","소통", "대화", "교류"] #소통 대화 교류
+keyword_6 = ["인내심","인내심", "끈기", "근성"] #인내심
+keyword_7 = ["정직","정직한","진실", "솔직"] #정직
+keyword_8 = ["주인의식","책임","의무", "자기주도"] #주인의식
+keyword_9 = ["창의","창의", "창조","독창"] #창의
+keyword_10 = ["팀워크","팀워크", "협력", "협동"] #팀워크
 
 
 keyword_dic = {'1' : keyword_1 , '2' : keyword_2, '3' : keyword_3, '4' : keyword_4, '5' : keyword_5, '6' : keyword_6 , '7' : keyword_7 , "8" : keyword_8 , "9" : keyword_9 , "10" : keyword_10}
@@ -37,9 +38,11 @@ def parsing(num):
   n = len(keyword_dic[tmp])
   sentence_list = []
 
-  for i in range (0, n):
+  savePath = "/Users/hyeinkim/Desktop/capstone/keyword/" + keyword_dic[tmp][0] + ".csv"
 
-    savePath = "/Users/hyeinkim/Desktop/capstone/keyword/" + keyword_dic[tmp][i] + ".csv"
+  for i in range (1, n):
+
+
     decode_keyword = quote(keyword_dic[tmp][i])
     sentence_num = 0
     page_num = 1
@@ -48,7 +51,7 @@ def parsing(num):
     while page_num < 81:
       page_num_str = str(page_num)
       #http://search.daum.net/search?nil_suggest=btn&w=news&DA=PGD&cluster=y&q=%EA%B8%80%EB%A1%9C%EB%B2%8C+%EC%97%AD%EB%9F%89&p=2
-      url = "http://search.daum.net/search?nil_suggest=btn&w=news&DA=PGD&cluster=y&q=" + decode_keyword + "&p=" + page_num_str
+      url = "http://search.daum.net/search?nil_suggest=btn&w=news&DA=PGD&cluster=n&q=" + decode_keyword + "&p=" + page_num_str
       temp_result = requests.get(url)
       soup = BeautifulSoup(temp_result.text, "html.parser")
       list = soup.select('p.f_eb.desc') # 각 페이의 뉴스 리스트들
@@ -75,17 +78,17 @@ def parsing(num):
 
       page_num = page_num + 1
 
-    csvfile = open(savePath, 'w', encoding="utf-8", newline="")
-    csvwriter = csv.writer(csvfile)
+  csvfile = open(savePath, 'w', encoding="utf-8", newline="")
+  csvwriter = csv.writer(csvfile)
 
-    print(len(sentence_list))
+  print(len(sentence_list))
 
-    csvwriter.writerow(["label","sentence"])
-    for row in sentence_list:
-      csvwriter.writerow(row)
+  csvwriter.writerow(["label","sentence"])
+  for row in sentence_list:
+    csvwriter.writerow(row)
 
-    csvfile.close()
-    sentence_list = []
+  csvfile.close()
+  sentence_list = []
 
 
 for i in range(1, 11):
