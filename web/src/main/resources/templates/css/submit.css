@@ -31,6 +31,7 @@ body .main-wrapper {
 #submit-select {
   margin-top: 30px;
   width: auto;
+  height: 250px;
 }
 
 #submit-guide {
@@ -110,33 +111,6 @@ body .main-wrapper {
   background-color: #4a8ac8;
   opacity: 0.8;
 }
-
-.form-control {
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-
-.container .btn-primary:hover {
-  color: #ffffff;
-  border-color: #4a8ac8;
-  background-color: #4a8ac8;
-  opacity: 0.8;
-}
-
-.container .btn-primary:focus {
-  color: #ffffff;
-  border-color: #4a8ac8;
-  background-color: #4a8ac8;
-  opacity: 0.8;
-}
-
-.container .btn-primary:active {
-  color: #ffffff;
-  border-color: #4a8ac8;
-  background-color: #4a8ac8;
-  opacity: 0.8;
-}
-
 
 
 
