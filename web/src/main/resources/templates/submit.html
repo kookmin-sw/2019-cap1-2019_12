@@ -14,6 +14,10 @@
         <link rel="stylesheet" id="theme-style" href="css/app.css">
         <link rel="stylesheet" href="css/submit.css">
 
+        <script>
+          var cnt = 0;
+        </script>
+
         <!-- Theme initialization
         <script>
             var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -123,36 +127,26 @@
               </div>
 </div>
 
+<input type="button" style="margin-right:10px;" class="btn btn-primary" value="문항추가" onclick="add_item()">
+<input type="button" class="btn btn-primary" value="문항삭제" onclick="remove_item()">
+<br>
+<hr />
 
-  <!-- 드롭다운 메뉴 위치 에러 발생 -->
-  <!--
-  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
-    분석 직무 선택
 
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-  </ul>
+<div class="textarea" id="pre_set" style="display:none;">
+  <div id="q_index">
+  </div>
+  <input class="form-control" type="text" placeholder="문항을 입력하세요."/>
+<textarea class="form-control" rows="10" placeholder="자기소개서를 입력하세요." id="test"></textarea>
 </div>
--->
 
-<div class="textarea">
-<textarea class="form-control" rows="15" placeholder="자기소개서를 입력하세요(최소 300자 이상)" id="test"></textarea>
+
+<div id="field"></div>
+
 <center>
 <button class="btn btn-default submitbutton" type="submit">분석하기</button>
 </center>
-</div>
+
 
       </div>
     </div>
@@ -171,6 +165,34 @@
         -->
         <script src="js/vendor.js"></script>
         <script src="js/app.js"></script>
+
+        <script type="text/javascript">
+
+
+
+    function add_item(){
+        // pre_set 에 있는 내용을 읽어와서 처리..
+        cnt++;
+        var newfield = document.createElement('div');
+        newfield.setAttribute('id', 'field' + cnt);
+
+        var div = document.createElement('div');
+        var q = document.createElement('div');
+        div.innerHTML = document.getElementById('pre_set').innerHTML;
+        q.innerHTML = cnt + "번 문항"
+
+        document.getElementById('field').appendChild(newfield);
+        document.getElementById('field' + cnt).appendChild(q);
+        document.getElementById('field' + cnt).appendChild(div);
+    }
+
+    function remove_item(obj){
+        // obj.parentNode 를 이용하여 삭제
+        document.getElementById('field'+cnt).remove();
+        cnt--;
+    }
+</script>
+
 
     </body>
 
