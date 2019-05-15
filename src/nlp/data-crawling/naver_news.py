@@ -3,15 +3,15 @@ from selenium.common.exceptions import NoSuchElementException
 import csv
 
 category = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']#10개
-keyword = ["문화", "국제", "외국",
-           "능동", "열정", "적극",
-           "도전", "모험", "용기",
-           "성실", "근면", "충실",
+keyword = ["문화 -문화상품권", "국제적", "외국어",
+           "능동적", "열정적", "적극적",
+           "도전적", "모험", "용기있는",
+           "성실한", "근면한", "충실한",
            "소통", "대화", "교류",
            "인내심", "끈기", "근성",
-           "정직", "진실", "솔직",
+           "정직한", "진실", "솔직",
            "책임", "의무", "자기주도",
-           "창의", "창조", "독창",
+           "창의적", "창조", "독창",
            "팀워크", "협력", "협동"]#30개
 
 driver = webdriver.Chrome("C:/Users/abcd_/workspace/chromedriver.exe")
@@ -64,12 +64,12 @@ for i in range(len(keyword)):
 
             try:
                 #기사제목
-                title = news[j].find_element_by_xpath(xpath+'/dt/a').get_attribute("title").replace(",", "").replace(";", "")
+                title = news[j].find_element_by_xpath(xpath+'/dt/a').get_attribute("title").replace(",", "").replace(";", "").replace("\"", " ")
                 csv_writer.writerow([label, title])
                 print(title)
 
                 #본문
-                article = news[j].find_element_by_xpath(xpath+'/dd[2]').text.replace("\n", " ").replace(",", "").replace(";", "")
+                article = news[j].find_element_by_xpath(xpath+'/dd[2]').text.replace("\n", " ").replace(",", "").replace(";", "").replace("\"", " ")
                 csv_writer.writerow([label, article])
                 #print(article)
 
