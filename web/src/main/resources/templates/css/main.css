@@ -10,6 +10,9 @@ body .main-wrapper {
 
 *******************************/
 
+html {
+  scroll-behavior: smooth;
+}
 #navbar-scroll {
   background-color: transparent;
 }
@@ -35,6 +38,15 @@ body .main-wrapper {
 
 .navbar-inner {
     background:transparent;
+}
+
+.navbar-default{
+  background-color:#f8f8f8;
+  border-color: transparent;
+}
+
+.bg-dark.scrolled{
+  background : #25272b !important;
 }
 
 
@@ -71,12 +83,10 @@ body .main-wrapper {
 .main-btn {
     background: #4a8ac8;
     color: #FFF;
+    font-weight: 700;
+    font-size : 18px;
 }
 
-.navbar-default{
-    background-color:#f8f8f8;
-    border-color: transparent;
-}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
@@ -84,3 +94,40 @@ body .main-wrapper {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #4a8ac8; }
+
+.page-section{
+  
+  padding: 100px 0;
+}
+
+.info-wrapper-first{
+  padding : 80px 0;
+
+}
+
+
+.first-title{
+  color: #25272b;
+  width: 185px;
+  padding-left : 60px;
+}
+
+.first-content{
+ font-size : 14px;
+ padding-left : 80px;
+}
+
+.info-wrapper-second{
+  padding : 40px 0;
+}
+
+.second-title{
+  color: #25272b;
+  width: 185px;
+  padding-left : 60px;
+}
+
+.second-content{
+ font-size : 14px;
+ padding-left : 80px;
+}
