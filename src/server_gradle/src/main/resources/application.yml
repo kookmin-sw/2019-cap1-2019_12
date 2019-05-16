@@ -21,3 +21,17 @@ google :
       - profile
   resource:
     userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+
+amazon:
+  dynamodb:
+    endpoint: http://localhost:8000
+  aws:
+    accesskey: test
+    secretkey: test2
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  thymeleaf:
+    cache: false

@@ -16,8 +16,8 @@ body .main-wrapper {
 }
 
 .content.dashboard-page {
-    padding-top: 80px;
-  }
+  padding-top: 80px;
+}
 
 
 
@@ -31,7 +31,6 @@ body .main-wrapper {
 #submit-select {
   margin-top: 30px;
   width: auto;
-  height: 250px;
 }
 
 #submit-guide {
@@ -82,7 +81,7 @@ body .main-wrapper {
 }
 
 #box-enter {
-  margin-bottom: 160px;
+  margin-bottom: 110px;
 }
 
 #test::placeholder {
@@ -108,6 +107,32 @@ body .main-wrapper {
 
 .submitbutton:focus {
   color: #ffffff;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
+.form-control {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.container .btn-primary:hover {
+  color: #ffffff;
+  border-color: #4a8ac8;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
+.container .btn-primary:focus {
+  color: #ffffff;
+  border-color: #4a8ac8;
+  background-color: #4a8ac8;
+  opacity: 0.8;
+}
+
+.container .btn-primary:active {
+  color: #ffffff;
+  border-color: #4a8ac8;
   background-color: #4a8ac8;
   opacity: 0.8;
 }
