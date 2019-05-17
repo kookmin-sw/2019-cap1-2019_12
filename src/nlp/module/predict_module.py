@@ -1,6 +1,7 @@
 import pickle
 import joblib
 from konlpy.tag import Okt
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
