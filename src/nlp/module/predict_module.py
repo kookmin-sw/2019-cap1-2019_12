@@ -1,9 +1,8 @@
 import pickle
 import joblib
 from konlpy.tag import Okt
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.linear_model import SGDClassifier
+from sklearn.multiclass import OneVsRestClassifier
+from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
 import csv
 import operator
@@ -19,10 +18,10 @@ def openStopword():
     return stopwords
 
 
- def tokenizer(raw, pos=["Noun","Verb"], stopword=openStopword()):
+def tokenizer(raw, pos=["Noun","Verb"], stopword=openStopword()):
     return [
         word for word, tag in okt.pos(
-            raw, 
+            raw,
             norm=True,
             stem=True
             )
