@@ -100,28 +100,45 @@
                 </div>
 
                 <div class = "company-chart-container">
-
-                <div class = "company-chart-txt">
-                        <p>당신이 선택한 기업은 "LG"입니다.</p>
+                    <!-- <p>차트 영역</p> -->
+                    <!-- 적합도 차트 -->
+                    <div class = "company-chart-txt">
+                        <p>당신은 LG를 선택하셨습니다.</p>
+                    </div>
+                    <div class = "company-chart">
+                        <div id = "AarChart"></div>
+                    </div>
+                    <div class = "company-chart-summary">
+                        <p>요약요약</p>
                     </div>
 
-                    <div id = "AarChart">
-                        </div>
-                
-                <div class = "company-chart-summary">
-                    <p>요약</p>
                 </div>
-                    
-            </div>
-
                 <hr>
 
                 <div class = "job-chart-container">
-                    	<div class="row">
-                                <div class="col-md-6 BarChart"></div>
-                                <div class="col-md-6 RadarChart"></div>
+                    <div class = "job-chart-title">
+                        <p>[직무 적합도 그래프]</p>
+                    </div>
+                    <div class = "job-chart">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id = "RadarChart">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div id = "BarChart"> </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
+
+                <hr>
+
+
+
+
+               
 
 
             </div>
@@ -143,9 +160,8 @@
         <script src="js/progress.js"></script>
 
     </body>
-
     <script>
-        var chart2 = bb.generate({
+        var chart = bb.generate({
             data: {
                 x: "x",
                 columns: [
@@ -182,10 +198,8 @@
                 clockwise: true
                 }
             },
-
             bindto: "#RadarChart"
             });
-
         var chart1 = bb.generate({
             bindto: "#BarChart",
             data: {
@@ -208,23 +222,17 @@
             ]
             }
             },
-
             bar: {
                 width: {
                 ratio: 0.4,
-
                 }
             },
-
         });
-
-
         var chart = bb.generate({
             bindto: "#AarChart",
             data: {
                 type: "bar",
                 columns: [
-
                 ["data1", 330, 350, 200, 380, 150,130,200,30,280],
                 ["data2", 130, 100, 30, 200, 80,180,240,170,350],
                 ],

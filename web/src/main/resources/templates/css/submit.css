@@ -274,7 +274,10 @@ input[class="result-check"] {
   padding-bottom: 30px;
 
 }
-
+.result{
+  color : #4a8ac8;
+  font-size : medium;
+}
 .result-container {
 
   height : auto ;
@@ -303,41 +306,26 @@ input[class="result-check"] {
   font-size: 15px;
 }
 
-.result-chart-container{
-  padding-top : 15px;
-  padding-left : 15px;
-  height : 400px ;
-
-}
-
 .company-chart-container{
   padding-top : 15px;
   padding-left : 15px;
+  /* border: 1px solid #e7e7e7; */
 }
-.chart-explain-container{
-  margin-left : 30px;
-  margin-right : 30px;
-  padding-left : 15px;
-  padding-top:15px;
-  padding-right : 15px;
-  padding-bottom:15px;
+.company-chart-summary{
+  margin-bottom : 30px;
+  padding-top : 15px;
   border: 1px solid #e7e7e7;
 }
 
-.result{
-  color : #4a8ac8;
-  font-size : medium;
+.job-chart-title{
+  margin-top : 30px;
+  margin-bottom : 30px;
 }
 
 
-.gray-box{
-  padding-left : 15px;
-  padding-top : 15px;
-  padding-bottom: 1px;
-  background-color : #F2F2F2;
-  height : auto;
 
-}
+
+
 
 /*******************************
 
