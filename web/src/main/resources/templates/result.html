@@ -99,50 +99,28 @@
                         <hr>
                 </div>
 
-                <div class = "result-chart-container">
-                    <!-- <p>차트 영역</p> -->
-                    <!-- 적합도 차트 -->
+                <div class = "company-chart-container">
 
-                    <div class="row">
-                            <div class="col-md-6">
-                                <p id= "com">[적합 기업 그래프]</p>
-                                    <div id = "BarChart">
-                                        </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                    <p id= "job">[직무 적합도 그래프]</p>
-                                <div id = "RadarChart">
-                                </div>
-                            </div>
+                <div class = "company-chart-txt">
+                        <p>당신이 선택한 기업은 "LG"입니다.</p>
                     </div>
 
-                </div>
-
-                <div class = "chart-explain-container">
-                    <p><strong>길JOB이가 생각하는 [OOO OOO]</strong></p>
-
-                    <p><strong>강점</strong></p>
-                    <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span style= "line-height:200%"><br></span>
-                    조직에서 안정감을 주고 사람들과 잘 협력하는 [OOO OOO]를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
-                    <div class = "gray-box-container">
-                        <div class = "gray-box">
-                                <p>-어떤 일이든 성실하고 꾸준하게 잘 수행하는 인재
-                                    <br>
-                                    -인내심이 높아 신뢰감을 주고 잘 화합하는 인재 <br>
-                                    -다른 사람을 잘 도와주고 배려하며, 팀에 헌신하는 인재<br></p>
+                    <div id = "AarChart">
                         </div>
-                    </div>
-
+                
+                <div class = "company-chart-summary">
+                    <p>요약</p>
                 </div>
+                    
+            </div>
 
                 <hr>
 
-
-
-
-                <div class = "company-chart-container">
-                    <div id = "AarChart"></div>
+                <div class = "job-chart-container">
+                    	<div class="row">
+                                <div class="col-md-6 BarChart"></div>
+                                <div class="col-md-6 RadarChart"></div>
+                        </div>
                 </div>
 
 
@@ -165,8 +143,9 @@
         <script src="js/progress.js"></script>
 
     </body>
+
     <script>
-        var chart = bb.generate({
+        var chart2 = bb.generate({
             data: {
                 x: "x",
                 columns: [

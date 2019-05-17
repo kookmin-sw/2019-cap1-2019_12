@@ -45,6 +45,10 @@ html {
   border-color: transparent;
 }
 
+.bg-dark{
+  background: transparent;
+}
+
 .bg-dark.scrolled{
   background : #25272b !important;
 }
