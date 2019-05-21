@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class VOTest {
 
-    @RequestMapping(value="/submit.do", method= RequestMethod.POST)
+    @RequestMapping(value="/votest", method=RequestMethod.POST)
     public String doTest(UserSubmitVO userSubmitVO)
     {
         System.out.println("company : " + userSubmitVO.getCompany());
@@ -20,6 +20,5 @@ public class VOTest {
 
         return "result";
     }
-
 
 }
