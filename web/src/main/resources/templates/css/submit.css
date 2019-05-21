@@ -316,9 +316,15 @@ input[class="result-check"] {
   margin-bottom : 30px;
   padding-top : 15px;
   margin-right : 15px;
+  margin-left : 15px;
   border: 1px solid #e7e7e7;
+  padding-left : 15px;
+  padding-bottom : 15px;
 }
 
+.blank{
+  margin-left : 15px;
+}
 .company-chart-title{
   margin-left : 15px;
 }
@@ -378,8 +384,10 @@ input[class="result-check"] {
 .que-chart{
   margin-left : 15px;
 }
+.RadarChart{
+  margin-top : 30px;
+}
 
-.que
 
 
 /*******************************

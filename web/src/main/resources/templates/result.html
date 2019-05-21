@@ -40,6 +40,15 @@
         <!-- Or load different theme style -->
         <link rel="stylesheet" href="billboard/billboard.js/dist/theme/insight.css">
 
+
+        <!-- toast chart -->
+        <script type="text/javascript" src="bower_components/core-js/client/core.js"></script>
+        <link rel="stylesheet" type="text/css" href="bower_components/tui-chart/dist/tui-chart.min.css"/>
+        <script type="text/javascript" src="bower_components/tui-code-snippet/dist/tui-code-snippet.min.js"></script>
+        <script type="text/javascript" src="bower_components/raphael/raphael.min.js"></script>
+        <script type="text/javascript" src="bower_components/tui-chart/dist/tui-chart.min.js"></script>
+        
+        <script src="Chart.js/Chart.js"></script>
     </head>
 
     <body>
@@ -88,13 +97,12 @@
                         </div>
                         <hr>
                         <div class = "result-main-text">
-                            <h6>길JOB이는 당신을 [OOO OOO]라고 생각 할 가능성이 높아요</h6>
+                            <h6>길JOB이는 당신을 S유형이라고 생각했어요</h6>
                         </div>
                         <div class = "result-text">
-                            <p>대부분의 상황에서 성실하고 화합을 중시하는 행동을 할 가능성이 높은 인재입니다.</p>
-                            <p>성실이는 "어떻게(How)"일을 해야 하는지에 관심이 많고 화합, 팀워크를 중시하며, 책임감이 높고 인내심이 강한유형입니다.<br>
-                            [OOO OOO]는 안정적으로 예측가능 한 것을 선호하며 규율에 따라 일을 진행하는 것을 선호합니다.
-                            <span style= "line-height:200%"></span><br></span>공감능력을 바탕으로 사람들을 잘 배려하며 신뢰감을 줍니다. 사람들에게 관대하고 협력적인 성향입니다.</p>
+                            <p>사회형은 다른 사람들과 함께 협력하여 일하는 것을 좋아하고 어려운 처지에 놓인 사람들의 복지에 관심이 있습니다.<span style= "line-height:200%"></span><br>
+                            또 남을 돌보고 자신이 알고 있는 것을 다른 사람들에게 교육하는 일에 관심이 많습니다.
+                            <span style= "line-height:200%"></span><br>다른 사람들과 적극적으로 대화하고 토론하는 것을 즐기며 사람들 간에 얽힌 문제를 풀어 주는 일에 앞장섭니다.</p>
                         </div>
                         <hr>
                 </div>
@@ -103,15 +111,25 @@
                     <!-- <p>차트 영역</p> -->
                     <!-- 적합도 차트 -->
                     <div class = "select-chart-txt">
-                        <p>당신은 LG를 선택하셨습니다.</p>
+                        <p>abcd1234님은 LG를 선택하셨습니다.</p>
                     </div>
                     <div class = "select-chart">
                         <div id = "AarChart"></div>
                     </div>
                     <div class = "select-chart-summary">
-                        <p>abcd1234님은 "글로벌"과"창의"이 강점입니다. 
-                            <br> LG에 적합한 인재가 되려면 "도전"과 "성실"을 더 키우세요 *\^__^/*
-                        </p>
+                        <p >abcd1234님은 "글로벌"과"창의"가 강점입니다. 
+                            <br> LG에 적합한 인재가 되려면 "도전"과 "성실"을 더 키우세요 
+                            <br><br>
+                            <strong>LG의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
+                            <div class = "gray-box">
+                                <p>
+
+                                    - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>
+                                    - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>
+                                    - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>
+                                    - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람
+                                </p>
+                            </div>
                     </div>
 
                 </div>
@@ -139,7 +157,7 @@
 
                             <p><strong>강점</strong></p>
                             <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span style= "line-height:200%"><br></span>
-                            조직에서 안정감을 주고 사람들과 잘 협력하는 [OOO OOO]를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
+                            조직에서 안정감을 주고 사람들과 잘 협력하는 S유형를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
                             <div class = "gray-box-container">
                                 <div class = "gray-box">
                                         <p>-어떤 일이든 성실하고 꾸준하게 잘 수행하는 인재
@@ -164,24 +182,24 @@
                                 </div>
                             </div>
 
-                            <div class="scatterPlot col-md-6">
-                                <div id = "scatterPlot"> </div>
+                            <div class="chart-area col-md-6">
+                                <div id = "chart-area"> </div>
                             </div>
                         </div>
                     </div>
 
                     <div class = "job-chart-txt">
-                            <p><strong>"개발"직무를 선택한 abcd1234님 </strong></p>
+                            <p><strong>"IT"직무를 선택한 abcd1234님 </strong></p>
 
-                            <p><strong>개발 직무의 강점</strong></p>
                             <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span style= "line-height:200%"><br></span>
-                            조직에서 안정감을 주고 사람들과 잘 협력하는 [OOO OOO]를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
+                            IT 직무 인사 담당자들은 아래와 같은 성향을 인재로 생각 할 가능성이 높습니다.</p>
+                            <p><strong>IT 직무의 역량</strong></p>
                             <div class = "gray-box-container">
                                 <div class = "gray-box">
-                                        <p>-어떤 일이든 성실하고 꾸준하게 잘 수행하는 인재
-                                            <br>
-                                            -인내심이 높아 신뢰감을 주고 잘 화합하는 인재 <br>
-                                            -다른 사람을 잘 도와주고 배려하며, 팀에 헌신하는 인재<br></p>
+                                        <p>-회사의 비전에 맞는 업무프로세스를 제공하기 위한 정보화전략 수립능력이 필요 합니다.
+                                            <br>-사용자에게 정확하고 원활한 정보시스템을 제공하기 위한 정보관리능력이 필요 합니다.
+                                            <br>-각 사업분야 별 사용자 니즈를 분석하는 역량이 필요합니다.
+                                            <br>-회사 업무의 효율최적화를 위한 프로세스 개선 능력이 필요 합니다.</p>
                                 </div>
                             </div>
                     </div>
@@ -206,12 +224,12 @@
                                         <div id = "quelineChart2"> </div>
                                     </div>
                                 </div>
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="quelineChart3 col-md-6">
                                                 <p>Q3. 합격하게 된다면 향후 포부는?</p>
                                                 <div id = "quelineChart3"> </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     
                             
                     </div>
@@ -255,14 +273,14 @@
                 "인내심",
                 "창의",
                 "글로벌"],
-                ["data1", 330, 350, 200, 380, 150,130,200,30,280],
-                ["data2", 130, 100, 30, 200, 80,180,240,170,350],
+                ["사용자", 330, 350, 200, 380, 150,130,200,30,280],
+                ["IT", 130, 100, 30, 200, 80,180,240,170,350],
                 ],
                 type: "radar",
                 labels: true,
                 colors : {
-                    data1 : "#4a8ac8",
-                    data2 : "#fdd3de"
+                    "사용자" : "#4a8ac8",
+                    "IT" : "#fdd3de"
                 },
             },
             radar: {
@@ -290,10 +308,10 @@
             data: {
                 type: "bar",
                 columns: [
-                    ["data1", 80, 68, 30],
+                    ["기업", 80, 68, 30],
                 ],
                 colors : {
-                    data1 : "#4a8ac8"
+                    "기업" : "#4a8ac8"
                 },
                 labels: true
             },
@@ -321,12 +339,12 @@
             data: {
                 type: "bar",
                 columns: [
-                ["data1", 330, 350, 200, 380, 150,130,200,30,280],
-                ["data2", 130, 100, 30, 200, 80,180,240,170,350],
+                ["LG", 330, 350, 200, 380, 150,130,200,30,280],
+                ["사용자", 130, 100, 30, 200, 80,180,240,170,350],
                 ],
                 colors : {
-                    data1 : "#4a8ac8",
-                    data2 : "#fdd3de"
+                    "LG" : "#4a8ac8",
+                    "사용자" : "#fdd3de"
                 },
             },
             axis: {
@@ -350,12 +368,12 @@
         var chart = bb.generate({
         data: {
             columns: [
-            ["data1", 330, 350, 200, 380, 150,130,200,30,280],
-            ["data2", 130, 100, 30, 200, 80,180,240,170,350]
+            ["삼성", 330, 350, 200, 380, 150,130,200,30,280],
+            ["사용자", 130, 100, 30, 200, 80,180,240,170,350]
             ],
             colors : {
-                    data1 : "#4a8ac8",
-                    data2 : "#fdd3de"
+                    "삼성" : "#4a8ac8",
+                    "사용자" : "#fdd3de"
                 },
         },
         axis: {
@@ -377,55 +395,34 @@
         bindto: "#lineChart"
         });
 
+
         var chart = bb.generate({
         data: {
-            xs: {
-            setosa: "setosa_x",
-            versicolor: "versicolor_x",
-            virginica: "virginica_x"
-            },
+            
             columns: [
-            ["setosa_x", 3.5, 3, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3, 3, 4, 4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3, 3.4, 3, 3.4, 3.5, 3.4, 3.2, 3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3, 3.8, 3.2, 3.7, 3.3],
-            ["versicolor_x", 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2, 3, 2.2, 2.9, 2.9, 3.1, 3, 2.7, 2.2, 2.5, 3.2, 2.8, 2.5, 2.8, 2.9, 3, 2.8, 3, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3, 3.4, 3.1, 2.3, 3, 2.5, 2.6, 3, 2.6, 2.3, 2.7, 3, 2.9, 2.9, 2.5, 2.8],
-            ["setosa", 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0.2, 0.1, 0.1, 0.2, 0.4, 0.4, 0.3, 0.3, 0.3, 0.2, 0.4, 0.2, 0.5, 0.2, 0.2, 0.4, 0.2, 0.2, 0.2, 0.2, 0.4, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.2, 0.6, 0.4, 0.3, 0.2, 0.2, 0.2, 0.2],
-            ["versicolor", 1.4, 1.5, 1.5, 1.3, 1.5, 1.3, 1.6, 1, 1.3, 1.4, 1, 1.5, 1, 1.4, 1.3, 1.4, 1.5, 1, 1.5, 1.1, 1.8, 1.3, 1.5, 1.2, 1.3, 1.4, 1.4, 1.7, 1.5, 1, 1.1, 1, 1.2, 1.6, 1.5, 1.6, 1.5, 1.3, 1.3, 1.3, 1.2, 1.4, 1.2, 1, 1.3, 1.2, 1.3, 1.3, 1.1, 1.3]
+            ["사용자", 30, 200, 100, 400, 150, 250],
             ],
-            type: "scatter",
             colors : {
-                setosa : "#4a8ac8",
-                versicolor : "#fdd3de"
+                    "사용자" : "#4a8ac8"
                 },
-        },
-
+        }, 
         size: {
             
             width: 480
         },
         axis: {
             x: {
-            label: "Sepal.Width",
-            tick: {
-                fit: false
+            type: "category",
+            categories: [
+                "소통",
+                "팀워크",
+                "도전",
+                "능동",
+                "성실",
+                "정직",
+               
+            ]
             }
-            },
-            y: {
-            label: "Petal.Width"
-            }
-        },
-        bindto: "#scatterPlot"
-        });
-
-        var chart = bb.generate({
-        data: {
-            columns: [
-            ["data1", 30, 200, 100, 400, 150, 250],
-            ],
-            colors : {
-                    data1 : "#4a8ac8"
-                },
-        }, size: {
-            
-            width: 480
         },
         bindto: "#quelineChart1"
         });
@@ -433,32 +430,46 @@
         var chart = bb.generate({
         data: {
             columns: [
-            ["data1", 30, 200, 100, 400, 150, 250],
+            ["사용자", 30, 200, 100, 400, 150, 250],
             ],
             colors : {
-                    data1 : "#fdd3de"
+                    "사용자" : "#fdd3de"
                 },
         }, size: {
             
             width: 480
+        },
+        axis: {
+            x: {
+            type: "category",
+            categories: [
+                "소통",
+                "팀워크",
+                "도전",
+                "능동",
+                "성실",
+                "정직",
+               
+            ]
+            }
         },
         bindto: "#quelineChart2"
         });
 
-        var chart = bb.generate({
-        data: {
-            columns: [
-            ["data1", 30, 200, 100, 400, 150, 250],
-            ],
-            colors : {
-                    data1 : "#4a8ac8"
-                },
-        }, size: {
+        // var chart = bb.generate({
+        // data: {
+        //     columns: [
+        //     ["data1", 30, 200, 100, 400, 150, 250],
+        //     ],
+        //     colors : {
+        //             data1 : "#4a8ac8"
+        //         },
+        // }, size: {
             
-            width: 480
-        },
-        bindto: "#quelineChart3"
-        });
+        //     width: 480
+        // },
+        // bindto: "#quelineChart3"
+        // });
 
         // var chart = bb.generate({
         // data: {
@@ -471,6 +482,61 @@
         // },
         // bindto: "#quelineChart4"
         // });
+
+
+        var container = document.getElementById('chart-area');
+var data = {
+    categories: ['100 ~', '90 ~ 99', '80 ~ 89', '70 ~ 79', '60 ~ 69', '50 ~ 59', '40 ~ 49', '30 ~ 39', '20 ~ 29', '10 ~ 19', '0 ~ 9'],
+    series: [
+        {
+            name: '사용자',
+            data: [330, 350, 200, 380, 150,130,200,30,280],
+            
+        },
+        {
+            name: 'LG',
+            data: [130, 100, 30, 200, 80,180,240,170,350]
+        }
+    ]
+};
+var options = {
+    chart: {
+        width: 480,
+        height: 400,
+        format: '1,000'
+    },
+    legend : {
+        showCheckbox : false,
+        align : 'bottom'
+    },
+    chartExportMenu:{
+        visible : false
+    },
+    yAxis: [{
+        labelMargin: 15
+    }, {
+       
+        labelMargin: 15
+    }],
+    series: {
+        diverging: true
+    }
+    
+};
+var theme = {
+    series: {
+        colors: [
+            '#fdd3de', '#4a8ac8'
+        ]
+    }
+};
+
+// For apply theme
+
+tui.chart.registerTheme('myTheme', theme);
+options.theme = 'myTheme';
+
+tui.chart.barChart(container, data, options);
 </script>
 
 </html>
