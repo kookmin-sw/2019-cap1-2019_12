@@ -2,12 +2,14 @@ import pickle
 import joblib
 from konlpy.tag import Okt
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.svm import SVC
 from sklearn.pipeline import Pipeline
 from sklearn.multiclass import OneVsRestClassifier
+import numpy as np
 import csv
-import operator
+import json
+from datetime import datetime
+
 
 def openStopword():
     f = open('stopwords.csv', 'r', encoding='utf-8')
@@ -32,18 +34,42 @@ def tokenizer(raw, pos=["Noun", "Verb"], stopword=openStopword()):
         ]
 
 
+#   예측 후 핵심역량 이름으로 return
 def SVCpredict(model, text):
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
     result = model.predict([text])
     return keyword_names[result[0]-1]
 
 
+#   decision function으로 예측 후 리스트 형태로 return
 def SVCdecision(model, text):
     return model.decision_function([text]).tolist()[0]
 
 
+#   분석 후 dictionary 형태로 return
 def SVCproba(model, text):
-    return model.predict_proba([text]).tolist()[0]
+    proba = model.predict_proba([text]).tolist()[0]
+    proba = [format(proba[i], '.30f') for i in range(10)]
+    keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
+    result = {}
+    for i in range(10):
+        result[keyword_eng[i]] = proba[i]
+    return result
+
+
+#   json파일로 저장
+def ConvertToJson(user_dict):
+    now = datetime.now()
+    json_name = '%s%02d%s.json' % (now.year, now.month, now.day)
+    with open(json_name, 'w') as outfile:
+        json.dump(user_dict, outfile)
+    return
+
+
+#   분석 후 json으로 저장
+def UserAnalysis(model, text):
+    ConvertToJson(SVCproba(model, text))
+    return
 
 
 if __name__ == "__main__":
@@ -58,9 +84,11 @@ if __name__ == "__main__":
     filename = 'SVC_PROB.joblib'
     svc_from_joblib = joblib.load(filename)
 
-    #keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
-    #job = ['architecture', 'IT', 'management', 'production', 'sales']
-    #company = ['samsung', 'hyundai', 'LG', 'SK', 'CJ']
+#   keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
+#   job = ['architecture', 'IT', 'management', 'production', 'sales']
+#   company = ['samsung', 'hyundai', 'LG', 'SK', 'CJ']
 
     print(SVCproba(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
     print(SVCpredict(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
+
+    UserAnalysis(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람")
