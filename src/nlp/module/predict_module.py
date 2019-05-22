@@ -2,13 +2,8 @@ import pickle
 import joblib
 from konlpy.tag import Okt
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.svm import SVC
-from sklearn.pipeline import Pipeline
-from sklearn.multiclass import OneVsRestClassifier
-import numpy as np
 import csv
 import json
-from datetime import datetime
 
 
 def openStopword():
@@ -57,19 +52,9 @@ def SVCproba(model, text):
     return result
 
 
-#   json파일로 저장
-def ConvertToJson(user_dict):
-    now = datetime.now()
-    json_name = '%s%02d%s.json' % (now.year, now.month, now.day)
-    with open(json_name, 'w') as outfile:
-        json.dump(user_dict, outfile)
-    return
-
-
 #   분석 후 json으로 저장
 def UserAnalysis(model, text):
-    ConvertToJson(SVCproba(model, text))
-    return
+    return json.dumps(SVCproba(model, text))
 
 
 if __name__ == "__main__":
@@ -91,4 +76,4 @@ if __name__ == "__main__":
     print(SVCproba(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
     print(SVCpredict(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
 
-    UserAnalysis(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람")
+    print(UserAnalysis(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
