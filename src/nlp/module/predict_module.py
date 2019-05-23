@@ -42,7 +42,7 @@ def Cosine(company_dict, company, user_text_dict):
         y = np.array(user_text).reshape(1, -1)
         cosine_dict[company[i]] = cosine_similarity(x, y)[0]
 
-    sorted(cosine_dict.items(), key=operator.itemgetter(1), reverse=True)
+    cosine_dict = sorted(cosine_dict.items(), key=operator.itemgetter(1), reverse=True)
 
     sorted_company = []
 
