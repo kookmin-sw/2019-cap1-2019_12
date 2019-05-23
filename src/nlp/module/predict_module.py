@@ -40,7 +40,7 @@ def Cosine(company_dict, company, user_text_dict):
     for i in range(len(company_dict)):
         x = np.array(company_dict[company[i]]).reshape(1, -1)
         y = np.array(user_text).reshape(1, -1)
-        cosine_dict[company[i]] = cosine_similarity(x, y)
+        cosine_dict[company[i]] = cosine_similarity(x, y)[0]
 
     sorted(cosine_dict.items(), key=operator.itemgetter(1), reverse=True)
 
@@ -49,10 +49,12 @@ def Cosine(company_dict, company, user_text_dict):
     for key in cosine_dict.keys():
         sorted_company.append(key)
 
-    top_company_name = sorted_company[0]
-    top_company_value = company_dict[top_company_name]
+    company_ranking = {}
 
-    return (top_company_name, top_company_value, user_text)
+    for i in range (0,3):
+        company_ranking[sorted_company[i]] = cosine_dict[sorted_company[i]].tolist()
+
+    return (company_ranking)
 
 
 #   분석 후 json으로 저장
