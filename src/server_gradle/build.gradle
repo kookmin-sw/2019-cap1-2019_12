@@ -36,9 +36,6 @@ dependencies {
 //    compile('org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.1.4.BUILD-SNAPSHOT')
     
 //    compile('org.springframework.session:spring-session-jdbc')
-///*    compile('org.springframework.boot:spring-boot-starter-jdbc')*/
-
-//    compile('org.springframework.session:spring-session')
 //    compile('org.springframework.boot:spring-boot-starter-jdbc')
 
     compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.34'

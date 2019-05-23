@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String index() {
 //        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 //        System.out.println(auth.getPrincipal());
@@ -27,7 +27,11 @@ public class IndexController {
    }
 
    @GetMapping("/callback")
-    public String callback() {
+   public String callback() {
        return "main";
    }
+
+//   @GetMapping("/login")
+//    public String login() { return "main"; }
+
 }

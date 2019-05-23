@@ -29,6 +29,14 @@ public class UserSubmitVO {
         return question;
     }
 
+    public String getQuestion(int n) {
+        return question.get(n);
+    }
+
+    public String getText(int n) {
+        return text.get(n);
+    }
+
     public void setQuestion(List<String> question) {
         this.question = question;
     }
