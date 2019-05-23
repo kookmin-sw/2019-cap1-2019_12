@@ -25,7 +25,7 @@ def SVCproba(model, text):
     keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
     result = {}
     for i in range(10):
-        result[keyword_eng[i]] = proba[i]
+        result[keyword_eng[i]] = float(proba[i])
     return result
 
 
