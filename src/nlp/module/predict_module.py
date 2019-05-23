@@ -40,26 +40,23 @@ def Cosine(company_dict, company, user_text_dict):
     for i in range(len(company_dict)):
         x = np.array(company_dict[company[i]]).reshape(1, -1)
         y = np.array(user_text).reshape(1, -1)
-        cosine_dict[company[i]] = cosine_similarity(x, y)[0]
+        cosine_dict[company[i]] = cosine_similarity(x, y).tolist()[0][0]
 
     cosine_dict = sorted(cosine_dict.items(), key=operator.itemgetter(1), reverse=True)
 
-    sorted_company = []
-
-    for key in cosine_dict.keys():
-        sorted_company.append(key)
-
-    company_ranking = {}
-
-    for i in range (0,3):
-        company_ranking[sorted_company[i]] = cosine_dict[sorted_company[i]].tolist()
-
-    return (company_ranking)
+    return json.dumps([cosine_dict[i] for i in range(3)])
 
 
-#   분석 후 json으로 저장
-def UserAnalysis(model, text):
-    return json.dumps(SVCproba(model, text))
+def Holland(user_text_dict):
+    holland_type = {}
+    holland_type['S'] = (user_text_dict['global'] + user_text_dict['communication'] + user_text_dict['teamwork'])/3
+    holland_type['E'] = (user_text_dict['challenge']+user_text_dict['responsibility']+user_text_dict['active']+user_text_dict['creative'])/4
+    holland_type['C'] = (user_text_dict['patient']+user_text_dict['honesty']+user_text_dict['sincerity'])
+    #keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
+    # S: 소통, 팀워크, 글로벌
+    # E: 도전, 주인의식, 능동, 창의
+    # C: 인내심, 정직, 성실
+    return holland_type
 
 
 def Predict(text):
@@ -89,9 +86,9 @@ def Predict(text):
 
     print(SVCproba(svc_from_joblib, text))
     print(SVCpredict(svc_from_joblib, text))
-    print(UserAnalysis(svc_from_joblib, text))
 
     print((Cosine(company_dict, company, SVCproba(svc_from_joblib, text))))
+    print(Holland(SVCproba(svc_from_joblib, text)))
 
 
 if __name__ == "__main__":
