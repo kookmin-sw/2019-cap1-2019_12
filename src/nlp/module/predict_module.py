@@ -1,34 +1,9 @@
-import pickle
-import joblib
-from konlpy.tag import Okt
-from sklearn.feature_extraction.text import TfidfVectorizer
+from utils import *
 from sklearn.metrics.pairwise import cosine_similarity
-import csv
 import json
 import numpy as np
 import operator
-
-def openStopword():
-    f = open('stopwords.csv', 'r', encoding='utf-8')
-    reader = csv.reader(f)
-    stopwords = list()
-
-    for row in reader:
-        stopwords.append(row[0])
-
-    return stopwords
-
-
-def tokenizer(raw, pos=["Noun", "Verb"], stopword=openStopword()):
-    okt = Okt()
-    return [
-        word for word, tag in okt.pos(
-            raw,
-            norm=True,
-            stem=True
-            )
-            if len(word) > 1 and tag in pos and word not in stopword
-        ]
+import joblib
 
 
 #   예측 후 핵심역량 이름으로 return
@@ -52,6 +27,7 @@ def SVCproba(model, text):
     for i in range(10):
         result[keyword_eng[i]] = proba[i]
     return result
+
 
 def Cosine(company_dict, company, user_text_dict):
     # cos = cosine_similarity(company_dict, user_text)
@@ -78,21 +54,14 @@ def Cosine(company_dict, company, user_text_dict):
 
     return (top_company_name, top_company_value, user_text)
 
+
 #   분석 후 json으로 저장
 def UserAnalysis(model, text):
     return json.dumps(SVCproba(model, text))
 
 
-if __name__ == "__main__":
-    vectorize = TfidfVectorizer(
-        ngram_range=(1, 3),  # n-gram 3
-        tokenizer=tokenizer,
-        max_df=0.95,
-        min_df=0,
-        sublinear_tf=True
-    )
-
-    filename = 'SVC_PROB.joblib'
+def Predict(text):
+    filename = 'SVC_PROB_small_190523.joblib'
     svc_from_joblib = joblib.load(filename)
 
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
@@ -114,11 +83,14 @@ if __name__ == "__main__":
                -0.6549712334986287],
         'CJ': [-0.7197954463771161, -0.3855618389458571, -0.5225478215844543, 0.010193007021379819, -0.2898697024011009,
                -1.865131533958604, -1.4985025101392337, -0.6209880454739807, -1.7121484451524631, -0.5946502637415154]
-    } #테스트 데이터
+    }  # 테스트 데이터
+
+    print(SVCproba(svc_from_joblib, text))
+    print(SVCpredict(svc_from_joblib, text))
+    print(UserAnalysis(svc_from_joblib, text))
+
+    print((Cosine(company_dict, company, SVCproba(svc_from_joblib, text))))
 
 
-    print(SVCproba(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
-    print(SVCpredict(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
-    print(UserAnalysis(svc_from_joblib, "열정을 갖고 끊임없이 노력하는 사람"))
-
-    print((Cosine(company_dict, company, SVCproba(svc_from_joblib,"열정을 갖고 끊임없이 노력하는 사람"))))
+if __name__ == "__main__":
+    Predict("예측자기소개서")
