@@ -1528,9 +1528,9 @@ label,
 a:not(.btn) {
   transition: initial;
   /* text-decoration: underline;
-  color: #969696;*/ } 
+  color: #969696;*/ }
   a:not(.btn):hover {
-    
+
     color: #FFF; }
     a:not(.btn):hover:before {
       -webkit-transform: scaleX(1);
