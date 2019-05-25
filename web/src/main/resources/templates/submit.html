@@ -51,7 +51,7 @@
                   <span class="icon-bar"></span>
                 </button>
                 <div class="brand">
-                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길 JOB 이</div>
+                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길JOB이</div>
               </div>
 
 
@@ -77,10 +77,10 @@
 
     <div id="submit-select">
 
-      <strong><h5>제출하기</h5></strong>
+      <strong><h4>제출하기</h4></strong>
     <hr />
 
-      <h3 id="submit-guide"> 지원하는 직무 분야와 기업을 선택한 후 자기소개서를 입력하세요.</h3>
+      <h4 id="submit-guide"> 지원하는 직무 분야와 기업을 선택한 후 자기소개서를 입력하세요.</h4>
 
 
       <div class="row">
@@ -93,7 +93,7 @@
       <div class="col-xs-4">
 
         <div class="dropdown" style="text-align:center;">
-
+  <strong>
           <select class="selectbox-dropdown form-control">
         	  <option>직무 선택</option>
         	  <option>개발</option>
@@ -101,6 +101,7 @@
         	  <option>생산</option>
         	  <option>영업</option>
         	</select>
+        </strong>
 
           </div>
           </div>
@@ -127,9 +128,15 @@
               </div>
 </div>
 
-<input type="button" style="margin-right:10px;" class="btn btn-primary" value="문항추가" onclick="add_item()">
-<input type="button" class="btn btn-primary" value="문항삭제" onclick="remove_item()">
-<br>
+<div class="row" style="margin-bottom:-10px;">
+  <div class="col-xs-6">
+    <input class="form-control" type="text" placeholder="저장될 자기소개서 제목을 입력하세요."/>
+  </div>
+  <div class="col-xs-3 col-xs-offset-3">
+    <input type="button" style="margin-right:10px;" class="btn btn-primary" value="문항추가" onclick="add_item()">
+    <input type="button" class="btn btn-primary" value="문항삭제" onclick="remove_item()">
+  </div>
+</div>
 <hr />
 
 
