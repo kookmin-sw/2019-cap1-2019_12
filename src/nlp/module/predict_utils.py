@@ -1,11 +1,5 @@
-from konlpy.tag import Okt
-from sklearn.feature_extraction.text import TfidfVectorizer
-import csv
-
-okt = Okt()
-
-
 def openStopword():
+    import csv
     f = open('stopwords.csv', 'r', encoding='utf-8')
     reader = csv.reader(f)
     stopwords = list()
@@ -17,8 +11,9 @@ def openStopword():
 
 
 def tokenizer(raw, pos=["Noun","Verb"], stopword=openStopword()):
+    from konlpy.tag import Okt
     return [
-        word for word, tag in okt.pos(
+        word for word, tag in Okt().pos(
             raw,
             norm=True,   # normalize 정제 과정
             stem=True    # stemming 정제 과정
@@ -27,10 +22,17 @@ def tokenizer(raw, pos=["Noun","Verb"], stopword=openStopword()):
         ]
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer
 vectorize = TfidfVectorizer(
-    ngram_range=(1, 3), #n-gram 3
+    ngram_range=(1,3), #n-gram 3
     tokenizer=tokenizer,
     max_df=0.95,
-    min_df=0.02, # 100개 문서 중 1번만 등장하면 제외
+    min_df=0,
     sublinear_tf=True
 )
+
+
+def openModel(filename):
+    import joblib
+    model = joblib.load(filename)
+    return model
