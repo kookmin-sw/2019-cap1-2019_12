@@ -1,9 +1,8 @@
-from utils import *
+from predict_utils import tokenizer, openStopword, openModel, vectorize
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 import numpy as np
 import operator
-import joblib
 
 
 #   예측 후 핵심역량 이름으로 return
@@ -44,11 +43,11 @@ def Cosine(company_dict, company, user_text_dict):
 
     cosine_dict = sorted(cosine_dict.items(), key=operator.itemgetter(1), reverse=True)
 
-    return json.dumps([cosine_dict[i] for i in range(3)])
+    return dict(cosine_dict[i] for i in range(3))
 
 
 def Holland(user_text_dict):
-    holland_type = {}
+    holland_type = dict()
     holland_type['S'] = (user_text_dict['global'] + user_text_dict['communication'] + user_text_dict['teamwork'])/3
     holland_type['E'] = (user_text_dict['challenge']+user_text_dict['responsibility']+user_text_dict['active']+user_text_dict['creative'])/4
     holland_type['C'] = (user_text_dict['patient']+user_text_dict['honesty']+user_text_dict['sincerity'])
@@ -60,8 +59,7 @@ def Holland(user_text_dict):
 
 
 def Predict(text):
-    filename = 'SVC_PROB_small_190523.joblib'
-    svc_from_joblib = joblib.load(filename)
+    model = openModel('SVC_PROB.joblib')
 
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
     job = ['architecture', 'IT', 'management', 'production', 'sales']
@@ -84,12 +82,14 @@ def Predict(text):
                -1.865131533958604, -1.4985025101392337, -0.6209880454739807, -1.7121484451524631, -0.5946502637415154]
     }  # 테스트 데이터
 
-    print(SVCproba(svc_from_joblib, text))
-    print(SVCpredict(svc_from_joblib, text))
+    result = dict()
 
-    print((Cosine(company_dict, company, SVCproba(svc_from_joblib, text))))
-    print(Holland(SVCproba(svc_from_joblib, text)))
+    result['user'] = SVCproba(model, text)
+    result['Cosine'] = Cosine(company_dict, company, result['user'])
+    result['Holland'] = Holland(result['user'])
+
+    return json.dumps(result)
 
 
 if __name__ == "__main__":
-    Predict("예측자기소개서")
+    print(Predict("예측자기소개서"))
