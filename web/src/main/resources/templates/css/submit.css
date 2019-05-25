@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
 
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+     }
+
+
 body .main-wrapper {
   padding-top: 80px;
   padding-bottom: 100px;
@@ -35,7 +42,7 @@ body .main-wrapper {
 
 #submit-guide {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   line-height: 2.0em;
   color:#011C3F;
   text-align: center;
@@ -81,7 +88,7 @@ body .main-wrapper {
 }
 
 #box-enter {
-  margin-bottom: 160px;
+  margin-bottom: 60px;
 }
 
 #test::placeholder {
@@ -400,5 +407,3 @@ input[class="result-check"] {
   padding-left : 15px;
   padding-right: 15px;
 }
-
-

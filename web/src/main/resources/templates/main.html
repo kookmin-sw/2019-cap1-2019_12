@@ -10,7 +10,7 @@
 	<title>HTML Template</title>
 
 	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet"> -->
 
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
@@ -38,13 +38,14 @@
 	<meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor.css">
+				<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="css/main.css">
 
-		<script>
+		<!-- <script>
 				var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
 				{};
 				var themeName = themeSettings.themeName || '';
@@ -56,7 +57,7 @@
 				{
 					document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
 				}
-			</script>
+			</script> -->
 </head>
 
 <body>
@@ -81,7 +82,7 @@
           <span class="icon-bar"></span>
         </button>
         <div class="brand">
-            <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길 JOB 이</div>
+            <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길JOB이</div>
       </div>
 
 
@@ -113,13 +114,13 @@
 					<!-- home content -->
 					<div class="col-md-10 col-md-offset-1">
 						<div class="home-content">
-						
+
 								<h1 class="white-text"><strong>길 JOB 이</strong></h1>
 							<br>
 							<p class="white-text">
 								"나의 열정을 AI가 분석해준다면?"
 								<br><br>
-								누구나 비용과 시간, 장소의 부담 없이 자기소개서를 객관적으로 분석할 수 있는 
+								누구나 비용과 시간, 장소의 부담 없이 자기소개서를 객관적으로 분석할 수 있는
 								AI 분석 서비스 '길JOB이' 입니다
 							</p>
 							<!-- <button class="white-btn">시작하기</button> -->
@@ -174,7 +175,7 @@
           <h4 class="service-heading">기능 3</h4>
           <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> -->
 				</div>
-				
+
 				<div class = "info-wrapper">
 					<div class = "info-wrapper-first">
 								<div class="row">
@@ -189,7 +190,7 @@
 					<div class = "info-wrapper-second">
 								<div class="row">
 									<div class="col-md-3 second-title">분석원리</div>
-									<div class="col-md-9 second-content">자기소개서에 사용된 100만 개 이상의 언어표현과 역량 간의 관계를 인공지능이 학습한 결과를 토대로 자기소개서에 드러난 내 성향과 강점을 분석한 다음, 
+									<div class="col-md-9 second-content">자기소개서에 사용된 100만 개 이상의 언어표현과 역량 간의 관계를 인공지능이 학습한 결과를 토대로 자기소개서에 드러난 내 성향과 강점을 분석한 다음,
 										코멘토의 빅데이터를 활용하여 직무별 우수 지원자 성향과 비교하여 자기소개서 준비 방법과 면접 대비 방법을 안내해 드립니다.</div>
 								</div>
 					</div>
@@ -264,16 +265,16 @@
 	<!-- Changecolor on scroll -->
 	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 	<script>
-		$(document).ready(function(){ 
-  	$(window).scroll(function(){ 
-    var scroll = $(window).scrollTop(); 
-    if(scroll>1){ 
-      $(".navbar-scroll").css("background",transparent); 
-    } 
-    else{ 
-      $(".navbar-scroll").css("background","#343a40"); 
-    } 
-  }) 
+		$(document).ready(function(){
+  	$(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll>1){
+      $(".navbar-scroll").css("background",transparent);
+    }
+    else{
+      $(".navbar-scroll").css("background","#343a40");
+    }
+  })
 })
 	</script>
 </body>
