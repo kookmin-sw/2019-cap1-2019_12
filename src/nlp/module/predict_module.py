@@ -57,9 +57,24 @@ def Holland(user_text_dict):
     # C: 인내심, 정직, 성실
     return holland_type
 
+def companyPredict(model, text, company):
+    #CJ / LG / SK / 현대 / 삼성
+    predict_company = model.decision_function([text]).tolist()
+    predict_company_dict = {}
+
+    for i in range (len(company)) :
+        predict_company_dict[company[i]] = predict_company[0][i]
+
+    predict_company_dict = sorted(predict_company_dict.items(), key=operator.itemgetter(1), reverse=True)
+    predict_company_dict = dict(predict_company_dict)
+
+    return (predict_company_dict)
+
 
 def Predict(text):
     model = openModel('SVC_PROB.joblib')
+    company_model = openModel('Company_SVM.joblib')
+
 
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
     job = ['architecture', 'IT', 'management', 'production', 'sales']
@@ -87,6 +102,7 @@ def Predict(text):
     result['user'] = SVCproba(model, text)
     result['Cosine'] = Cosine(company_dict, company, result['user'])
     result['Holland'] = Holland(result['user'])
+    result['company'] = companyPredict(company_model, text, company)
 
     return json.dumps(result)
 
