@@ -391,6 +391,7 @@ input[class="result-check"] {
 .que-chart{
   margin-left : 15px;
 }
+
 .RadarChart{
   margin-top : 30px;
 }
@@ -406,4 +407,42 @@ input[class="result-check"] {
 .result-text{
   padding-left : 15px;
   padding-right: 15px;
+  margin-top : 30px;
+  padding-bottom : 15px; border: 2px solid #F2F2F2;
+  
 }
+
+.line-chart{
+  
+  padding-left : 15px;
+  padding-right : 15px;
+  margin-top : 15px;
+}
+
+.line-chart-txt{
+  padding-top : 15px;
+  padding-left : 15px;
+}
+
+.result-container {
+  margin-bottom : 30px;
+  height : auto ;
+  width : 1080px;
+  background-color : #fff;
+}
+.bar-chart-container{
+  margin-top :30px;
+  
+}
+.bar-chart-title {
+  margin-left : 15px;
+}
+.bar-chart-compare{
+  margin-top : 15px;
+  padding-left : 15px;
+}
+
+.company-chart-container{
+  margin-top :30px;
+}
+

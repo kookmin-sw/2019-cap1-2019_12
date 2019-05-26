@@ -81,7 +81,7 @@
             </nav>
 
          <div class="container" >
-            <div class = "result-container">
+            <div class = "result-container"> 
                 <div class = "result-txt-container">
                     <div class = "header-text">
                            <strong><p>비교 분석</p></strong>
@@ -90,65 +90,43 @@
                         <div class = "result-main-text">
                             <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
                         </div>
-                        <div class = "result-text">
+                        <!-- <div class = "result-text">
                             <p>대부분의 상황에서 성실하고 화합을 중시하는 행동을 할 가능성이 높은 인재입니다.</p>
                             <p>성실이는 "어떻게(How)"일을 해야 하는지에 관심이 많고 화합, 팀워크를 중시하며, 책임감이 높고 인내심이 강한유형입니다.<br>
                             [OOO OOO]는 안정적으로 예측가능 한 것을 선호하며 규율에 따라 일을 진행하는 것을 선호합니다.
                             <span style= "line-height:200%"></span><br></span>공감능력을 바탕으로 사람들을 잘 배려하며 신뢰감을 줍니다. 사람들에게 관대하고 협력적인 성향입니다.</p>
-                        </div>
+                        </div> -->
                         <hr>
                 </div>
 
-                <div class = "result-chart-container">
-                    <!-- <p>차트 영역</p> -->
-                    <!-- 적합도 차트 -->
-
-                    <!-- <div class="row"> -->
-                            <!-- <div class="col-md-6"> -->
-                                <div class = "bar-chart">
-                                        <p id= "com">[적합 기업 그래프]</p>
-                                        <div id = "lineChart">
-                                            </div>
-                                </div>
-                                
-                            <!-- </div> -->
-
-                            <!-- <div class="col-md-6">
-                                    <p id= "job">[직무 적합도 그래프]</p> -->
-                                        <!-- <div id = "RadarChart"> -->
-                                <!-- </div> -->
-                            <!-- </div> -->
-                    <!-- </div> -->
-
+                <div class = "line-chart-container">
+                    <div class = "line-chart-txt">[적합 기업 그래프]</div>
+                        <div class = "line-chart">
+                            <div id = "lineChart"></div>
+                    </div>  
+                    <hr>  
                 </div>
 
-                <!-- <div class = "chart-explain-container">
-                    <p><strong>길JOB이가 생각하는 [OOO OOO]</strong></p>
+                
+                                <!-- </div> -->
+                            
+                
 
-                    <p><strong>강점</strong></p>
-                    <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span style= "line-height:200%"><br></span>
-                    조직에서 안정감을 주고 사람들과 잘 협력하는 [OOO OOO]를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
-                    <div class = "gray-box-container">
-                        <div class = "gray-box">
-                                <p>-어떤 일이든 성실하고 꾸준하게 잘 수행하는 인재
-                                    <br>
-                                    -인내심이 높아 신뢰감을 주고 잘 화합하는 인재 <br>
-                                    -다른 사람을 잘 도와주고 배려하며, 팀에 헌신하는 인재<br></p>
-                        </div>
-                    </div>
-
-                </div> -->
 
                 <div class = "bar-chart-container">  
+                    <div class = "bar-chart-title">[적합 기업 그래프]</div>
                     <div class = "row">
                         <div class = "col-md-6">
-                                <div class = "bubble-chart-compare">
+                                <div class = "bar-chart-compare">
                                         <div id = "BarChart"></div>
                                     </div>
                         </div>
 
+
+                        
+
                         <div class = "col-md-6">
-                                <div class = "result-text">
+                                <div class = "result-text txt-center">
                                         <p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>
                                         <p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구
                                             사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된
@@ -162,61 +140,49 @@
                                     </div>
                         </div>
                     </div>
-                    
+                    <hr>
                 </div>
+                
 
 
-                <div>
-                    <div class  = "chart-compare">
-                            <div class = "result-txt-container">
-                                    <div class = "header-text">
-                                           <!-- <strong><p>비교 분석</p></strong> -->
-                                        </div>
-                                        <hr>
-                                        <div class = "result-main-text">
-                                            <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
-                                        </div>
-                                        <div class = "result-text">
-                                            <p> - 애플리케이션 테스트 관리란 요구사항대로 응용소프트웨어가 
-                                                구현되었는지를 검증하기 위해 테스트케이스를 작성하고 
-                                                개발자 통합 테스트를 수행하여 애플리케이션의 성능을 개선하는 능력이다. 
-                                            </p>
-                                            <p> - 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트방식, 
-                                                대상과 범위를 결정하여 테스트케이스를 작성 할 수 있다.
-                                             개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트 방식, 
-                                                대상과 범위가 적용된 시나리오를 정의 할 수 있다.
-                                            </p>
-                                            
-                                        </div>
+                
+                    <div class  = "chart-job-compare">
+                            <div class = "result-main-text">
+                                    <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
                                 </div>
+                            <div class = "company-chart-container">
+                                    <div class = "row">
+                                        <div class = "col-md-6">
+                                                <div class = "radar-chart-compare">
+                                                        <div id = "RadarChart1"></div>
+                                                    </div>
+                                        </div>
+                
+                                        <div class = "col-md-6">
+                                                <div class = "radar-chart-compare">
+                                                        <div id = "RadarChart2"></div>
+                                                    </div>
+                                        </div>
+                                    </div> 
                     </div>
-                </div>
-
-                <hr>
-
-
-
-
-                <div class = "company-chart-container">
-                                <div class = "row">
-                                    <div class = "col-md-6">
-                                            <div class = "bubble-chart-compare">
-                                                    <div id = "RadarChart1"></div>
-                                                </div>
+                                 <div class = "result-txt-container">  
+                                            
+                                            <div class = "result-text">
+                                                <p> - 애플리케이션 테스트 관리란 요구사항대로 응용소프트웨어가 
+                                                    구현되었는지를 검증하기 위해 테스트케이스를 작성하고 
+                                                    개발자 통합 테스트를 수행하여 애플리케이션의 성능을 개선하는 능력이다. 
+                                                </p>
+                                                <p> - 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트방식, 
+                                                    대상과 범위를 결정하여 테스트케이스를 작성 할 수 있다.
+                                                 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트 방식, 
+                                                    대상과 범위가 적용된 시나리오를 정의 할 수 있다.
+                                                </p>
+                                                
+                                            </div>
                                     </div>
-            
-                                    <div class = "col-md-6">
-                                            <div class = "bubble-chart-compare">
-                                                    <div id = "RadarChart2"></div>
-                                                </div>
-                                    </div>
-                                </div> 
-                </div>
-
+                    </div>
 
             </div>
-
-
         </div>
     </div>
 
