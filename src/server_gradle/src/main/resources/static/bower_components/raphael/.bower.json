@@ -1,0 +1,46 @@
+{
+  "name": "raphael",
+  "main": "raphael.min.js",
+  "description": "JavaScript Vector Library",
+  "dependencies": {
+    "eve": "https://github.com/adobe-webplatform/eve.git#eef80ed"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.17"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "svg",
+    "vml",
+    "javascript"
+  ],
+  "authors": [
+    "Dmitry Baranovskiy"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "*.html",
+    "*.json",
+    "*.markdown",
+    "*.md",
+    "copy.js",
+    "Gruntfile.js",
+    "reference.js"
+  ],
+  "homepage": "https://github.com/nhnent/raphael",
+  "version": "2.2.0-c",
+  "_release": "2.2.0-c",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.0-c",
+    "commit": "78a6ed3ec269f33b6457b0ec66f8c3d1f2ed70e0"
+  },
+  "_source": "https://github.com/nhnent/raphael.git",
+  "_target": "2.2.0-c",
+  "_originalSource": "https://github.com/nhnent/raphael.git"
+}

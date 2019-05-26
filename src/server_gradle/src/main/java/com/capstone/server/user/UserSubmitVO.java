@@ -5,7 +5,7 @@ import java.util.List;
 public class UserSubmitVO {
 
     private String company;
-    private String type;
+    private String job;
     private List<String> question;
     private List<String> text;
 
@@ -17,12 +17,12 @@ public class UserSubmitVO {
         this.company = company;
     }
 
-    public String getType() {
-        return type;
+    public String getJob() {
+        return job;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setJob(String job) {
+        this.job = job;
     }
 
     public List<String> getQuestion() {
@@ -48,4 +48,6 @@ public class UserSubmitVO {
     public void setText(List<String> text) {
         this.text = text;
     }
+
+
 }

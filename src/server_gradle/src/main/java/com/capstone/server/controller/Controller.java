@@ -1,7 +1,8 @@
 package com.capstone.server.controller;
 
-import com.capstone.server.dbtest.DbTest;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
@@ -13,12 +14,19 @@ public class Controller {
         return principal;
     }
 
-    private DbTest dbTest;
+//    private DbTest dbTest;
 
-    @GetMapping("/dbtest")
-    public void dbtest() throws Exception {
-        dbTest.main();
+//    @GetMapping("/dbtest")
+//    public void dbtest() throws Exception {
+//        dbTest.main();
+//
+//    }
 
+
+    @RequestMapping(value="/request", method = RequestMethod.GET)
+    public String request(String str) {
+
+        return "the request message is " + str;
     }
 
 

@@ -47,6 +47,10 @@ dependencies {
     compile('org.springframework.boot:spring-boot-devtools')
 //    runtime('com.h2database:h2')
 
+    compile('org.apache.httpcomponents:httpclient')
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.4'
+
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }
