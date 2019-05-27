@@ -21,12 +21,12 @@ def SVCpredict(model, text):
 #   분석 후 dictionary 형태로 return
 def SVCproba(model, text):
     proba = model.predict_proba([text]).tolist()[0]
-    proba = [format(proba[i], '.30f') for i in range(10)]
+    proba = [proba[i] for i in range(10)]
     keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
     
     result = {}
     for i in range(10):
-        result[keyword_eng[i]] = float(proba[i])
+        result[keyword_eng[i]] = float(proba[i]*100)
     
     return result
 
@@ -95,7 +95,7 @@ def Predict(text):
     job = ['architecture', 'IT', 'management', 'production', 'sales']
     company = ['samsung', 'hyundai', 'LG', 'SK', 'CJ']
 
-     #테스트데이터
+    #테스트데이터
     company_dict = {
         'samsung': [2.829048, 21.278193, 12.713069, 30.096896, 5.50489, 4.997317, 2.318836, 10.240305, 4.814532, 5.206915],
         'hyundai': [2.277059, 17.469233, 11.893394, 31.895603, 5.207689, 4.522994, 2.957843, 13.852678, 5.115702, 4.807805],
@@ -119,6 +119,11 @@ def Predict(text):
     result['company'] = companyPredict(company_model, text, company) # 그래프 표현할 값 조정 필요함.
     result['choice_company'] = Percent(company_dict['samsung'], result['user']) # 나중에 기업명을 DB에서 받아와야 함.
     result['first_company'] = Percent(company_dict[list(result['company'].keys())[0]], result['user'])
+
+
+    for key, value in result.items():
+        for key_, value_ in value.items():
+            value[key_] = format(value_, '.30f')
 
     return json.dumps(result)
 
