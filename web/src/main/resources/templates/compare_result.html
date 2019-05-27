@@ -94,9 +94,9 @@
                     <div class = "header-text">
                            <strong><p>비교 분석</p></strong>
                         </div>
-                        <hr>
+                        
                         <div class = "result-main-text">
-                            <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
+                            <strong><h5>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h5></strong>
                         </div>
                         <!-- <div class = "result-text">
                             <p>대부분의 상황에서 성실하고 화합을 중시하는 행동을 할 가능성이 높은 인재입니다.</p>
@@ -104,25 +104,32 @@
                             [OOO OOO]는 안정적으로 예측가능 한 것을 선호하며 규율에 따라 일을 진행하는 것을 선호합니다.
                             <span style= "line-height:200%"></span><br></span>공감능력을 바탕으로 사람들을 잘 배려하며 신뢰감을 줍니다. 사람들에게 관대하고 협력적인 성향입니다.</p>
                         </div> -->
-                        <hr>
+                    <hr>   
                 </div>
 
                 <div class = "line-chart-container">
-                    <div class = "line-chart-txt">[적합 기업 그래프]</div>
+                    <div class = "line-chart-title"><strong>[적합 기업 그래프]</strong></div>
                         <div class = "line-chart">
                             <div id = "combinationChart"></div>
+                            <div class = "line-chart-txt">
+                                <strong>LG의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
+                            <div class="gray-box">
+                                <p>
+
+                                    - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>
+                                    - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>
+                                    - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>
+                                    - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람
+                                </p>
+                            </div>
                     </div>  
                     <hr>  
                 </div>
 
-                
-                                <!-- </div> -->
+
                             
-                
-
-
                 <div class = "bar-chart-container">  
-                    <div class = "bar-chart-title">[적합 기업 그래프]</div>
+                    <div class = "bar-chart-title"><strong>[적합 기업 그래프]</strong></div>
                     <div class = "row">
                         <div class = "col-md-6">
                                 <div class = "bar-chart-compare">
@@ -133,8 +140,8 @@
 
                         
 
-                        <div class = "col-md-6">
-                                <div class = "result-text txt-center">
+                        <div class = "bar-chart2 col-md-6">
+                                <div class = "bar-chart-txt light-gray-box text-center">
                                         <p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>
                                         <p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구
                                             사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된
@@ -210,53 +217,6 @@
 
     <script>
 
-        // var chart1 = bb.generate({
-        //     bindto: "#BarChart",
-        //     data: {
-        //         type: "bar",
-        //         columns: [
-        //             ["2019-03-30", 80, 68, 30],
-        //             ["2019-04-12", 70, 98, 60]
-        //         ],
-        //         colors : {
-        //             "2019-03-30" : "#4a8ac8",
-        //             "2019-04-12" : "#fdd3de"
-        //         },
-        //         labels: true
-        //     },
-        //     axis: {
-        //     x: {
-        //     type: "category",
-        //     categories: [
-        //         "삼성",
-        //         "LG",
-        //         "SK",]
-        //     }
-        //     },
-
-        //     bar: {
-        //         width: {
-        //         ratio: 0.4,
-
-        //         }
-        //     },
-
-        // });        
-
-            // var chart = bb.generate({
-            // data: {
-            //     columns: [
-            //     ["data1", 330, 350, 200, 380, 150,130,200,30,280],
-            //     ["2019-03-30", 130, 100, 30, 200, 80,180,240,170,350],
-            //     ["2019-04-12", 180, 160, 320, 120, 90,100,200,190,230]
-            //     ],
-            //     colors : {
-            //         data1 : "#4a8ac8",
-            //         "2019-03-30" : "#fdd3de"
-            //     },
-            // },
-            // bindto: "#lineChart"
-            // });
 
             var chart = bb.generate({
             data: {
@@ -403,18 +363,6 @@
         },
         bindto: "#combinationChart"
     });
-
-//     var chart = bb.generate({
-//   data: {
-//     columns: [
-// 	["삼성", 30],
-// 	["LG", 120],
-//     ["SK", 80]
-//     ],
-//     type: "pie",
-//   },
-//   bindto: "#pieChart"
-// });
 
 
 var container = document.getElementById('bar-area');

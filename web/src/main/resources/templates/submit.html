@@ -198,6 +198,15 @@
         document.getElementById('field'+cnt).remove();
         cnt--;
     }
+
+    $(document).ready(function() {
+      $('#test').on('keyup', function() {
+        if($(this).val().length > 80) {
+        $(this).val($(this).val().substring(0, 80));
+    }
+  });
+});
+
 </script>
 
 

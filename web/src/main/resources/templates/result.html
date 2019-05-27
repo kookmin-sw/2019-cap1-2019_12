@@ -100,7 +100,7 @@
                                 <p>내 성향 분석</p>
                             </strong>
                         </div>
-                        <hr>
+
                         <div class="result-main-text">
                             <h6>길JOB이는 당신을 S유형이라고 생각했어요</h6>
                         </div>
@@ -111,12 +111,15 @@
                                 <span style="line-height:200%"></span><br>다른 사람들과 적극적으로 대화하고 토론하는 것을 즐기며 사람들 간에 얽힌 문제를
                                 풀어 주는 일에 앞장섭니다.</p>
                         </div>
-                        <hr>
+                        
                     </div>
 
                     <div class="select-chart-container">
                         <!-- <p>차트 영역</p> -->
                         <!-- 적합도 차트 -->
+                        <div class = "select-chart-title">
+                            <strong><h5>[선택기업 적합도 그래프]</h5></strong>
+                        </div>
                         <div class="select-chart-txt">
                             <p>abcd1234님은 LG를 선택하셨습니다.</p>
                         </div>
@@ -125,7 +128,7 @@
                         </div>
                         <div class="select-chart-summary">
                             <p>abcd1234님은 "글로벌"과"창의"가 강점입니다.
-                                <br> LG에 적합한 인재가 되려면 "도전"과 "성실"을 더 키우세요
+                                <br> LG에 적합한 인재가 되려면 "도전"과 "성실" 역량을 보완하세요
                                 <br><br>
                                 <strong>LG의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
                             <div class="gray-box">
@@ -144,7 +147,7 @@
 
                     <div class="company-chart-container">
                         <div class="company-chart-title">
-                            <p>[기업별 적합도 그래프]</p>
+                           <strong><h5>[기업별 적합도 그래프]</h5></strong> 
                         </div>
                         <div class="company-chart">
                             <div class="row">
@@ -181,7 +184,7 @@
 
                     <div class="job-chart-container">
                         <div class="job-chart-title">
-                            <p>[직무별 적합도 그래프]</p>
+                            <strong><h5>[직무별 적합도 그래프]</h5></strong>
                         </div>
                         <div class="job-chart">
                             <div class="row">
@@ -197,7 +200,7 @@
                         </div>
 
                         <div class="job-chart-txt">
-                            <p><strong>"IT"직무를 선택한 abcd1234님 </strong></p>
+                            <p><strong>IT직무를 선택한 abcd1234님 </strong></p>
 
                             <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span
                                     style="line-height:200%"><br></span>
@@ -217,19 +220,19 @@
 
                     <div class="que-chart-container">
                         <div class="que-chart-title">
-                            <p>[항목별 직무 적합도 그래프]</p>
+                            <strong><h5>[항목별 직무 적합도 그래프]</h5></strong>
                             <!--수미나 사랑해♡-->
                         </div>
                         <div class="que-chart">
                             <div class="row">
-                                <div class="quelineChart1 col-md-6">
+                                <div class="quelineChart1 text-center col-md-6">
                                     <p>Q1. 당신의 성장 배경은?</p>
                                     <div id="pieChart1">
                                     </div>
                                 </div>
 
 
-                                <div class="quelineChart2 col-md-6">
+                                <div class="quelineChart2 text-center col-md-6">
                                     <p>Q2. 당신이 삼성에 지원하게 된 계기는?</p>
                                     <div id="pieChart2"> </div>
                                 </div>
@@ -278,15 +281,16 @@
                     "정직",
                     "인내심",
                     "창의",
-                    "글로벌"],
-                ["사용자", 330, 350, 200, 380, 150, 130, 200, 30, 280],
-                ["IT", 130, 100, 30, 200, 80, 180, 240, 170, 350],
+                    "글로벌",
+                    "주인의식"],
+                ["사용자", 330, 350, 200, 380, 150, 130, 200, 30, 280,111],
+                ["IT", 130, 100, 30, 200, 80, 180, 240, 170, 350,222],
             ],
             type: "radar",
             labels: true,
             colors: {
                 "사용자": "#4a8ac8",
-                "IT": "#fdd3de"
+                "IT": "#FBB1C5"
             },
         },
         radar: {
@@ -340,6 +344,9 @@
     });
 
     var chart = bb.generate({
+        title: {
+    text: "삼성"
+  },
         data: {
             columns: [
                 ["삼성", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
@@ -411,7 +418,8 @@
                 ["정직", 57],
                 ["인내심", 123],
                 ["창의", 76],
-                ["글로벌", 311]
+                ["글로벌", 311],
+                ["주인의식",111]
             ],
             type: "pie",
 
@@ -454,6 +462,7 @@
                 ["정직", 57],
                 ["인내심", 123],
                 ["창의", 76],
+                ["주인의식",130]
                 
             ],
             type: "pie",
@@ -490,12 +499,12 @@
                 ["LG", 200, 130, 180, 240, 130, 220, 111, 132, 222, 164],
             ],
             types: {
-                "사용자": "bar",
-                "LG": "line",
+                "LG": "bar",
+                "사용자": "line",
             },
             colors: {
-                "사용자": "#fdd3de",
-                "LG": "#4a8ac8"
+                "사용자": "#4a8ac8",
+                "LG": "#fdd3de"
             },
             axes: {
                 "사용자": "y",
@@ -546,7 +555,17 @@
 
     var container = document.getElementById('diverge-chart');
     var data = {
-        categories: ['100 ~', '90 ~ 99', '80 ~ 89', '70 ~ 79', '60 ~ 69', '50 ~ 59', '40 ~ 49', '30 ~ 39', '20 ~ 29', '10 ~ 19', '0 ~ 9'],
+        categories: [ "소통",
+                    "팀워크",
+                    "도전",
+                    "능동",
+                    "성실",
+                    "정직",
+                    "인내심",
+                    "창의",
+                    "글로벌",
+                    "주인의식",
+                    ],
         series: [
             {
                 name: '사용자',

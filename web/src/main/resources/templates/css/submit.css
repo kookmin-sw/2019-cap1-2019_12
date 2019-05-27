@@ -301,7 +301,7 @@ input[class="result-check"] {
 }
 
 .result-main-text{
-
+  padding-top : 15px;
   padding-left : 15px;
   color : #000000;
 }
@@ -334,11 +334,13 @@ input[class="result-check"] {
 }
 .company-chart-title{
   margin-left : 15px;
+  padding-bottom :5px
 }
 
 .company-chart{
   /* margin-left : 15px; */
   margin-right : 30px;
+  margin-top : 15px;
 }
  .BarChart{
    padding-left : 30px;
@@ -363,8 +365,19 @@ input[class="result-check"] {
 
 }
 
+.light-gray-box {
+
+  padding-left : 15px;
+  padding-right : 15px;
+  padding-top : 15px;
+  padding-bottom: 1px;
+  background-color : #F5F5F5;
+  height : auto;
+}
+
 .job-chart-title{
   margin-left : 15px;
+  margin-top : 30px;
 }
 .job-chart{
   margin-bottom : 15px;
@@ -385,15 +398,27 @@ input[class="result-check"] {
 }
 
 .que-chart-title{
+  margin-top : 30px;
   margin-left : 15px;
 }
 
 .que-chart{
-  margin-left : 15px;
+  margin-top : 30px;
+  margin-left : 20px;
 }
 
 .RadarChart{
-  margin-top : 30px;
+  margin-top : 45px;
+}
+
+.select-chart-title{
+  margin-top : 15px;
+  margin-bottom : 15px;
+}
+
+#combinationChart2 .bb-title{
+  font-size : 17px;
+  font-weight: bold;
 }
 
 
@@ -419,7 +444,7 @@ input[class="result-check"] {
   margin-top : 15px;
 }
 
-.line-chart-txt{
+.line-chart-title{
   padding-top : 15px;
   padding-left : 15px;
 }
@@ -446,3 +471,11 @@ input[class="result-check"] {
   margin-top :30px;
 }
 
+.bar-chart-txt{
+  margin-top : 15px;
+  margin-right : 30px;
+}
+
+.bar-chart2{
+  margin-top : 45px;
+}
