@@ -124,7 +124,7 @@
 								AI 분석 서비스 '길JOB이' 입니다
 							</p>
 							<!-- <button class="white-btn">시작하기</button> -->
-							<a class="main-btn nav-link js-scroll-trigger" href="#services">소개하기</a>
+							<a class="main-btn nav-link js-scroll-trigger" id="intro-btn" href="#services">소개하기</a>
 							<!-- <button class="main-btn">소개하기</button> -->
 						</div>
 					</div>
@@ -268,15 +268,24 @@
 		$(document).ready(function(){
   	$(window).scroll(function(){
     var scroll = $(window).scrollTop();
-    if(scroll>1){
-      $(".navbar-scroll").css("background",transparent);
+    if(scroll>600){
+      $("#navbar-scroll").css("background","#343a40");
     }
     else{
-      $(".navbar-scroll").css("background","#343a40");
+      $("#navbar-scroll").css("background","transparent");
     }
   })
 })
+
+
 	</script>
+	<script type="text/javascript">
+      $(document).ready(function(){
+        $("#intro-btn").on("click",function(event){
+          $("html body").animate({scrollTop:870},500);
+        });
+      }); // end of ready()
+    </script>
 </body>
 
 </html>
