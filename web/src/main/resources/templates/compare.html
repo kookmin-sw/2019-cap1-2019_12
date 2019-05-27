@@ -11,22 +11,9 @@
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/submit.css">
 
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
-            }
-            else
-            {``
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
-            }
-        </script>
     </head>
 
     <body>
@@ -45,7 +32,7 @@
                   <span class="icon-bar"></span>
                 </button>
                 <div class="brand">
-                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길 JOB 이</div>
+                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길JOB이</div>
               </div>
 
 

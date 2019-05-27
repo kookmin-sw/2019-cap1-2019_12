@@ -408,12 +408,13 @@ input[class="result-check"] {
   padding-left : 15px;
   padding-right: 15px;
   margin-top : 30px;
-  padding-bottom : 15px; border: 2px solid #F2F2F2;
-  
+  padding-bottom : 15px;
+  /* border: 2px solid #F2F2F2; */
+
 }
 
 .line-chart{
-  
+
   padding-left : 15px;
   padding-right : 15px;
   margin-top : 15px;
@@ -432,7 +433,7 @@ input[class="result-check"] {
 }
 .bar-chart-container{
   margin-top :30px;
-  
+
 }
 .bar-chart-title {
   margin-left : 15px;
@@ -445,4 +446,3 @@ input[class="result-check"] {
 .company-chart-container{
   margin-top :30px;
 }
-

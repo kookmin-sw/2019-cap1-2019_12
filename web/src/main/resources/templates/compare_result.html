@@ -12,22 +12,8 @@
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/submit.css">
-
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
-            }
-        </script>
 
         <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -66,7 +52,7 @@
                   <span class="icon-bar"></span>
                 </button>
                 <div class="brand">
-                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길 JOB 이</div>
+                    <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길JOB이</div>
               </div>
 
 
@@ -89,7 +75,7 @@
             </nav>
 
          <div class="container" >
-            <div class = "result-container"> 
+            <div class = "result-container">
                 <div class = "result-txt-container">
                     <div class = "header-text">
                            <strong><p>비교 분석</p></strong>
@@ -111,17 +97,17 @@
                     <div class = "line-chart-txt">[적합 기업 그래프]</div>
                         <div class = "line-chart">
                             <div id = "combinationChart"></div>
-                    </div>  
-                    <hr>  
+                    </div>
+                    <hr>
                 </div>
 
-                
+
                                 <!-- </div> -->
-                            
-                
 
 
-                <div class = "bar-chart-container">  
+
+
+                <div class = "bar-chart-container">
                     <div class = "bar-chart-title">[적합 기업 그래프]</div>
                     <div class = "row">
                         <div class = "col-md-6">
@@ -131,7 +117,7 @@
                         </div>
 
 
-                        
+
 
                         <div class = "col-md-6">
                                 <div class = "result-text txt-center">
@@ -142,7 +128,7 @@
                                             계획, 실행, 통제 및 모니터링 하는 능력이다.</p>
                                         <p> - 애플리케이션 설계란 요구사항 확인을 통한 상세 분석 결과,
                                             소프트웨어 아키텍처 가이드라인 및 소프트웨어 아키텍처 산출물에 의거하여
-                                            이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계, 
+                                            이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계,
                                             타 시스템 연동에 대하여 상세 설계하는 능력이다.
                                         </p>
                                     </div>
@@ -150,10 +136,10 @@
                     </div>
                     <hr>
                 </div>
-                
 
 
-                
+
+
                     <div class  = "chart-job-compare">
                             <div class = "result-main-text">
                                     <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
@@ -165,27 +151,27 @@
                                                         <div id = "RadarChart1"></div>
                                                     </div>
                                         </div>
-                
+
                                         <div class = "col-md-6">
                                                 <div class = "radar-chart-compare">
                                                         <div id = "RadarChart2"></div>
                                                     </div>
                                         </div>
-                                    </div> 
+                                    </div>
                     </div>
-                                 <div class = "result-txt-container">  
-                                            
+                                 <div class = "result-txt-container">
+
                                             <div class = "result-text">
-                                                <p> - 애플리케이션 테스트 관리란 요구사항대로 응용소프트웨어가 
-                                                    구현되었는지를 검증하기 위해 테스트케이스를 작성하고 
-                                                    개발자 통합 테스트를 수행하여 애플리케이션의 성능을 개선하는 능력이다. 
+                                                <p> - 애플리케이션 테스트 관리란 요구사항대로 응용소프트웨어가
+                                                    구현되었는지를 검증하기 위해 테스트케이스를 작성하고
+                                                    개발자 통합 테스트를 수행하여 애플리케이션의 성능을 개선하는 능력이다.
                                                 </p>
-                                                <p> - 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트방식, 
+                                                <p> - 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트방식,
                                                     대상과 범위를 결정하여 테스트케이스를 작성 할 수 있다.
-                                                 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트 방식, 
+                                                 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트 방식,
                                                     대상과 범위가 적용된 시나리오를 정의 할 수 있다.
                                                 </p>
-                                                
+
                                             </div>
                                     </div>
                     </div>
@@ -241,7 +227,7 @@
         //         }
         //     },
 
-        // });        
+        // });
 
             // var chart = bb.generate({
             // data: {
@@ -273,7 +259,7 @@
                 "글로벌"],
                 ["IT", 330, 350, 200, 380, 150,130,200,30,280],
                 ["2019-03-30", 130, 100, 300, 200, 80,180,240,170,350],
-                
+
                 ],
                 type: "radar",
                 labels: true,
@@ -444,7 +430,7 @@ var options = {
     chart: {
         width: 500,
         height: 450,
-        
+
     },
     legend: {
             showCheckbox: false,
@@ -453,7 +439,7 @@ var options = {
         chartExportMenu: {
             visible: false
         },
-    xAxis: { 
+    xAxis: {
         max: 120
     },
     series: {
@@ -480,7 +466,7 @@ tui.chart.barChart(container, data, options);
 
 
 
-        
+
 </script>
 
 </html>

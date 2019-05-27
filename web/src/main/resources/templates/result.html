@@ -12,20 +12,10 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/submit.css">
 
-    <!-- Theme initialization -->
-    <script>
-        var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
-            {};
-        var themeName = themeSettings.themeName || '';
-        if (themeName) {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
-        }
-        else {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
-        }
-    </script>
+
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -68,7 +58,7 @@
                             <div class="brand">
                                 <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span
                                         class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span>
-                                </div> 길 JOB 이
+                                </div> 길JOB이
                             </div>
                         </div>
 
@@ -454,7 +444,7 @@
                 ["정직", 57],
                 ["인내심", 123],
                 ["창의", 76],
-                
+
             ],
             type: "pie",
 
