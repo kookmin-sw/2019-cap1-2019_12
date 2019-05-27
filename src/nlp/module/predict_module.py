@@ -1,8 +1,14 @@
-from predict_utils import tokenizer, openStopword, openModel, vectorize
+from predict_utils import tokenizer, openStopword, vectorize
 from sklearn.metrics.pairwise import cosine_similarity
 import json
 import numpy as np
 import operator
+
+
+def openModel(filename):
+    import joblib
+    model = joblib.load(filename)
+    return model
 
 
 #   예측 후 핵심역량 이름으로 return
@@ -12,19 +18,16 @@ def SVCpredict(model, text):
     return keyword_names[result[0]-1]
 
 
-#   decision function으로 예측 후 리스트 형태로 return
-def SVCdecision(model, text):
-    return model.decision_function([text]).tolist()[0]
-
-
 #   분석 후 dictionary 형태로 return
 def SVCproba(model, text):
     proba = model.predict_proba([text]).tolist()[0]
     proba = [format(proba[i], '.30f') for i in range(10)]
     keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
+    
     result = {}
     for i in range(10):
         result[keyword_eng[i]] = float(proba[i])
+    
     return result
 
 
@@ -57,6 +60,18 @@ def Holland(user_text_dict):
     # C: 인내심, 정직, 성실
     return holland_type
 
+
+def Percent(company_dict, user_text_dict):
+    result = dict()
+
+    i = 0
+    for key, value in user_text_dict.items():
+        result[key] = (value / company_dict[i])*100
+        i += 1
+
+    return result
+
+
 def companyPredict(model, text, company):
     #CJ / LG / SK / 현대 / 삼성
     predict_company = model.decision_function([text]).tolist()
@@ -80,29 +95,30 @@ def Predict(text):
     job = ['architecture', 'IT', 'management', 'production', 'sales']
     company = ['samsung', 'hyundai', 'LG', 'SK', 'CJ']
 
+     #테스트데이터
     company_dict = {
-        'samsung': [-0.8887642959439978, -0.2320497495038032, -0.3980158364286989, 0.07982216179178525,
-                    -0.4634689585655357, -1.4945375211875371, -1.5887466236154073, -0.3994969557289842,
-                    -1.9458319112295257, -0.6715375781390972],
-        'hyundai': [-0.8228359594421046, -0.4560047847307666, -0.4392581998869604, 0.05151212010714745,
-                    -0.37278093523020006, -1.441515818729987, -1.6143444997864906, -0.554804611382156,
-                    -1.831011837725321, -0.6144309645563442],
-        'LG': [-0.7620625480990436, -0.4474363044623253, -0.46674841323118554, 0.07333865957640484,
-               -0.43207572092095403, -1.4279317971574639, -1.4718943563369267, -0.6400563343545634, -1.7959020562081858,
-               -0.7120585840815354],
-        'SK': [-0.7200478445244407, -0.4990252126738345, -0.4127369498124192, 0.006192507305919692,
-               -0.41839920312881207, -1.4965564622475518, -1.4192891756133306, -0.552887345195595, -1.773997090857436,
-               -0.6549712334986287],
-        'CJ': [-0.7197954463771161, -0.3855618389458571, -0.5225478215844543, 0.010193007021379819, -0.2898697024011009,
-               -1.865131533958604, -1.4985025101392337, -0.6209880454739807, -1.7121484451524631, -0.5946502637415154]
-    }  # 테스트 데이터
+        'samsung': [2.829048, 21.278193, 12.713069, 30.096896, 5.50489, 4.997317, 2.318836, 10.240305, 4.814532, 5.206915],
+        'hyundai': [2.277059, 17.469233, 11.893394, 31.895603, 5.207689, 4.522994, 2.957843, 13.852678, 5.115702, 4.807805],
+        'LG': [4.691135, 35.682092, 9.088129, 18.448958, 3.483393, 6.277644, 1.17589, 11.276273, 4.630043, 5.246442],
+        'SK': [2.95132, 17.854298, 12.35037, 31.950111, 5.126333, 5.243466, 2.778728, 11.823368, 4.841313, 5.080694],
+        'CJ': [3.732902, 21.483846, 12.301521, 30.066666, 5.893883, 4.261314, 2.306606, 11.011743, 4.632992, 4.308527]
+    }
+    job_dict = {
+        'architecture': [2.829048, 21.278193, 12.713069, 30.096896, 5.50489, 4.997317, 2.318836, 10.240305, 4.814532, 5.206915],
+        'IT': [2.277059, 17.469233, 11.893394, 31.895603, 5.207689, 4.522994, 2.957843, 13.852678, 5.115702, 4.807805],
+        'management': [4.691135, 35.682092, 9.088129, 18.448958, 3.483393, 6.277644, 1.17589, 11.276273, 4.630043, 5.246442],
+        'production': [2.95132, 17.854298, 12.35037, 31.950111, 5.126333, 5.243466, 2.778728, 11.823368, 4.841313, 5.080694],
+        'sales': [3.732902, 21.483846, 12.301521, 30.066666, 5.893883, 4.261314, 2.306606, 11.011743, 4.632992, 4.308527]
+    }
 
     result = dict()
 
     result['user'] = SVCproba(model, text)
-    result['Cosine'] = Cosine(company_dict, company, result['user'])
+    #result['Cosine'] = Cosine(company_dict, company, result['user'])
     result['Holland'] = Holland(result['user'])
-    result['company'] = companyPredict(company_model, text, company)
+    result['company'] = companyPredict(company_model, text, company) # 그래프 표현할 값 조정 필요함.
+    result['choice_company'] = Percent(company_dict['samsung'], result['user']) # 나중에 기업명을 DB에서 받아와야 함.
+    result['first_company'] = Percent(company_dict[list(result['company'].keys())[0]], result['user'])
 
     return json.dumps(result)
 

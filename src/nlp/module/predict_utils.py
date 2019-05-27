@@ -30,9 +30,3 @@ vectorize = TfidfVectorizer(
     min_df=0,
     sublinear_tf=True
 )
-
-
-def openModel(filename):
-    import joblib
-    model = joblib.load(filename)
-    return model
