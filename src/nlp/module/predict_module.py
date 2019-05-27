@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from predict_utils import tokenizer, openStopword, vectorize
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -80,8 +81,35 @@ def companyPredict(model, text, company):
     for i in range (len(company)) :
         predict_company_dict[company[i]] = predict_company[0][i]
 
-    predict_company_dict = sorted(predict_company_dict.items(), key=operator.itemgetter(1), reverse=True)
-    predict_company_dict = dict(predict_company_dict)
+    predict_company_dict = sorted(predict_company_dict.items(), key=operator.itemgetter(1), reverse=True) # 값이 큰 순서대로 정렬
+
+    last_company_value = float(predict_company_dict[4][1]) # 튜플형식임. 5위 값의 2번재 값 저장
+
+    predict_company_dict = dict(predict_company_dict) #튜플을 딕셔너리 형태로 변환
+
+    sum = 0
+
+    # 모든 값이 양수면 값 변환 안해도 됨. 따라서 마지막 값만 체크하고, 그 값이 양수가 아니라면(=모든 값이 음수라는 뜻) 값 변환 해야함
+
+    if (last_company_value < 0): #변환 해야함
+        for i in range(0, len(company)): # - 값 없애기
+            tmp = float(predict_company_dict[company[i]])
+            tmp += abs(last_company_value)
+            tmp *= 100
+            sum += tmp
+            predict_company_dict[company[i]] = tmp
+    else :
+        for i in range(0, len(company)): # -값이 없는 경우에 총합만 저장
+            tmp = float(predict_company_dict[company[i]]) * 100
+            sum += tmp
+            predict_company_dict[company[i]] = tmp
+
+
+    for i in range(0, len(company)): # 총합을 이용하여 퍼센트 계산
+        tmp = float(predict_company_dict[company[i]])
+        tmp = (tmp * 100) / sum
+        predict_company_dict[company[i]] = tmp
+
 
     return (predict_company_dict)
 
