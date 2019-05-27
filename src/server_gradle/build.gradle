@@ -48,7 +48,8 @@ dependencies {
 //    runtime('com.h2database:h2')
 
     compile('org.apache.httpcomponents:httpclient')
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.9'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
 
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

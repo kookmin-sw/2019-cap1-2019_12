@@ -15,9 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 public class DbTest {
-
-
-
     public static void main(String[] args) throws Exception {
 
         AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
