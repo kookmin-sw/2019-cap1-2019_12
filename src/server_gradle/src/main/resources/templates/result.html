@@ -54,6 +54,7 @@
 
         var company = [[${company}]];
         var job = [[${job}]];
+
         </script>
 
 </head>
@@ -109,7 +110,7 @@
                         <h6>길JOB이는 당신을 [[${holland}]]유형이라고 생각했어요</h6>
                     </div>
                     <div class="result-text">
-                        <p th:remove="tag" th:utext="${n}">[[${holland_text}]]</p>
+                        <p th:utext="${holland_text}"></p>
 
                         <!--사회형은 다른 사람들과 함께 협력하여 일하는 것을 좋아하고 어려운 처지에 놓인 사람들의 복지에 관심이 있습니다.<span
                             style="line-height:200%"></span><br>
