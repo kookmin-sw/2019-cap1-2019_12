@@ -12,10 +12,20 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/submit.css">
 
-
+    <!-- Theme initialization -->
+    <script>
+        var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+            {};
+        var themeName = themeSettings.themeName || '';
+        if (themeName) {
+            document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+        }
+        else {
+            document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+        }
+    </script>
 
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -58,7 +68,7 @@
                             <div class="brand">
                                 <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span
                                         class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span>
-                                </div> 길JOB이
+                                </div> 길 JOB 이
                             </div>
                         </div>
 
@@ -90,6 +100,7 @@
                                 <p>내 성향 분석</p>
                             </strong>
                         </div>
+                        <hr>
 
                         <div class="result-main-text">
                             <h6>길JOB이는 당신을 S유형이라고 생각했어요</h6>
@@ -104,11 +115,13 @@
                         
                     </div>
 
+                    <hr>
+
                     <div class="select-chart-container">
                         <!-- <p>차트 영역</p> -->
                         <!-- 적합도 차트 -->
                         <div class = "select-chart-title">
-                            <strong><h5>[선택기업 적합도 그래프]</h5></strong>
+                            <h5><strong>[선택기업 핵심역량 그래프]</strong></h5>
                         </div>
                         <div class="select-chart-txt">
                             <p>abcd1234님은 LG를 선택하셨습니다.</p>
@@ -137,7 +150,7 @@
 
                     <div class="company-chart-container">
                         <div class="company-chart-title">
-                           <strong><h5>[기업별 적합도 그래프]</h5></strong> 
+                           <h5><strong>[추천 기업 순위 그래프]　　　　　　　　　　　　　　　　[삼성 핵심 역량 그래프] </strong></h5>
                         </div>
                         <div class="company-chart">
                             <div class="row">
@@ -174,7 +187,7 @@
 
                     <div class="job-chart-container">
                         <div class="job-chart-title">
-                            <strong><h5>[직무별 적합도 그래프]</h5></strong>
+                            <h5><strong>[선택직무 핵심역량 그래프]</strong></h5>
                         </div>
                         <div class="job-chart">
                             <div class="row">
@@ -210,7 +223,7 @@
 
                     <div class="que-chart-container">
                         <div class="que-chart-title">
-                            <strong><h5>[항목별 직무 적합도 그래프]</h5></strong>
+                            <h5><strong>[문항별 직무 핵심역량 그래프]</strong></h5>
                             <!--수미나 사랑해♡-->
                         </div>
                         <div class="que-chart">
@@ -334,9 +347,9 @@
     });
 
     var chart = bb.generate({
-        title: {
-    text: "삼성"
-  },
+//         title: {
+//     text: "삼성"
+//   },
         data: {
             columns: [
                 ["삼성", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
@@ -595,7 +608,7 @@
     var theme = {
         series: {
             colors: [
-                '#fdd3de', '#4a8ac8'
+                '#4a8ac8', '#fdd3de'
             ]
         }
     };

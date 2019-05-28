@@ -412,8 +412,12 @@ input[class="result-check"] {
 }
 
 .select-chart-title{
-  margin-top : 15px;
-  margin-bottom : 15px;
+  /* margin-top : 15px; */
+  margin-bottom : 30px;
+}
+
+.select-chart-txt{
+  margin-left : 15px;
 }
 
 #combinationChart2 .bb-title{
@@ -429,12 +433,10 @@ input[class="result-check"] {
 
 *******************************/
 
-.result-text{
-  padding-left : 15px;
-  padding-right: 15px;
-  margin-top : 30px;
-  padding-bottom : 15px;
-  /* border: 2px solid #F2F2F2; */
+#compare_resultpage {
+
+  background-color: #F2F2F2;
+  padding-bottom: 30px;
 
 }
 
@@ -446,11 +448,12 @@ input[class="result-check"] {
 }
 
 .line-chart-title{
-  padding-top : 15px;
+  padding-top : 5px;
   padding-left : 15px;
 }
 
 .result-container {
+  padding-bottom : 30px;
   margin-bottom : 30px;
   height : auto ;
   width : 1080px;
@@ -481,3 +484,15 @@ input[class="result-check"] {
   margin-top : 45px;
 }
 
+.result-chart-txt{
+  margin-left :30px;
+  margin-right:30px;
+}
+
+.main-wrapper{
+  padding-bottom : 50px;
+}
+
+.result-txt{
+  margin-left : 30px;
+}
