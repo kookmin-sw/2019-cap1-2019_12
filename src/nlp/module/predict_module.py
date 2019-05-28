@@ -83,35 +83,22 @@ def companyPredict(model, text, company):
 
     predict_company_dict = sorted(predict_company_dict.items(), key=operator.itemgetter(1), reverse=True) # 값이 큰 순서대로 정렬
 
-    last_company_value = float(predict_company_dict[4][1]) # 튜플형식임. 5위 값의 2번재 값 저장
-
-    predict_company_dict = dict(predict_company_dict) #튜플을 딕셔너리 형태로 변환
-
-    sum = 0
-
-    # 모든 값이 양수면 값 변환 안해도 됨. 따라서 마지막 값만 체크하고, 그 값이 양수가 아니라면(=모든 값이 음수라는 뜻) 값 변환 해야함
+    last_company_value = float(predict_company_dict[3][1]) # 튜플형식임. 4위 값의 2번재 값 저장
+    sum = ((abs(last_company_value) + predict_company_dict[0][1]) + (abs(last_company_value) + predict_company_dict[1][1]) + (abs(last_company_value) + predict_company_dict[2][1]))
+    new_dict = {} # 모든 값이 양수면 값 변환 안해도 됨. 따라서 마지막 값만 체크하고, 그 값이 양수가 아니라면(=모든 값이 음수라는 뜻) 값 변환 해야함
 
     if (last_company_value < 0): #변환 해야함
-        for i in range(0, len(company)): # - 값 없애기
-            tmp = float(predict_company_dict[company[i]])
-            tmp += abs(last_company_value)
-            tmp *= 100
-            sum += tmp
-            predict_company_dict[company[i]] = tmp
+        for i in range(0, len(company)-2): # - 값 없애기
+            tmp = float(predict_company_dict[i][1])
+            tmp = abs(last_company_value) + tmp
+            new_dict[predict_company_dict[i][0]] = tmp*100 / sum
+
     else :
-        for i in range(0, len(company)): # -값이 없는 경우에 총합만 저장
-            tmp = float(predict_company_dict[company[i]]) * 100
-            sum += tmp
-            predict_company_dict[company[i]] = tmp
+        for i in range(0, len(company)-2): # -값이 없는 경우에 총합만 저장
+            tmp = float(predict_company_dict[i][1])
+            new_dict[predict_company_dict[i][0]] = tmp*100 / sum
 
-
-    for i in range(0, len(company)): # 총합을 이용하여 퍼센트 계산
-        tmp = float(predict_company_dict[company[i]])
-        tmp = (tmp * 100) / sum
-        predict_company_dict[company[i]] = tmp
-
-
-    return (predict_company_dict)
+    return (new_dict)
 
 
 def Predict(text):
@@ -151,10 +138,14 @@ def Predict(text):
 
     for key, value in result.items():
         for key_, value_ in value.items():
-            value[key_] = format(value_, '.30f')
+            value[key] = format(value_, '.30f')
 
     return json.dumps(result)
 
 
 if __name__ == "__main__":
-    print(Predict("예측자기소개서"))
+
+
+    print(Predict(" 목표를 가지고 열심히 공부했고 수능에서 수리 가형 1등급을 받으며 대학에 서"))
+
+
