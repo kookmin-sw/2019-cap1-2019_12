@@ -9,7 +9,10 @@
 
 
 ### 2. 소개 영상
+(1) 최종 시연 영상
+[![Video Label](http://img.youtube.com/vi/cQftqjLSunc/0.jpg)](https://youtu.be/cQftqjLSunc) 
 
+(2) 계획서 발표 영상
 [![Video Label](http://img.youtube.com/vi/UCKvnSsVXas/0.jpg)](https://youtu.be/UCKvnSsVXas) 
 
 
