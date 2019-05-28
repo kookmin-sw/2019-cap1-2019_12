@@ -47,11 +47,14 @@ Professor : 윤종영 교수님
 
 ![Imgur](https://i.imgur.com/OaLEPT2.jpg)
 
-시작하기 버튼을 통해 분석을 시작합니다. 
+시작하기 버튼을 통해 분석을 시작합니다.
+<br><br><br><br>
 
 ![Imgur](https://imgur.com/ImYQDCM.png)
 
 사용자가 희망하는 직무와 기업을 선택하고 문항별로 자기소개서를 입력합니다.
+<br><br><br><br>
+
 
 
 
@@ -60,6 +63,7 @@ Professor : 윤종영 교수님
 [분석그래프 1] 선택 기업 핵심역량 그래프
 
 사용자가 자기소개서 제출 시 선택한 기업과 사용자의 자기소개서가 핵심 역량 별로 얼마나 일치하는지 보여주는 그래프입니다. 분홍색 Bar Chart는 기업의 역량 수치를 보여주고 파란색 Line Chart는 사용자의 핵심 역량 수치를 보여줍니다.
+<br><br><br><br>
 
 
 
@@ -68,6 +72,7 @@ Professor : 윤종영 교수님
 [분석그래프 2] 추천기업 순위 그래프(좌), 1순위 기업 핵심역량 그래프(우)
 
 사용자의 자기소개서 분석 결과, 기업 합격자기소개서와 유사한 정도를 적합도로 나타내어 수치가 가장 높은 기업 3개를 선정하여 보여줍니다. 오른쪽 그래프는 가장 적합도가 높은 기업의 핵심역량 수치를 보여주는 그래프입니다.
+<br><br><br><br>
 
 
 
@@ -76,6 +81,7 @@ Professor : 윤종영 교수님
 [분석그래프 3] 선택 직무 핵심역량 그래프
 
 좌측에는 사용자의 자기소개서와 사용자가 선택한 직무의 합격 자기소개서를 분석한 결과를 방사형차트로 나타냅니다. 방사형 차트에 핵심역량 수치를 그래프로 2개의 그래프로 나타내어 비교 분석이 가능하도록 합니다. 우측에는 사용자의 역량 수치가 우수한 순서로 보여주고 선택한 직무와 비교가 가능하도록합니다.
+<br><br><br><br>
 
 
 
@@ -84,11 +90,12 @@ Professor : 윤종영 교수님
 [분석그래프 4] 문항별 핵심역량 그래프
 
 사용자가 자기소개서 문항 별로 입력한 내용에 대해서 핵심역량을 분석한 결과를 보여줍니다.
+<br><br><br><br>
 
 
 
-![Imgur](https://imgur.com/5hBah99.png)
 
+![Imgur](https://imgur.com/4gYZ5bQ.png)
 사용자가 기존에 입력했던 자기소개서와 비교, 분석하는 페이지입니다.
 화면에 표시된 자기소개서를 선택하여 분석결과를 확인할 수 있습니다.
 
@@ -97,6 +104,3 @@ Professor : 윤종영 교수님
 Our ‘길JOB이’  project is a web service that analyzes self-introduction document using natural language processing. Currently, the market for self-introduction document consulting has a number of problems, such as overburdening job seekers. 
 We aim to develop a self-introduction document comprehensive analysis system that can improve the current over-transient high-value system through cheaper, objective, and target-oriented analysis as we progress the project and help job seekers write self-introduction document statements.
 With ‘길JOB이’, we'll help everyone easily create a self-introduction document form and maximize their capabilities without being affected by external factors.
-
-
-
