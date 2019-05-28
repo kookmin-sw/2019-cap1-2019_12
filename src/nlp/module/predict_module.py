@@ -115,7 +115,7 @@ def companyPredict(model, text, company):
     return (predict_company_dict)
 
 
-def Predict(*text):
+def Predict(select_company, *text):
     model = openModel('KeywordModel.joblib')
     company_model = openModel('CompanyModel.joblib')
 
@@ -151,7 +151,7 @@ def Predict(*text):
     # result['Cosine'] = Cosine(company_dict, company, result['user'])
     result['Holland'] = Holland(result['user'])
     result['company'] = companyPredict(company_model, text_all, company)
-    result['choice_company'] = Percent(company_dict['samsung'], result['user'])  # select_company : 선택 기업
+    result['choice_company'] = Percent(company_dict[select_company], result['user'])  # select_company : 선택 기업
     result['first_company'] = Percent(company_dict[list(result['company'].keys())[0]], result['user'])
 
     for key, value in result.items():
