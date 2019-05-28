@@ -50,7 +50,7 @@ Professor : 윤종영 교수님
 시작하기 버튼을 통해 분석을 시작합니다.
 <br><br><br><br>
 
-![Imgur](https://imgur.com/B1DYKiv.png)
+<img src="https://imgur.com/B1DYKiv.png" width="500">
 
 사용자가 희망하는 직무와 기업을 선택하고 문항별로 자기소개서를 입력합니다.
 <br><br><br><br>
@@ -95,13 +95,14 @@ Professor : 윤종영 교수님
 사용자가 자기소개서 문항 별로 입력한 내용에 대해서 핵심역량을 분석한 결과를 보여줍니다.
 <br><br><br><br>
 
+<img src="https://imgur.com/4gYZ5bQ.png" width="500">
 
+또한 사용자는 기존에 작성했던 자기소개서와 비교를 할 수 있습니다.
+<br><br>
 
+<img src="https://imgur.com/U5jhbMD.png" width="500">
 
-
-
-![Imgur](https://imgur.com/U5jhbMD.png)
-사용자가 선택한 자기소개서에 대해 기존의 자기소개서와 비교하여 결과를 보여줍니다.
+자기소개서를 선택하면 비교페이지로 이동하여 분석결과를 확인할 수 있습니다.
 
 
 ### 5. Abstract
