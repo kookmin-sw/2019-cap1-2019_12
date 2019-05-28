@@ -4,18 +4,18 @@
 
 <b>자연어 처리 기반의 자기소개서 분석 웹서비스
 
-저희 <길JOB이> 프로젝트는 자연어 처리를 활용한 자기소개서 분석을 해주는 웹서비스입니다. 현재 자기소개서 컨설팅 시장은 취업준비생들에게 과도한 부담을 주는 등 여러 문제가 있습니다. 
+저희 <길JOB이> 프로젝트는 자연어 처리를 활용한 자기소개서 분석을 해주는 웹서비스입니다. 현재 자기소개서 컨설팅 시장은 취업준비생들에게 과도한 부담을 주는 등 여러 문제가 있습니다.
 길JOB이는 머신러닝을 통해 자기소개서를 작성하는 취업 준비생들에게 객관적인 자기소개서 분석 서비스를 제공하는 것을 목표로 합니다. 길JOB이는 단순히 합격과 불합격을 판가름하는 것이 아니라 사용자의 강점과 약점을 분석하여 취업준비생들이 자기소개서를 작성하는데 도움이 될 것입니다.  따라서 기존 AI 자기소개서 분석기보다 더 유용한 서비스를 제공할 수 있을 것입니다.
 
 
 ### 2. 소개 영상
 (1) 최종 시연 영상
 <br>
-[![Video Label](http://img.youtube.com/vi/cQftqjLSunc/0.jpg)](https://youtu.be/cQftqjLSunc) 
+[![Video Label](http://img.youtube.com/vi/cQftqjLSunc/0.jpg)](https://youtu.be/cQftqjLSunc)
 
 (2) 계획서 발표 영상
 <br>
-[![Video Label](http://img.youtube.com/vi/UCKvnSsVXas/0.jpg)](https://youtu.be/UCKvnSsVXas) 
+[![Video Label](http://img.youtube.com/vi/UCKvnSsVXas/0.jpg)](https://youtu.be/UCKvnSsVXas)
 
 
 ### 3. 팀 소개
@@ -112,6 +112,6 @@ Professor : 윤종영 교수님
 
 ### 5. Abstract
 
-Our ‘길JOB이’  project is a web service that analyzes self-introduction document using natural language processing. Currently, the market for self-introduction document consulting has a number of problems, such as overburdening job seekers. 
+Our ‘길JOB이’  project is a web service that analyzes self-introduction document using natural language processing. Currently, the market for self-introduction document consulting has a number of problems, such as overburdening job seekers.
 We aim to develop a self-introduction document comprehensive analysis system that can improve the current over-transient high-value system through cheaper, objective, and target-oriented analysis as we progress the project and help job seekers write self-introduction document statements.
 With ‘길JOB이’, we'll help everyone easily create a self-introduction document form and maximize their capabilities without being affected by external factors.
