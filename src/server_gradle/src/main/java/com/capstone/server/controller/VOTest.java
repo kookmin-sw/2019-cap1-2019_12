@@ -26,6 +26,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
 import java.util.*;
 
+import static java.lang.Float.parseFloat;
+import static jdk.nashorn.internal.objects.NativeFunction.function;
+
 
 @Controller
 public class VOTest {
@@ -54,26 +57,26 @@ public class VOTest {
 
         GetItemSpec specCompany = new GetItemSpec()
                 .withPrimaryKey("Company_Name", userSubmitVO.getCompany())
-                .withProjectionExpression("#data")
+                .withProjectionExpression("#data, Main, talent")
                 .withNameMap(nameMap);
+
 
         GetItemSpec specJob = new GetItemSpec()
                 .withPrimaryKey("Job_Name", userSubmitVO.getJob())
-                .withProjectionExpression("#data")
+                .withProjectionExpression("#data, talent")
                 .withNameMap(nameMap);
 
         Item item = tableCompany.getItem(specCompany);
         Map itemCompany = (Map) item.get("Data");
-//        Map textCompany = (Map) item.get("Text");
+        String talentCompany = (String) item.get("talent");
 
 //        System.out.println(item.toJSONPretty());
 //        System.out.println(itemCompany);
 //        System.out.println(itemCompany.get("honesty"));
 
         item = tableJob.getItem(specJob);
-
         Map itemJob = (Map) item.get("Data");
-//        Map textJob = (Map) item.get("Text");
+        String talentJob = (String) item.get("talent");
 
         System.out.println(item.toJSONPretty());
 
@@ -83,7 +86,7 @@ public class VOTest {
 
 //        선택 기업 데이터
 
-//        model.addAttribute("talent_Company", textCompany.get("talent"));
+        model.addAttribute("talent_Company", talentCompany);
 
         model.addAttribute("active",            itemCompany.get("active"));
         model.addAttribute("challenge",         itemCompany.get("challenge"));
@@ -98,7 +101,8 @@ public class VOTest {
 
 //        선택 직무 데이터
 
-//        model.addAttribute("talent_Job", textJob.get("talent"));
+        System.out.println(talentJob);
+        model.addAttribute("talent_Job", talentJob);
 
         model.addAttribute("active_Job",            itemJob.get("active"));
         model.addAttribute("challenge_Job",         itemJob.get("challenge"));
@@ -174,9 +178,83 @@ public class VOTest {
         JSONObject userChoicecompany = (JSONObject) user.get("choice_company");
         JSONObject userFirstcompany = (JSONObject) user.get("first_company");
 
-        System.out.println(user);
-        System.out.println(userUser);
-        System.out.println(userUser.get("teamwork"));
+        JSONArray ja = new JSONArray();
+        JSONObject sk = new JSONObject();
+        JSONObject lg = new JSONObject();
+        JSONObject cj = new JSONObject();
+        JSONObject hyundai = new JSONObject();
+        JSONObject samsung = new JSONObject();
+        sk.put("SK", userCompany.get("SK"));
+        lg.put("LG", userCompany.get("LG"));
+        cj.put("CJ", userCompany.get("CJ"));
+        hyundai.put("hyundai", userCompany.get("hyundai"));
+        samsung.put("samsung", userCompany.get("samsung"));
+        ja.add(sk.get("SK"));
+        ja.add(lg.get("LG"));
+        ja.add(cj.get("CJ"));
+        ja.add(hyundai.get("hyundai"));
+        ja.add(samsung.get("samsung"));
+
+//        System.out.println(ja.get(0));
+//        System.out.println(ja.get(1));
+//        System.out.println(ja.get(2));
+//        System.out.println(ja.get(3));
+//        System.out.println(ja.get(4));
+
+
+        ArrayList<String> stringList = new ArrayList<String>();
+
+        stringList.add((String) userCompany.get("SK"));
+        stringList.add((String) userCompany.get("LG"));
+        stringList.add((String) userCompany.get("CJ"));
+        stringList.add((String) userCompany.get("samsung"));
+        stringList.add((String) userCompany.get("hyundai"));
+
+        System.out.println("정렬전");
+        System.out.println(stringList);
+
+        System.out.println("정렬후");
+        Collections.sort(stringList);
+        System.out.println(stringList);
+
+
+        ArrayList<String> n = new ArrayList<String>();
+        String n1;
+        String n2;
+        String n3;
+
+        for(int i=0;i<5;i++){
+            if(stringList.get(i) == userCompany.get("SK")) n.add("SK");
+            else if (stringList.get(i) == userCompany.get("LG")) n.add("LG");
+            else if (stringList.get(i) == userCompany.get("CJ")) n.add("CJ");
+            else if (stringList.get(i) == userCompany.get("hyundai")) n.add("현대");
+            else if (stringList.get(i) == userCompany.get("samsung")) n.add("삼성");
+        }
+        System.out.println(n);
+//        for(int i=0;i<5;i++){
+//            if(stringList.get(i) == userCompany.get("SK")) n1 = "SK";
+//            else if (stringList.get(i) == userCompany.get("LG")) n1 = "LG";
+//            else if (stringList.get(i) == userCompany.get("CJ")) n1 = "CJ";
+//            else if (stringList.get(i) == userCompany.get("hyundai")) n1 = "LG";
+//            else if (stringList.get(i) == userCompany.get("LG")) n1 = "LG";
+//        }
+
+        model.addAttribute("n1_company", n.get(0));
+        model.addAttribute("n2_company", n.get(1));
+        model.addAttribute("n3_company", n.get(2));
+
+        model.addAttribute("n1_value", stringList.get(0));
+        model.addAttribute("n2_value", stringList.get(1));
+        model.addAttribute("n3_value", stringList.get(2));
+
+
+
+
+//        ja.get(0);
+
+//        System.out.println(user);
+//        System.out.println(userUser);
+//        System.out.println(userUser.get("teamwork"));
 
 //        홀랜드 유형
         String holland = "S";
@@ -184,9 +262,9 @@ public class VOTest {
                 "또 남을 돌보고 자신이 알고 있는 것을 다른 사람들에게 교육하는 일에 관심이 많습니다.<span style=\"line-height:200%\"></span><br>" +
                 "다른 사람들과 적극적으로 대화하고 토론하는 것을 즐기며 사람들 간에 얽힌 문제를 풀어 주는 일에 앞장섭니다.<span style=\"line-height:200%\"></span><br>" +
                 "열심히 일한 만큼 인정받기를 원하고 대가를 바라지 않고 봉사하기를 좋아합니다.";
-        Float S = Float.parseFloat((String) userHolland.get("S"));
-        Float E = Float.parseFloat((String) userHolland.get("E"));
-        Float C = Float.parseFloat((String) userHolland.get("C"));
+        Float S = parseFloat((String) userHolland.get("S"));
+        Float E = parseFloat((String) userHolland.get("E"));
+        Float C = parseFloat((String) userHolland.get("C"));
 
         if(E > S){
             holland = "E";
@@ -269,4 +347,11 @@ public class VOTest {
     }
 
 
+    class AscendingString implements Comparator<String>{
+
+        @Override
+        public int compare(String a, String b){
+            return b.compareTo(a);
+        }
+    }
 }

@@ -92,7 +92,7 @@ public class UserSubmitVO {
                 this.job = "management";
                 break;
             case "건설":
-                this.job = "construct";
+                this.job = "architecture";
                 break;
             case "IT":
                 break;
