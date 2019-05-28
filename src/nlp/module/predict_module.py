@@ -16,19 +16,20 @@ def openModel(filename):
 def SVCpredict(model, text):
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
     result = model.predict([text])
-    return keyword_names[result[0]-1]
+    return keyword_names[result[0] - 1]
 
 
 #   분석 후 dictionary 형태로 return
 def SVCproba(model, text):
     proba = model.predict_proba([text]).tolist()[0]
     proba = [proba[i] for i in range(10)]
-    keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
-    
+    keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty',
+                   'responsibility', 'creative', 'teamwork']
+
     result = {}
     for i in range(10):
-        result[keyword_eng[i]] = float(proba[i]*100)
-    
+        result[keyword_eng[i]] = float(proba[i] * 100)
+
     return result
 
 
@@ -52,10 +53,11 @@ def Cosine(company_dict, company, user_text_dict):
 
 def Holland(user_text_dict):
     holland_type = dict()
-    holland_type['S'] = (user_text_dict['global'] + user_text_dict['communication'] + user_text_dict['teamwork'])/3
-    holland_type['E'] = (user_text_dict['challenge']+user_text_dict['responsibility']+user_text_dict['active']+user_text_dict['creative'])/4
-    holland_type['C'] = (user_text_dict['patient']+user_text_dict['honesty']+user_text_dict['sincerity'])
-    #keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
+    holland_type['S'] = (user_text_dict['global'] + user_text_dict['communication'] + user_text_dict['teamwork']) / 3
+    holland_type['E'] = (user_text_dict['challenge'] + user_text_dict['responsibility'] + user_text_dict['active'] +
+                         user_text_dict['creative']) / 4
+    holland_type['C'] = (user_text_dict['patient'] + user_text_dict['honesty'] + user_text_dict['sincerity'])
+    # keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
     # S: 소통, 팀워크, 글로벌
     # E: 도전, 주인의식, 능동, 창의
     # C: 인내심, 정직, 성실
@@ -67,7 +69,7 @@ def Percent(company_dict, user_text_dict):
 
     i = 0
     for key, value in user_text_dict.items():
-        result[key] = (value / company_dict[i])*100
+        result[key] = (value / company_dict[i]) * 100
         i += 1
 
     return result
@@ -101,40 +103,45 @@ def companyPredict(model, text, company):
     return (new_dict)
 
 
-def Predict(text):
-    model = openModel('SVC_PROB.joblib')
-    company_model = openModel('Company_SVM.joblib')
 
+def Predict(select_company, *text):
+    model = openModel('KeywordModel.joblib')
+    company_model = openModel('CompanyModel.joblib')
 
     keyword_names = ['글로벌역량', '능동', '도전', '성실', '소통', '인내심', '정직', '주인의식', '창의', '팀워크']
     job = ['architecture', 'IT', 'management', 'production', 'sales']
     company = ['samsung', 'hyundai', 'LG', 'SK', 'CJ']
 
-    #테스트데이터
     company_dict = {
-        'samsung': [2.829048, 21.278193, 12.713069, 30.096896, 5.50489, 4.997317, 2.318836, 10.240305, 4.814532, 5.206915],
-        'hyundai': [2.277059, 17.469233, 11.893394, 31.895603, 5.207689, 4.522994, 2.957843, 13.852678, 5.115702, 4.807805],
-        'LG': [4.691135, 35.682092, 9.088129, 18.448958, 3.483393, 6.277644, 1.17589, 11.276273, 4.630043, 5.246442],
-        'SK': [2.95132, 17.854298, 12.35037, 31.950111, 5.126333, 5.243466, 2.778728, 11.823368, 4.841313, 5.080694],
-        'CJ': [3.732902, 21.483846, 12.301521, 30.066666, 5.893883, 4.261314, 2.306606, 11.011743, 4.632992, 4.308527]
+        'samsung': [10.952462, 13.259205, 12.329018999999999, 21.309497999999998, 9.510311, 6.0389669999999995, 2.3193330000000003, 15.3345, 3.4741220000000004, 5.472583],
+        'hyundai': [11.289582, 12.711838, 14.681745, 19.719708, 9.164579, 5.763642, 1.8328939999999998, 17.878541000000002, 2.2700359999999997, 4.687436],
+        'LG': [10.349413, 12.957435, 13.990820000000001, 19.228322000000002, 7.697866, 6.906366, 1.7987099999999998, 18.576876000000002, 2.920934, 5.573257],
+        'SK': [10.402835000000001, 12.334364, 13.663704, 19.325575999999998, 9.732626, 6.8238259999999995, 1.5660830000000001, 16.734253, 2.9451910000000003, 6.471544],
+        'CJ': [9.288477, 13.242901000000002, 13.745071000000001, 21.213103, 6.885591000000001, 7.7885860000000005, 1.776099, 17.291672, 3.67024, 5.098260000000001]
     }
+
+
     job_dict = {
-        'architecture': [2.829048, 21.278193, 12.713069, 30.096896, 5.50489, 4.997317, 2.318836, 10.240305, 4.814532, 5.206915],
-        'IT': [2.277059, 17.469233, 11.893394, 31.895603, 5.207689, 4.522994, 2.957843, 13.852678, 5.115702, 4.807805],
-        'management': [4.691135, 35.682092, 9.088129, 18.448958, 3.483393, 6.277644, 1.17589, 11.276273, 4.630043, 5.246442],
-        'production': [2.95132, 17.854298, 12.35037, 31.950111, 5.126333, 5.243466, 2.778728, 11.823368, 4.841313, 5.080694],
-        'sales': [3.732902, 21.483846, 12.301521, 30.066666, 5.893883, 4.261314, 2.306606, 11.011743, 4.632992, 4.308527]
+        'architecture': [10.952462, 13.259205, 12.329018999999999, 21.309497999999998, 9.510311, 6.0389669999999995, 2.3193330000000003, 15.3345, 3.4741220000000004, 5.472583],
+        'IT': [11.289582, 12.711838, 14.681745, 19.719708, 9.164579, 5.763642, 1.8328939999999998, 17.878541000000002, 2.2700359999999997, 4.687436],
+        'management': [10.349413, 12.957435, 13.990820000000001, 19.228322000000002, 7.697866, 6.906366, 1.7987099999999998, 18.576876000000002, 2.920934, 5.573257],
+        'production': [10.402835000000001, 12.334364, 13.663704, 19.325575999999998, 9.732626, 6.8238259999999995, 1.5660830000000001, 16.734253, 2.9451910000000003, 6.471544],
+        'sales': [9.288477, 13.242901000000002, 13.745071000000001, 21.213103, 6.885591000000001, 7.7885860000000005, 1.776099, 17.291672, 3.67024, 5.098260000000001]
     }
 
     result = dict()
+    text_all = ''
 
-    result['user'] = SVCproba(model, text)
-    #result['Cosine'] = Cosine(company_dict, company, result['user'])
+    for i in range(len(text)):
+        text_all += text[i]
+        result['q'+str(i+1)] = SVCproba(model, text[i])
+
+    result['user'] = SVCproba(model, text_all)
+    # result['Cosine'] = Cosine(company_dict, company, result['user'])
     result['Holland'] = Holland(result['user'])
-    result['company'] = companyPredict(company_model, text, company) # 그래프 표현할 값 조정 필요함.
-    result['choice_company'] = Percent(company_dict['samsung'], result['user']) # 나중에 기업명을 DB에서 받아와야 함.
+    result['company'] = companyPredict(company_model, text_all, company)
+    result['choice_company'] = Percent(company_dict[select_company], result['user'])  # select_company : 선택 기업
     result['first_company'] = Percent(company_dict[list(result['company'].keys())[0]], result['user'])
-
 
     for key, value in result.items():
         for key_, value_ in value.items():
@@ -143,5 +150,6 @@ def Predict(text):
     return json.dumps(result)
 
 
-if __name__ == "__main__":
-    print(Predict("예측자기소개서"))
+def PredictMain():
+    Predict()
+    #print(Predict("예측텍스트","도전적인 사람","안녕하세요"))
