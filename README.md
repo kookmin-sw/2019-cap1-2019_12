@@ -45,7 +45,7 @@ Professor : 윤종영 교수님
 ### 4. 사용법
 
 
-![Imgur](https://i.imgur.com/OaLEPT2.jpg)
+![Imgur](https://imgur.com/ODswSMj.png)
 
 시작하기 버튼을 통해 분석을 시작합니다.
 <br><br><br><br>
@@ -60,7 +60,7 @@ Professor : 윤종영 교수님
 
 
 
-![Imgur](https://imgur.com/GaofevT.png)
+<img src="https://imgur.com/GaofevT.png" width="500">
 
 [분석그래프 1] 선택 기업 핵심역량 그래프
 
@@ -69,7 +69,7 @@ Professor : 윤종영 교수님
 
 
 
-![Imgur](https://imgur.com/xqbVV0W.png)
+<img src="https://imgur.com/xqbVV0W.png" width="500">
 
 [분석그래프 2] 추천기업 순위 그래프(좌), 1순위 기업 핵심역량 그래프(우)
 
@@ -78,7 +78,8 @@ Professor : 윤종영 교수님
 
 
 
-![Imgur](https://imgur.com/PuygdBt.png)
+<img src="https://imgur.com/PuygdBt.png" width="500">
+
 
 [분석그래프 3] 선택 직무 핵심역량 그래프
 
@@ -87,7 +88,7 @@ Professor : 윤종영 교수님
 
 
 
-![Imgur](https://imgur.com/duFGKem.png)
+<img src="https://imgur.com/duFGKem.png" width="500">
 
 [분석그래프 4] 문항별 핵심역량 그래프
 
@@ -97,10 +98,6 @@ Professor : 윤종영 교수님
 
 
 
-![Imgur](https://imgur.com/4gYZ5bQ.png)
-사용자가 기존에 입력했던 자기소개서와 비교, 분석하는 페이지입니다.
-비교를 위해 화면에 표시된 자기소개서를 선택합니다.
-<br><br><br><br>
 
 
 ![Imgur](https://imgur.com/U5jhbMD.png)
