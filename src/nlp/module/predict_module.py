@@ -138,14 +138,10 @@ def Predict(text):
 
     for key, value in result.items():
         for key_, value_ in value.items():
-            value[key] = format(value_, '.30f')
+            value[key_] = format(value_, '.30f')
 
     return json.dumps(result)
 
 
 if __name__ == "__main__":
-
-
-    print(Predict(" 목표를 가지고 열심히 공부했고 수능에서 수리 가형 1등급을 받으며 대학에 서"))
-
-
+    print(Predict("예측자기소개서"))
