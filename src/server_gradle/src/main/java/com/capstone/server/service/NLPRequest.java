@@ -1,4 +1,5 @@
-package com.capstone.server.dbtest;
+package com.capstone.server.service;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.HttpClient;
@@ -15,8 +16,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Resttest {
-    public static void main(String[] args) throws IOException, ParseException {
+public class NLPRequest {
+
+    public static JSONObject main() throws IOException, ParseException {
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
         factory.setReadTimeout(50000);
         factory.setConnectTimeout(3000);
@@ -53,7 +55,7 @@ public class Resttest {
 
         System.out.println(feedback);
 
-
+        return feedback;
 //
 //        Map<String, Object > map = new HashMap<String, Object>();
 //        map = mapper.readValue(obj, new TypeReference<Map<String, Object>>()  {});
@@ -85,5 +87,5 @@ public class Resttest {
 
 
     }
-}
 
+}

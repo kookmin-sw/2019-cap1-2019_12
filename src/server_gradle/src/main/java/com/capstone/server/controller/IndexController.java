@@ -16,6 +16,13 @@ public class IndexController {
         return "main";
     }
 
+    @GetMapping("/main")
+    public String index_main() {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        System.out.println(auth.getPrincipal());
+        return "main";
+    }
+
    /* @GetMapping("/callback")
     public String callback() {
         return "main";

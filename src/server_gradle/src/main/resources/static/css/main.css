@@ -1,5 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
 
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+     }
+
 body .main-wrapper {
   padding-top: 80px;
 }
@@ -10,6 +16,9 @@ body .main-wrapper {
 
 *******************************/
 
+html {
+  scroll-behavior: smooth;
+}
 #navbar-scroll {
   background-color: transparent;
 }
@@ -35,6 +44,19 @@ body .main-wrapper {
 
 .navbar-inner {
     background:transparent;
+}
+
+.navbar-default{
+  background-color:#f8f8f8;
+  border-color: transparent;
+}
+
+.bg-dark{
+  background: transparent;
+}
+
+.bg-dark.scrolled{
+  background : #25272b !important;
 }
 
 
@@ -71,12 +93,10 @@ body .main-wrapper {
 .main-btn {
     background: #4a8ac8;
     color: #FFF;
+    font-weight: 700;
+    font-size : 18px;
 }
 
-.navbar-default{
-    background-color:#f8f8f8;
-    border-color: transparent;
-}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 0;
@@ -84,3 +104,75 @@ body .main-wrapper {
 
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #4a8ac8; }
+
+.page-section{
+
+  padding: 100px 0;
+}
+
+.info-wrapper-first{
+  padding : 80px 0;
+
+}
+
+
+.first-title{
+  color: #25272b;
+  width: 185px;
+  padding-left : 60px;
+}
+
+.first-content{
+ font-size : 14px;
+ padding-left : 80px;
+}
+
+.info-wrapper-second{
+  padding : 40px 0;
+}
+
+.second-title{
+  color: #25272b;
+  width: 185px;
+  padding-left : 60px;
+}
+
+.second-content{
+ font-size : 14px;
+ padding-left : 80px;
+}
+
+.info-wrapper-third{
+  padding : 40px 0;
+}
+
+.third-title{
+  color: #25272b;
+  width: 185px;
+  padding-left : 60px;
+}
+
+.third-content{
+  font-size : 14px;
+  padding-left : 80px;
+ }
+
+ .info-wrapper-third .square-box1 img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+.square-box1{
+  display: inline-block;
+  width: 300px;
+  height: 160px;
+  border: 1px solid #f8f9fa;
+}
+
+.text-center1{
+  width : 330px;
+}

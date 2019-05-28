@@ -1,4 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
+
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+     }
+
 /*************************************************************
 *						App Variables
 **************************************************************/
@@ -25,7 +32,7 @@ body {
   min-height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #4f5f6f;
-  overflow-x: hidden; }
+   }
 
 .main-wrapper {
   width: 100%;
@@ -399,7 +406,7 @@ pre {
       .open > .btn.btn-primary.dropdown-toggle.focus {
         color: #ffffff;
         background-color: #4a8ac8;
-        border-color: #4a8ac8; }
+        border-color: #446b1a; }
     .btn.btn-primary.disabled:focus, .btn.btn-primary.disabled.focus, .btn.btn-primary:disabled:focus, .btn.btn-primary:disabled.focus {
       background-color: #4a8ac8;
       border-color: #4a8ac8; }
@@ -1527,11 +1534,11 @@ label,
 
 a:not(.btn) {
   transition: initial;
-  text-decoration: underline;
-  color: #969696; }
+  /* text-decoration: underline;
+  color: #969696;*/ }
   a:not(.btn):hover {
-    text-decoration: underline;
-    color: #70b02b; }
+
+    color: #FFF; }
     a:not(.btn):hover:before {
       -webkit-transform: scaleX(1);
               transform: scaleX(1); }

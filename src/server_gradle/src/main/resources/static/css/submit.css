@@ -1,5 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600);
 
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+    font-family: 'NanumSquare', sans-serif;
+     }
+
+
 body .main-wrapper {
   padding-top: 80px;
   padding-bottom: 100px;
@@ -16,8 +23,8 @@ body .main-wrapper {
 }
 
 .content.dashboard-page {
-  padding-top: 80px;
-}
+    padding-top: 80px;
+  }
 
 
 
@@ -35,7 +42,7 @@ body .main-wrapper {
 
 #submit-guide {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   line-height: 2.0em;
   color:#011C3F;
   text-align: center;
@@ -81,7 +88,7 @@ body .main-wrapper {
 }
 
 #box-enter {
-  margin-bottom: 110px;
+  margin-bottom: 60px;
 }
 
 #test::placeholder {
@@ -93,6 +100,7 @@ body .main-wrapper {
   margin-right: auto;
   margin-top: 60px;
   font-size: 18px;
+  font-weight: bold;
   width: 160px;
   height: 60px;
   color: #ffffff;
@@ -136,6 +144,7 @@ body .main-wrapper {
   background-color: #4a8ac8;
   opacity: 0.8;
 }
+
 
 
 
@@ -261,7 +270,6 @@ input[class="result-check"] {
   background-color: #4a8ac8;
 }
 
-
 .comparebutton:hover {
   color: #ffffff;
   background-color: #4a8ac8;
@@ -345,11 +353,11 @@ input[class="result-check"] {
   /* margin-left : 15px; */
   margin-right : 30px;
 }
-.BarChart{
-  padding-left : 30px;
-}
+ .BarChart{
+   padding-left : 30px;
+ }
 
-.company-chart-txt{
+ .company-chart-txt{
   margin-left : 30px;
   margin-right : 30px;
   padding-left : 15px;
@@ -396,6 +404,58 @@ input[class="result-check"] {
 .que-chart{
   margin-left : 15px;
 }
+
 .RadarChart{
   margin-top : 30px;
+}
+
+
+
+/*******************************
+
+        compare_result.html
+
+*******************************/
+
+.result-text{
+  padding-left : 15px;
+  padding-right: 15px;
+  margin-top : 30px;
+  padding-bottom : 15px;
+  /* border: 2px solid #F2F2F2; */
+
+}
+
+.line-chart{
+
+  padding-left : 15px;
+  padding-right : 15px;
+  margin-top : 15px;
+}
+
+.line-chart-txt{
+  padding-top : 15px;
+  padding-left : 15px;
+}
+
+.result-container {
+  margin-bottom : 30px;
+  height : auto ;
+  width : 1080px;
+  background-color : #fff;
+}
+.bar-chart-container{
+  margin-top :30px;
+
+}
+.bar-chart-title {
+  margin-left : 15px;
+}
+.bar-chart-compare{
+  margin-top : 15px;
+  padding-left : 15px;
+}
+
+.company-chart-container{
+  margin-top :30px;
 }
