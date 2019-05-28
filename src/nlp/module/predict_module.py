@@ -56,7 +56,7 @@ def Holland(user_text_dict):
     holland_type['S'] = (user_text_dict['global'] + user_text_dict['communication'] + user_text_dict['teamwork']) / 3
     holland_type['E'] = (user_text_dict['challenge'] + user_text_dict['responsibility'] + user_text_dict['active'] +
                          user_text_dict['creative']) / 4
-    holland_type['C'] = (user_text_dict['patient'] + user_text_dict['honesty'] + user_text_dict['sincerity'])
+    holland_type['C'] = (user_text_dict['patient'] + user_text_dict['honesty'] + user_text_dict['sincerity']) / 3
     # keyword_eng = ['global', 'active', 'challenge', 'sincerity', 'communication', 'patient', 'honesty', 'responsibility', 'creative', 'teamwork']
     # S: 소통, 팀워크, 글로벌
     # E: 도전, 주인의식, 능동, 창의
