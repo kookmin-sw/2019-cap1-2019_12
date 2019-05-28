@@ -81,7 +81,7 @@ h5 {
 }
 
 a {
-    color: #85CE36 ;
+    color: #4a8ac8 ;
     text-decoration: none;
     -webkit-transition: 0.2s opacity;
     transition: 0.2s opacity;
@@ -91,11 +91,11 @@ a:hover, a:focus {
     text-decoration: none;
     outline: none;
     opacity: 0.8;
-    color: #85CE36 ;
+    color: #4a8ac8 ;
 }
 
 .main-color {
-    color:#85CE36 ;
+    color:#4a8ac8 ;
 }
 
 .white-text {
@@ -103,12 +103,12 @@ a:hover, a:focus {
 }
 
 ::-moz-selection {
-    background-color: #85CE36 ;
+    background-color: #4a8ac8 ;
     color: #FFF;
 }
 
 ::selection {
-    background-color: #85CE36;
+    background-color: #4a8ac8;
     color: #FFF;
 }
 
@@ -144,7 +144,7 @@ ul, ol {
 }
 
 .bg-dark {
-    background-color: #1C1D21;
+    background-color: #f2f2f2;
 }
 
 
@@ -189,7 +189,7 @@ ul, ol {
   	display:block;
   	height:4px;
   	width:40px;
-  	background-color: #85CE36;
+  	background-color: #4a8ac8;
     margin-top: 20px;
 }
 
@@ -247,8 +247,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 .outline-btn {
     background: transparent;
-    color: #85CE36 !important;
-    border-color: #85CE36;
+    color: #4a8ac8 !important;
+    border-color: #4a8ac8;
 }
 
 .main-btn:hover, .white-btn:hover, .outline-btn:hover {
@@ -349,12 +349,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     }
     .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
         background: transparent;
-        color: #85CE36;
+        color: #4a8ac8;
     }
     .main-nav>li>a:after {
         content: "";
         display: block;
-        background-color: #85CE36;
+        background-color: #4a8ac8;
         height: 2px;
         width: 0%;
         -webkit-transition: 0.2s width;
@@ -471,10 +471,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         transition: 0.2s all;
     }
     .main-nav>li.active {
-        border-left: 6px solid #85CE36;
+        border-left: 6px solid #4a8ac8;
     }
     .main-nav li a:hover, .main-nav li a:focus {
-        background-color: #85CE36;
+        background-color: #4a8ac8;
         color: #FFF;
         opacity: 1;
     }
@@ -963,7 +963,7 @@ header {
 }
 .preloader span {
     display: inline-block;
-    background-color: #85CE36;
+    background-color: #4a8ac8;
     width: 25px;
     height: 25px;
     -webkit-animation: 1s preload ease-in-out infinite;
