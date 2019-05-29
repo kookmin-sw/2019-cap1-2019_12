@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!--<link rel="stylesheet" href="/assets/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/assets/css/vendor.css">-->
+    <!--<link rel="stylesheet" id="theme-style" href="/assets/css/app.css">-->
+    <!--<link rel="stylesheet" href="/assets/css/submit.css?after">-->
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/vendor.css}" />
+    <link rel="stylesheet" id="theme-style" th:href="@{/css/app.css}" />
+    <link rel="stylesheet" th:href="@{/css/submit.css?after}" />
+
+    <!-- Theme initialization
+    <script>
+        var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+        {};
+        var themeName = themeSettings.themeName || '';
+        if (themeName)
+        {
+            document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+        }
+        else
+        {``
+            document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+        }
+    </script>
+    -->
+</head>
+
+<body>
+<div class="main-wrapper">
+    <div class="container">
+
+        <nav class="navbar navbar-default navbar-fixed-top bg-secondary" role="navigation" id="navbar-scroll">
+            <div class="container">
+
+                <div class="row">
+                    <div class="navbar-header col-xs-4">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="brand">
+                            <div class="logo"> <span class="l l1"></span> <span class="l l2"></span> <span class="l l3"></span> <span class="l l4"></span> <span class="l l5"></span> </div> 길 JOB 이</div>
+                    </div>
+
+
+                    <div class="collapse col-xs-4 col-xs-offset-1  navbar-collapse navbar-center navbar-ex1-collapse" id="menu-center">
+                        <ul class="nav navbar-nav">
+                            <li><a class="navbar-menu" href="main_login" style="text-decoration:none">홈</a></li>
+                            <li><a class="navbar-menu" href="submit_login" style="text-decoration:none">제출하기 </a></li>
+                            <li><a class="navbar-menu" href="compare_login" style="text-decoration:none">비교하기 </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="collapse col-xs-3 navbar-collapse navbar-right navbar-ex1-collapse ">
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a class="navbar-menu" >4726님 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" id="page">
+
+            <div id="submit-select">
+
+                <strong><h5>제출하기</h5></strong>
+                <hr />
+
+                <h3 id="submit-guide"> 지원하는 직무 분야와 기업을 선택한 후 자기소개서를 입력하세요.</h3>
+
+
+                <div class="row">
+                    <div class="col-xs-1 col-xs-offset-1">
+                        <div class="job-select text-center">
+                            <strong><h4><strong>직무</strong></h4>
+                        </div>
+
+                    </div>
+                    <div class="col-xs-4">
+
+                        <div class="dropdown" style="text-align:center;">
+
+                            <select class="selectbox-dropdown form-control">
+                                <option>직무 선택</option>
+                                <option>영업</option>
+                                <option>생산</option>
+                                <option>IT</option>
+                                <option>경영지원관리</option>
+                                <option>건설</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="enterprise-select text-center">
+                            <strong><h4><strong>기업</strong></h4>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+
+
+                        <div class="dropdown" style="text-align:center;">
+
+                            <select class="selectbox-dropdown form-control" id="box-enter">
+                                <option>기업 선택</option>
+                                <option>삼성</option>
+                                <option>현대</option>
+                                <option>LG</option>
+                                <option>SK</option>
+                                <option>CJ</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 드롭다운 메뉴 위치 에러 발생 -->
+            <!--
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+              분석 직무 선택
+
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          -->
+
+            <div class="textarea">
+                <textarea class="form-control" rows="15" placeholder="자기소개서를 입력하세요(최소 300자 이상)" id="test"></textarea>
+                <form action="/result_login" method="GET">
+                    <center>
+                        <button class="btn btn-default submitbutton" type="submit">분석하기</button>
+                    </center>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+</div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- 자바스크립트 충돌
+<script src="js/bootstrap.min.js"></script>
+-->
+<script th:src="@{/js/vendor.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>
