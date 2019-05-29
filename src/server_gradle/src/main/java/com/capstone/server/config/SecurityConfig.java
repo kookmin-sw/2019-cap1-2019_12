@@ -23,12 +23,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.antMatcher("/**")
                 .authorizeRequests()
                 .antMatchers("/", "/h2-console/**", "/favicon.ico", "/fonts/**",
-                        "/css/**",  "/img/**", "/js/**", "/login/**", "/billboard/**", "/bower_components/**", "/Chart.js/**",
-                        "/**").permitAll() // "/login**" 옵션 추가
+                        "/css/**",  "/img/**", "/js/**", "/login/**", "/billboard/**", "/bower_components/**", "/Chart.js/**").permitAll() // "/login**" 옵션 추가
                 .anyRequest().authenticated()
                 .and().logout().logoutSuccessUrl("/").permitAll()
                 .and().headers().frameOptions().sameOrigin()
+                .and()
+                .exceptionHandling().accessDeniedHandler((request, response, accessDeniedException) -> response.sendRedirect("/"))
                 .and().csrf().disable()
                 .addFilterBefore(ssoFilter, BasicAuthenticationFilter.class); // OAuthConfig에서 생성한 ssoFilter 추가
+
     }
 }

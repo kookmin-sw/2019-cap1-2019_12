@@ -4,10 +4,10 @@
 
 body {
     font-family: 'NanumSquare', sans-serif;
-     }
+}
 
 body .main-wrapper {
-  padding-top: 80px;
+    padding-top: 80px;
 }
 
 /*******************************
@@ -17,29 +17,29 @@ body .main-wrapper {
 *******************************/
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 #navbar-scroll {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .content.dashboard-page {
     padding-top: 80px;
     background-color: transparent;
-  }
+}
 
 
 
 .brand {
-  padding-top: 6px;
-  font-weight: bold;
-  font-size: 23px;
-  color: #fff;
+    padding-top: 6px;
+    font-weight: bold;
+    font-size: 23px;
+    color: #fff;
 }
 
 .collapse .nav .navbar-menu {
-  color: #fff;
-  font-weight: bold;
+    color: #fff;
+    font-weight: bold;
 }
 
 .navbar-inner {
@@ -47,47 +47,47 @@ html {
 }
 
 .navbar-default{
-  background-color:#f8f8f8;
-  border-color: transparent;
+    background-color:#f8f8f8;
+    border-color: transparent;
 }
 
 .bg-dark{
-  background: transparent;
+    background: transparent;
 }
 
 .bg-dark.scrolled{
-  background : #25272b !important;
+    background : #25272b !important;
 }
 
 
 .collapse .nav .navbar-menu:hover {
-  color: #4a8ac8;
-  cursor:pointer;
+    color: #4a8ac8;
+    cursor:pointer;
 }
 
 
 .job-select {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 
 #dropdown-job {
-  display:inline-block;
-  width: 600px;
-  border-color: #4a8ac8;
-  margin-top: 20px;
-  margin-bottom: 160px;
+    display:inline-block;
+    width: 600px;
+    border-color: #4a8ac8;
+    margin-top: 20px;
+    margin-bottom: 160px;
 }
 
 #dropdown-job:visited {
-  border-color: #4a8ac8;
+    border-color: #4a8ac8;
 }
 
 #dropdown-job:hover {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 #test::placeholder {
-  font-style: normal;
+    font-style: normal;
 }
 
 .main-btn {
@@ -99,80 +99,124 @@ html {
 
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 0;
-  background: #4a8ac8; }
+    border-radius: 0;
+    background: #4a8ac8; }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: #4a8ac8; }
+    background: #4a8ac8; }
 
 .page-section{
 
-  padding: 100px 0;
+    padding: 100px 0;
 }
 
 .info-wrapper-first{
-  padding : 80px 0;
+    padding : 80px 0;
 
 }
 
 
 .first-title{
-  color: #25272b;
-  width: 185px;
-  padding-left : 60px;
+    color: #25272b;
+    width: 185px;
+    padding-left : 60px;
 }
 
 .first-content{
- font-size : 14px;
- padding-left : 80px;
+    font-size : 14px;
+    padding-left : 80px;
 }
 
 .info-wrapper-second{
-  padding : 40px 0;
+    padding : 40px 0;
 }
 
 .second-title{
-  color: #25272b;
-  width: 185px;
-  padding-left : 60px;
+    color: #25272b;
+    width: 185px;
+    padding-left : 60px;
 }
 
 .second-content{
- font-size : 14px;
- padding-left : 80px;
+    font-size : 14px;
+    padding-left : 80px;
 }
 
 .info-wrapper-third{
-  padding : 40px 0;
+    padding-top: 70px;
 }
 
+
+
 .third-title{
-  color: #25272b;
-  width: 185px;
-  padding-left : 60px;
+    color: #25272b;
+    width: 185px;
+    padding-left : 60px;
 }
 
 .third-content{
-  font-size : 14px;
-  padding-left : 80px;
- }
+    font-size : 14px;
+    padding-left : 80px;
+    margin-bottom : 3px;
+}
 
- .info-wrapper-third .square-box1 img {
-  width: 50px;
-  height: 50px;
-  display: block;
-  margin-top: 35px;
-  margin-left: auto;
-  margin-right: auto;
- }
+.third-content2{
+    font-size : 14px;
+    margin-left : 130px;
+
+}
+
+
+.square-box1 img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .square-box1{
-  display: inline-block;
-  width: 300px;
-  height: 160px;
-  border: 1px solid #f8f9fa;
+    display: inline-block;
+    width: 250px;
+    height: 160px;
+    border: 1px solid #e7e7e7;
 }
 
 .text-center1{
-  width : 330px;
+    width : 330px;
+}
+.square-box2 img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.square-box2{
+    display: inline-block;
+    width: 250px;
+    height: 160px;
+    border: 1px solid #e7e7e7;
+}
+
+.square-box3 img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.square-box3{
+    display: inline-block;
+    width: 250px;
+    height: 160px;
+    border: 1px solid #e7e7e7;
+}
+
+.intro{
+    margin-top : 30px;
+    margin-left: 170px;
 }

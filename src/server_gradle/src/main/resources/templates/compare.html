@@ -50,9 +50,10 @@
                     </div>
 
 
-                    <div class="collapse col-xs-4 col-xs-offset-1  navbar-collapse navbar-center navbar-ex1-collapse" id="menu-center">
+                    <div class="collapse col-xs-4 col-xs-offset-1  navbar-collapse navbar-center navbar-ex1-collapse"
+                         id="menu-center">
                         <ul class="nav navbar-nav">
-                            <li><a class="navbar-menu" href="main" >홈 </a></li>
+                            <li><a class="navbar-menu" href="main">홈 </a></li>
                             <li><a class="navbar-menu" href="submit">제출하기 </a></li>
                             <li><a class="navbar-menu" href="compare">비교하기 </a></li>
                         </ul>
@@ -60,8 +61,8 @@
 
                     <div class="collapse col-xs-3 navbar-collapse navbar-right navbar-ex1-collapse ">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a class="navbar-menu" href="login">로그인 </a></li>
-                            <li><a class="navbar-menu" href="signup">회원가입 </a></li>
+                            <li><a class="navbar-menu">[[${username}]]님 </a></li>
+                            <li><a class="navbar-menu" href="logout">로그아웃 </a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,14 +81,25 @@
                 </article>
 
                 <div class="row select-job">
-                    <div class="col-xs-offset-3 col-xs-6">
+                    <div class="col-xs-offset-3 col-xs-3">
                         <select class="form-control">
                             <option>분석 직무 선택</option>
                             <option>영업</option>
+                            <option>마케팅</option>
+                            <option>홍보</option>
                             <option>생산</option>
                             <option>IT</option>
-                            <option>경영지원관리</option>
-                            <option>건설</option>
+                        </select>
+                    </div>
+
+                    <div class="col-xs-3 col-xs-3">
+                        <select class="form-control">
+                            <option>분석 기업 선택</option>
+                            <option>SK</option>
+                            <option>LG</option>
+                            <option>CJ</option>
+                            <option>현대</option>
+                            <option>삼성</option>
                         </select>
                     </div>
 
@@ -102,9 +114,9 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">삼성 영업 자소서 최종 수정본</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
-                                    <h6 class="result-text pull-right">2019-03-10 19:07</h6>
+                                    <h5 style="text-align:left;">삼성 IT개발 1차 2019-03-30</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
+                                    <h6 class="result-text pull-right">2019-03-30 19:07</h6>
                                 </div>
                             </div>
                             <div class="result-item card-block row">
@@ -112,9 +124,9 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">삼성 영업 자소서 1차 수정</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
-                                    <h6 class="result-text pull-right">2019-03-10 14:07</h6>
+                                    <h5 style="text-align:left;">삼성 IT개발 최종 2019-04-12</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
+                                    <h6 class="result-text pull-right">2019-04-12 14:07</h6>
                                 </div>
                             </div>
                             <div class="result-item card-block row">
@@ -122,8 +134,8 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">삼성 영업 자소서 1</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
+                                    <h5 style="text-align:left;">삼성 IT개발 자소서 1</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
                                     <h6 class="result-text pull-right">2019-03-08 11:47</h6>
                                 </div>
                             </div>
@@ -132,8 +144,8 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">롯데 영업마케팅 자소서 1</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
+                                    <h5 style="text-align:left;">삼성 웹개발직군 자소서 1</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
                                     <h6 class="result-text pull-right">2019-03-10 19:07</h6>
                                 </div>
                             </div>
@@ -142,8 +154,8 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">현대 영업 자소서 1</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
+                                    <h5 style="text-align:left;">현대 IT 자소서 1</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
                                     <h6 class="result-text pull-right">2019-03-10 19:07</h6>
                                 </div>
                             </div>
@@ -152,8 +164,8 @@
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
                                 <div class="col-xs-11">
-                                    <h5 style="text-align:left;">삼성 영업 자소서 1</h5>
-                                    <h6 class="result-text pull-left">영업</h6>
+                                    <h5 style="text-align:left;">삼성 IT 자소서 1</h5>
+                                    <h6 class="result-text pull-left">IT</h6>
                                     <h6 class="result-text pull-right">2019-03-10 19:07</h6>
                                 </div>
                             </div>

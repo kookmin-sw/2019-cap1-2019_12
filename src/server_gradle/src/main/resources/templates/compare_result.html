@@ -37,10 +37,10 @@
 </head>
 
 <body>
-<div class="main-wrapper" id="resultpage">
+<div class="main-wrapper" id="compare_resultpage">
     <div class="container">
 
-        <nav class="navbar navbar-default navbar-fixed-top bg-dark" role="navigation" id="navbar-scroll">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar-scroll">
             <div class="container">
 
                 <div class="row">
@@ -56,9 +56,10 @@
                     </div>
 
 
-                    <div class="collapse col-xs-4 col-xs-offset-1  navbar-collapse navbar-center navbar-ex1-collapse" id="menu-center">
+                    <div class="collapse col-xs-4 col-xs-offset-1  navbar-collapse navbar-center navbar-ex1-collapse"
+                         id="menu-center">
                         <ul class="nav navbar-nav">
-                            <li><a class="navbar-menu" href="main" >홈 </a></li>
+                            <li><a class="navbar-menu" href="main">홈 </a></li>
                             <li><a class="navbar-menu" href="submit">제출하기 </a></li>
                             <li><a class="navbar-menu" href="compare">비교하기 </a></li>
                         </ul>
@@ -66,8 +67,8 @@
 
                     <div class="collapse col-xs-3 navbar-collapse navbar-right navbar-ex1-collapse ">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a class="navbar-menu" href="login">로그인 </a></li>
-                            <li><a class="navbar-menu" href="signup">회원가입 </a></li>
+                            <li><a class="navbar-menu">[[${username}]]님 </a></li>
+                            <li><a class="navbar-menu" href="logout">로그아웃 </a></li>
                         </ul>
                     </div>
                 </div>
@@ -80,9 +81,9 @@
                     <div class = "header-text">
                         <strong><p>비교 분석</p></strong>
                     </div>
-                    <hr>
+
                     <div class = "result-main-text">
-                        <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
+                        <strong><h5>[삼성 IT개발 1차 2019-03-30] 와 [삼성 IT개발 최종 2019-04-12]의 결과 비교 </h5></strong>
                     </div>
                     <!-- <div class = "result-text">
                         <p>대부분의 상황에서 성실하고 화합을 중시하는 행동을 할 가능성이 높은 인재입니다.</p>
@@ -94,21 +95,26 @@
                 </div>
 
                 <div class = "line-chart-container">
-                    <div class = "line-chart-txt">[적합 기업 그래프]</div>
+                    <div class = "line-chart-title"><strong>[선택 기업 핵심역량 그래프]</strong></div>
                     <div class = "line-chart">
                         <div id = "combinationChart"></div>
+
+
+
                     </div>
-                    <hr>
+
                 </div>
 
 
-                <!-- </div> -->
+
 
 
 
 
                 <div class = "bar-chart-container">
-                    <div class = "bar-chart-title">[적합 기업 그래프]</div>
+                    <hr>
+                    <div class = "bar-chart-title"><strong>[적합 기업 그래프]</strong></div>
+
                     <div class = "row">
                         <div class = "col-md-6">
                             <div class = "bar-chart-compare">
@@ -119,17 +125,16 @@
 
 
 
-                        <div class = "col-md-6">
-                            <div class = "result-text txt-center">
-                                <p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>
-                                <p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구
-                                    사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된
-                                    SW아키텍처를 SW 개발에 적용하는 것을 보증하기 위하여
-                                    계획, 실행, 통제 및 모니터링 하는 능력이다.</p>
-                                <p> - 애플리케이션 설계란 요구사항 확인을 통한 상세 분석 결과,
-                                    소프트웨어 아키텍처 가이드라인 및 소프트웨어 아키텍처 산출물에 의거하여
-                                    이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계,
-                                    타 시스템 연동에 대하여 상세 설계하는 능력이다.
+                        <div class = "bar-chart2 col-md-6">
+                            <div class = "bar-chart-txt light-gray-box text-center">
+                                <div class = "bar-chart-title">
+                                    <strong>삼성의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
+                                </div>
+                                <p>
+                                    - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>
+                                    - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>
+                                    - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>
+                                    - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람
                                 </p>
                             </div>
                         </div>
@@ -142,7 +147,7 @@
 
                 <div class  = "chart-job-compare">
                     <div class = "result-main-text">
-                        <strong><h6>[2019-03-30] 와 [2019-04-12]의 결과 비교 </h6></strong>
+                        <h6><strong>[직무 핵심역량 그래프]</strong></h6>
                     </div>
                     <div class = "company-chart-container">
                         <div class = "row">
@@ -160,18 +165,19 @@
                         </div>
                     </div>
                     <div class = "result-txt-container">
-
-                        <div class = "result-text">
-                            <p> - 애플리케이션 테스트 관리란 요구사항대로 응용소프트웨어가
-                                구현되었는지를 검증하기 위해 테스트케이스를 작성하고
-                                개발자 통합 테스트를 수행하여 애플리케이션의 성능을 개선하는 능력이다.
+                        <p class = "result-txt"></p>
+                        <div class = "result-chart-txt light-gray-box ">
+                            <strong>IT 직무의 역량</strong><br><br>
+                            <p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>
+                            <p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구
+                                사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된
+                                SW아키텍처를 SW 개발에 적용하는 것을 보증하기 위하여
+                                계획, 실행, 통제 및 모니터링 하는 능력이다.</p>
+                            <p> - 애플리케이션 설계란 요구사항 확인을 통한 상세 분석 결과,
+                                소프트웨어 아키텍처 가이드라인 및 소프트웨어 아키텍처 산출물에 의거하여
+                                이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계,
+                                타 시스템 연동에 대하여 상세 설계하는 능력이다.
                             </p>
-                            <p> - 개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트방식,
-                                대상과 범위를 결정하여 테스트케이스를 작성 할 수 있다.
-                                개발하고자 하는 응용소프트웨어의 특성을 반영한 테스트 방식,
-                                대상과 범위가 적용된 시나리오를 정의 할 수 있다.
-                            </p>
-
                         </div>
                     </div>
                 </div>
@@ -210,14 +216,14 @@
                     "창의",
                     "글로벌"],
                 ["IT", 330, 350, 200, 380, 150,130,200,30,280],
-                ["2019-03-30", 130, 100, 300, 200, 80,180,240,170,350],
+                ["삼성 IT개발 1차 2019-03-30", 130, 100, 300, 200, 80,180,240,170,350],
 
             ],
             type: "radar",
             labels: true,
             colors : {
                 "IT" : "#FBB1C5",
-                "2019-03-30" : "#4a8ac8"
+                "삼성 IT개발 1차 2019-03-30" : "#4a8ac8"
             },
         },
         radar: {
@@ -252,13 +258,13 @@
                     "창의",
                     "글로벌"],
                 ["IT", 330, 350, 200, 380, 150,130,200,30,280],
-                ["2019-04-12", 180, 160, 320, 120, 90,100,200,190,230],
+                ["삼성 IT개발 최종 2019-04-12", 180, 160, 320, 120, 90,100,200,190,230],
             ],
             type: "radar",
             labels: true,
             colors : {
                 "IT" : "#FBB1C5",
-                "2019-04-12" : "#4a8ac8"
+                "삼성 IT개발 최종 2019-04-12" : "#4a8ac8"
             },
         },
         radar: {
@@ -282,24 +288,24 @@
     var chart = bb.generate({
         data: {
             columns: [
-                ["2019-03-30", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
-                ["2019-04-12", 40, 10, 45, 64, 38, 59, 19, 35, 83, 54],
+                ["삼성 IT개발 1차 2019-03-30", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
+                ["삼성 IT개발 최종 2019-04-12", 40, 10, 45, 64, 38, 59, 19, 35, 83, 54],
                 ["삼성", 200, 130, 180, 240, 130, 220, 111, 132, 222, 164],
             ],
             types: {
                 "삼성": "bar",
-                "2019-03-30": "line",
-                "2019-04-12": "line"
+                "삼성 IT개발 1차 2019-03-30": "line",
+                "삼성 IT개발 최종 2019-04-12": "line"
             },
             colors: {
                 "삼성": "#fdd3de",
-                "2019-03-30": "#4a8ac8",
-                "2019-04-12" : "0E1F2F"
+                "삼성 IT개발 1차 2019-03-30": "#4a8ac8",
+                "삼성 IT개발 최종 2019-04-12" : "0E1F2F"
             },
             axes: {
                 "삼성": "y",
-                "2019-03-30": "y2",
-                "2019-04-12":"y2"
+                "삼성 IT개발 1차 2019-03-30": "y2",
+                "삼성 IT개발 최종 2019-04-12":"y2"
             }
         },
         axis: {
@@ -342,27 +348,15 @@
         bindto: "#combinationChart"
     });
 
-    //     var chart = bb.generate({
-    //   data: {
-    //     columns: [
-    // 	["삼성", 30],
-    // 	["LG", 120],
-    //     ["SK", 80]
-    //     ],
-    //     type: "pie",
-    //   },
-    //   bindto: "#pieChart"
-    // });
-
 
     var container = document.getElementById('bar-area');
     var data = {
-        categories: ['2019-03-30', '2019-04-12'],
+        categories: ['삼성 IT개발 1차 2019-03-30', '삼성 IT개발 최종 2019-04-12'],
         series: [
             {
                 label: '삼성',
                 name: '삼성',
-                data: [50,30]
+                data: [50,45]
             },
             {
                 name: '현대',
@@ -381,7 +375,7 @@
     var options = {
         chart: {
             width: 500,
-            height: 450,
+            height: 350,
 
         },
         legend: {

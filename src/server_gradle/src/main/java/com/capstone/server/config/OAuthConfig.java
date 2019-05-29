@@ -31,8 +31,14 @@ public class OAuthConfig {
     public Filter ssoFilter() {
         OAuth2ClientAuthenticationProcessingFilter oauth2Filter = new OAuth2ClientAuthenticationProcessingFilter("/login");
         OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(googleClient(), oauth2ClientContext);
+        StringBuilder redirectUrl = new StringBuilder("/main");
+//        redirectUrl.append()
+
+
         oauth2Filter.setRestTemplate(oAuth2RestTemplate);
         oauth2Filter.setTokenServices(new UserInfoTokenServices(googleResource().getUserInfoUri(), googleClient().getClientId()));
+        oauth2Filter.setAuthenticationSuccessHandler(((request, response, authentication) -> response.sendRedirect(redirectUrl.toString())));
+        oauth2Filter.setAuthenticationFailureHandler((request, response, exception) -> response.sendRedirect("/error"));
 
         return oauth2Filter;
     }

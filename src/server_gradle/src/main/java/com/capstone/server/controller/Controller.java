@@ -1,17 +1,19 @@
 package com.capstone.server.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-@RestController
+@org.springframework.stereotype.Controller
 public class Controller {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public Principal home(Principal principal) {
-        return principal;
+    public String home(Principal principal, Model model) {
+        model.addAttribute("username", principal.getName());
+        return "main_login";
     }
 
 //    private DbTest dbTest;
