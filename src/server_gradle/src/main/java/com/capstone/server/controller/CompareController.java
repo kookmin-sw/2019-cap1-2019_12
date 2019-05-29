@@ -1,5 +1,7 @@
 package com.capstone.server.controller;
 
+import com.capstone.server.user.CompareVO;
+import com.capstone.server.user.UserSubmitVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +21,15 @@ public class CompareController {
     }
 
     @RequestMapping(value = "/compare_result", method = RequestMethod.POST)
-    public String compare_result_login(Principal principal, Model model) {
+    public String compare_result_login(CompareVO compareVO, Principal principal, Model model) {
         model.addAttribute("username", principal.getName());
+        model.addAttribute("company", compareVO.getCompany());
+        model.addAttribute("job", compareVO.getJob());
+
+        
+
+
+
         return "compare_result";
     }
 

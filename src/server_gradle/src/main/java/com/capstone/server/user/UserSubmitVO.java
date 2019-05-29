@@ -7,8 +7,17 @@ public class UserSubmitVO {
     private String title;
     private String company;
     private String job;
+    private Integer q_num;
     private List<String> question;
     private List<String> text;
+
+    public Integer getQ_num() {
+        return q_num;
+    }
+
+    public void setQ_num(Integer q_num) {
+        this.q_num = q_num;
+    }
 
     public String getTitle() {
         return title;
@@ -75,6 +84,21 @@ public class UserSubmitVO {
                 break;
             case "LG":
                 this.company = "lg";
+                break;
+        }
+    }
+
+    public void companyToUpper() {
+
+        switch (this.company) {
+            case "sk":
+                this.company = "SK";
+                break;
+            case "cj":
+                this.company = "CJ";
+                break;
+            case "lg":
+                this.company = "LG";
                 break;
         }
     }

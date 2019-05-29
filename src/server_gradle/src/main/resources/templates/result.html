@@ -12,8 +12,9 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/vendor.css}">
-    <link rel="stylesheet" id="theme-style" th:href="@{/css/app.css}">
     <link rel="stylesheet" th:href="@{/css/submit.css}">
+    <link rel="stylesheet" id="theme-style" th:href="@{/css/app.css}">
+
 
 
     <!-- Theme initialization -->
@@ -55,7 +56,7 @@
         var company = [[${company}]];
         var job = [[${job}]];
 
-        </script>
+    </script>
 
 </head>
 
@@ -63,7 +64,7 @@
 <div class="main-wrapper" id="resultpage">
     <div class="container">
 
-        <nav class="navbar navbar-default navbar-fixed-top bg-dark" role="navigation" id="navbar-scroll">
+        <nav class="navbar navbar-default navbar-fixed-top bg-dark" role="navigation" id="navbar-scroll" style="font-family: 'NanumSquare', sans-serif;">
             <div class="container">
 
                 <div class="row">
@@ -89,8 +90,8 @@
 
                     <div class="collapse col-xs-3 navbar-collapse navbar-right navbar-ex1-collapse ">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a class="navbar-menu" href="login">로그인 </a></li>
-                            <li><a class="navbar-menu" href="signup">회원가입 </a></li>
+                            <li><a class="navbar-menu">[[${username}]]님 </a></li>
+                            <li><a class="navbar-menu" href="logout">로그아웃 </a></li>
                         </ul>
                     </div>
                 </div>
@@ -126,24 +127,26 @@
                 <div class="select-chart-container">
                     <!-- <p>차트 영역</p> -->
                     <!-- 적합도 차트 -->
+                    <div class = "select-chart-title">
+                        <h5><strong>[선택기업 핵심역량 그래프]</strong></h5>
+                    </div>
                     <div class="select-chart-txt">
-                        <p>abcd1234님은 LG를 선택하셨습니다.</p>
+                        <p>[[${username}]]님은 [[${company}]]를 선택하셨습니다.</p>
                     </div>
                     <div class="select-chart">
                         <div id="combinationChart"></div>
                     </div>
                     <div class="select-chart-summary">
-                        <p>abcd1234님은 "글로벌"과"창의"가 강점입니다.
-                            <br> LG에 적합한 인재가 되려면 "도전"과 "성실"을 더 키우세요
+                        <p>[[${username}]]님은 "인내심"과"창의"가 강점입니다.
+                            <br> [[${company}]]에 적합한 인재가 되려면 "성실"과 "책임"을 더 보완하세요
                             <br><br>
-                            <strong>LG의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
+                            <strong>[[${company}]]의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
                         <div class="gray-box">
-                            <p>
-
-                                - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>
-                                - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>
-                                - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>
-                                - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람
+                            <p th:utext="${talent_Company}">
+                                <!-- - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>-->
+                                <!-- - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>-->
+                                <!-- - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>-->
+                                <!-- - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람-->
                             </p>
                         </div>
                     </div>
@@ -153,8 +156,10 @@
 
                 <div class="company-chart-container">
                     <div class="company-chart-title">
-                        <p>[기업별 적합도 그래프]</p>
+                        <h5><strong>[추천 기업 순위 그래프]　　　　　　　　　　　　　　　[<a th:text="${n1_company}" ></a> 핵심 역량 그래프] </strong></h5>
                     </div>
+
+
                     <div class="company-chart">
                         <div class="row">
                             <div class="BarChart col-md-6">
@@ -169,12 +174,12 @@
                     </div>
 
                     <div class="company-chart-txt">
-                        <p><strong>삼성에 적합한 abcd1234님 </strong></p>
+                        <p><strong>[[${n1_company}]]에 적합한 [[${username}]]님 </strong></p>
 
                         <p><strong>강점</strong></p>
                         <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span
                                 style="line-height:200%"><br></span>
-                            조직에서 안정감을 주고 사람들과 잘 협력하는 S유형를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
+                            조직에서 안정감을 주고 사람들과 잘 협력하는 [[${holland}]]유형를 아래와 같은 인재로 생각 할 가능성이 높습니다.</p>
                         <div class="gray-box-container">
                             <div class="gray-box">
                                 <p>-어떤 일이든 성실하고 꾸준하게 잘 수행하는 인재
@@ -190,7 +195,7 @@
 
                 <div class="job-chart-container">
                     <div class="job-chart-title">
-                        <p>[직무별 적합도 그래프]</p>
+                        <h5><strong>[선택직무 핵심역량 그래프]</strong></h5>
                     </div>
                     <div class="job-chart">
                         <div class="row">
@@ -206,18 +211,19 @@
                     </div>
 
                     <div class="job-chart-txt">
-                        <p><strong>"IT"직무를 선택한 abcd1234님 </strong></p>
+                        <p><strong>[[${job}]]직무를 선택한 [[${username}]]님 </strong></p>
 
                         <p>인사담당자는 각 성향에 따라 더 잘할 수 있는 일이 있고, 조직에 기여하는 강점이 다르다고 생각합니다.<span
                                 style="line-height:200%"><br></span>
-                            IT 직무 인사 담당자들은 아래와 같은 성향을 인재로 생각 할 가능성이 높습니다.</p>
-                        <p><strong>IT 직무의 역량</strong></p>
+                            [[${job}]] 직무 인사 담당자들은 아래와 같은 성향을 인재로 생각 할 가능성이 높습니다.</p>
+                        <p><strong>[[${job}]] 직무의 역량</strong></p>
                         <div class="gray-box-container">
                             <div class="gray-box">
-                                <p>-회사의 비전에 맞는 업무프로세스를 제공하기 위한 정보화전략 수립능력이 필요 합니다.
-                                    <br>-사용자에게 정확하고 원활한 정보시스템을 제공하기 위한 정보관리능력이 필요 합니다.
-                                    <br>-각 사업분야 별 사용자 니즈를 분석하는 역량이 필요합니다.
-                                    <br>-회사 업무의 효율최적화를 위한 프로세스 개선 능력이 필요 합니다.</p>
+                                <p th:utext="${talent_Job}">
+                                    <!-- -회사의 비전에 맞는 업무프로세스를 제공하기 위한 정보화전략 수립능력이 필요 합니다.-->
+                                    <!--<br>-사용자에게 정확하고 원활한 정보시스템을 제공하기 위한 정보관리능력이 필요 합니다.-->
+                                    <!--<br>-각 사업분야 별 사용자 니즈를 분석하는 역량이 필요합니다.-->
+                                    <!--<br>-회사 업무의 효율최적화를 위한 프로세스 개선 능력이 필요 합니다.</p>-->
                             </div>
                         </div>
                     </div>
@@ -226,20 +232,19 @@
 
                 <div class="que-chart-container">
                     <div class="que-chart-title">
-                        <p>[항목별 직무 적합도 그래프]</p>
-                        <!--수미나 사랑해♡-->
+                        <h5><strong>[문항별 직무 핵심역량 그래프]</strong></h5>
                     </div>
                     <div class="que-chart">
                         <div class="row">
-                            <div class="quelineChart1 col-md-6">
-                                <p>Q1. 당신의 성장 배경은?</p>
+                            <div class="quelineChart1 text-center col-md-6">
+                                <p>Q1. 본인의 경험 중 대상의 니즈를 파악하고 상황을 분석하여<br> 전략적으로 해결 방안을 제시한 경험에 대해 기술하시오</p>
                                 <div id="pieChart1">
                                 </div>
                             </div>
 
 
-                            <div class="quelineChart2 col-md-6">
-                                <p>Q2. 당신이 삼성에 지원하게 된 계기는?</p>
+                            <div class="quelineChart2 text-center col-md-6">
+                                <p>Q2. 삼성전자에 지원한 이유와 <br>입사 후 회사에서 이루고 싶은 꿈을 기술하시오 </p>
                                 <div id="pieChart2"> </div>
                             </div>
                         </div>
@@ -277,7 +282,7 @@
 
 
 <script th:inline="javascript">
-
+    // 선택 기업 데이터 in DB
     var active = [[${active}]];
     var challenge = [[${challenge}]];
     var communication = [[${communication}]];
@@ -289,6 +294,7 @@
     var sincerity = [[${sincerity}]];
     var teamwork = [[${teamwork}]];
 
+    // 선택 직무 데이터 in DB
     var active_Job = [[${active_Job}]];
     var challenge_Job = [[${challenge_Job}]];
     var communication_Job = [[${communication_Job}]];
@@ -300,6 +306,8 @@
     var sincerity_Job = [[${sincerity_Job}]];
     var teamwork_Job = [[${teamwork_Job}]];
 
+
+    // 사용자 자기소개서 직무 분석 결과
     var active_user = [[${active_user}]];
     var challenge_user = [[${challenge_user}]];
     var communication_user = [[${communication_user}]];
@@ -311,6 +319,7 @@
     var sincerity_user = [[${sincerity_user}]];
     var teamwork_user = [[${teamwork_user}]];
 
+    // 사용자 자기소개서 기업 분석 결과
     var active_choice_company = [[${active_choice_company}]];
     var challenge_choice_company = [[${challenge_choice_company}]];
     var communication_choice_company = [[${communication_choice_company}]];
@@ -322,6 +331,7 @@
     var sincerity_choice_company = [[${sincerity_choice_company}]];
     var teamwork_choice_company = [[${teamwork_choice_company}]];
 
+    // 1순위 기업 데이터
     var active_first_company = [[${active_first_company}]];
     var challenge_first_company = [[${challenge_first_company}]];
     var communication_first_company = [[${communication_first_company}]];
@@ -333,6 +343,18 @@
     var sincerity_first_company = [[${sincerity_first_company}]];
     var teamwork_first_company = [[${teamwork_first_company}]];
 
+    // 추천 기업 순위 1, 2, 3
+    var n1_company = [[${n1_company}]];
+    var n2_company = [[${n2_company}]];
+    var n3_company = [[${n3_company}]];
+
+    // 추천 기업 별 수치
+    var n1_value = [[${n1_value}]];
+    var n2_value = [[${n2_value}]];
+    var n3_value = [[${n3_value}]];
+
+
+    // 선택직무 핵심역량 그래프
     var chart = bb.generate({
         data: {
             x: "x",
@@ -346,7 +368,7 @@
                     "인내심",
                     "창의",
                     "글로벌",
-                    "책임"],
+                    "주인의식"],
                 ["사용자",
                     communication_user,
                     teamwork_user,
@@ -359,31 +381,31 @@
                     global_user,
                     responsibility_user],
                 [job,
-                    communication,
-                    teamwork,
-                    challenge,
-                    active,
-                    sincerity,
-                    honesty,
-                    patient,
-                    creative,
-                    global,
-                    responsibility],
+                    communication_Job,
+                    teamwork_Job,
+                    challenge_Job,
+                    active_Job,
+                    sincerity_Job,
+                    honesty_Job,
+                    patient_Job,
+                    creative_Job,
+                    global_Job,
+                    responsibility_Job],
             ],
             type: "radar",
             labels: true,
             colors: {
-                "사용자": "#4a8ac8",
                 "영업": "#fdd3de",
                 "생산": "#fdd3de",
                 "IT": "#fdd3de",
                 "경영지원관리": "#fdd3de",
-                "건설": "#fdd3de"
+                "건설": "#fdd3de",
+                "사용자": "#4a8ac8"
             },
         },
         radar: {
             axis: {
-                max: 400,
+                max: 100,
             },
             level: {
                 depth: 4,
@@ -400,13 +422,13 @@
     });
 
 
-
+    // 추천 기업 순위 그래프
     var chart1 = bb.generate({
         bindto: "#BarChart",
         data: {
             type: "bar",
             columns: [
-                ["기업", 80, 68, 30],
+                ["기업", n1_value, n2_value, n3_value],
             ],
             colors: {
                 "기업": "#4a8ac8"
@@ -417,9 +439,7 @@
             x: {
                 type: "category",
                 categories: [
-                    "삼성",
-                    "LG",
-                    "SK",
+                    n1_company, n2_company, n3_company
                 ]
             }
         },
@@ -431,22 +451,55 @@
 
     });
 
+    // 1순위 기업 핵심 역량 그래프
     var chart = bb.generate({
         data: {
             columns: [
-                ["삼성", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
-                ["사용자", 200, 130, 180, 240, 130, 220, 111, 132, 222, 164],
+                ["사용자",
+                    communication_choice_company,
+                    teamwork_choice_company,
+                    challenge_choice_company,
+                    active_choice_company,
+                    sincerity_choice_company,
+                    honesty_choice_company,
+                    patient_choice_company,
+                    creative_choice_company,
+                    global_choice_company,
+                    responsibility_choice_company],
+                [n1_company,
+                    communication_first_company,
+                    teamwork_first_company,
+                    challenge_first_company,
+                    active_first_company,
+                    sincerity_first_company,
+                    honesty_first_company,
+                    patient_first_company,
+                    creative_first_company,
+                    global_first_company,
+                    responsibility_first_company],
             ],
             types: {
                 "삼성": "bar",
+                "현대": "bar",
+                "LG": "bar",
+                "SK": "bar",
+                "CJ": "bar",
                 "사용자": "line",
             },
             colors: {
                 "삼성": "#fdd3de",
+                "현대": "#fdd3de",
+                "LG": "#fdd3de",
+                "SK": "#fdd3de",
+                "CJ": "#fdd3de",
                 "사용자": "#4a8ac8"
             },
             axes: {
                 "삼성": "y",
+                "현대": "y",
+                "LG": "y",
+                "SK": "y",
+                "CJ": "y",
                 "사용자": "y2"
             }
         },
@@ -491,7 +544,7 @@
     });
 
 
-
+    // 문항별 그래프
     var chart = bb.generate({
         data: {
             columns: [
@@ -549,7 +602,6 @@
 
             ],
             type: "pie",
-
         },
         legend: {
             show: false
@@ -574,7 +626,7 @@
         bindto: "#pieChart2"
     });
 
-
+    // 선택 기업 핵심역량 그래프
     var chart = bb.generate({
         data: {
             columns: [
@@ -602,20 +654,20 @@
                     responsibility],
             ],
             types: {
-                "사용자": "bar",
-                "삼성": "line",
-                "현대": "line",
-                "LG": "line",
-                "SK": "line",
-                "CJ": "line"
+                "사용자": "line",
+                "삼성": "bar",
+                "현대": "bar",
+                "LG": "bar",
+                "SK": "bar",
+                "CJ": "bar"
             },
             colors: {
-                "사용자": "#fdd3de",
-                "삼성": "#4a8ac8",
-                "현대": "#4a8ac8",
-                "LG": "#4a8ac8",
-                "SK": "#4a8ac8",
-                "CJ": "#4a8ac8"
+                "사용자": "#4a8ac8",
+                "삼성": "#fdd3de",
+                "현대": "#fdd3de",
+                "LG": "#fdd3de",
+                "SK": "#fdd3de",
+                "CJ": "#fdd3de"
             },
             axes: {
                 "사용자": "y",
@@ -667,10 +719,20 @@
         bindto: "#combinationChart"
     });
 
-
+    // 선택 직무 핵심역량 그래프 좌우
     var container = document.getElementById('diverge-chart');
     var data = {
-        categories: ['100 ~', '90 ~ 99', '80 ~ 89', '70 ~ 79', '60 ~ 69', '50 ~ 59', '40 ~ 49', '30 ~ 39', '20 ~ 29', '10 ~ 19', '0 ~ 9'],
+        categories: [ "소통",
+            "팀워크",
+            "도전",
+            "능동",
+            "성실",
+            "정직",
+            "인내심",
+            "창의",
+            "글로벌",
+            "주인의식",
+        ],
         series: [
             {
                 name: '사용자',
@@ -688,17 +750,18 @@
             },
             {
                 name: job,
-                data: [communication,
-                    teamwork,
-                    challenge,
-                    active,
-                    sincerity,
-                    honesty,
-                    patient,
-                    creative,
-                    global,
-                    responsibility]
-            }
+                data: [communication_Job,
+                    teamwork_Job,
+                    challenge_Job,
+                    active_Job,
+                    sincerity_Job,
+                    honesty_Job,
+                    patient_Job,
+                    creative_Job,
+                    global_Job,
+                    responsibility_Job]
+            },
+            ,
         ]
     };
     var options = {
@@ -728,7 +791,7 @@
     var theme = {
         series: {
             colors: [
-                '#fdd3de', '#4a8ac8'
+                '#4a8ac8', '#fdd3de'
             ]
         }
     };
@@ -739,6 +802,7 @@
     options.theme = 'myTheme';
 
     tui.chart.barChart(container, data, options);
+
 </script>
 
 </html>

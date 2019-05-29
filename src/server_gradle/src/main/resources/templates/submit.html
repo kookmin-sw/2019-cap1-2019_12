@@ -70,8 +70,8 @@
 
                     <div class="collapse col-xs-3 navbar-collapse navbar-right navbar-ex1-collapse ">
                         <ul class="nav navbar-nav pull-right">
-                            <li><a class="navbar-menu" href="login">로그인 </a></li>
-                            <li><a class="navbar-menu" href="signup">회원가입 </a></li>
+                            <li><a class="navbar-menu">[[${username}]]님 </a></li>
+                            <li><a class="navbar-menu" href="logout">로그아웃 </a></li>
                         </ul>
                     </div>
                 </div>
@@ -79,7 +79,9 @@
         </nav>
 
         <div class="container" id="page">
-            <form method="POST" action="/votest">
+            <form name="submit" id="submit" method="POST" action="/votest">
+                <script>
+                </script>
             <div id="submit-select">
 
                 <strong><h4>제출하기</h4></strong>
@@ -149,18 +151,22 @@
             <div id="field"></div>
 
 
-            <center>
-                <button class="btn btn-default submitbutton" type="submit">분석하기</button>
-            </center>
+
+                <input type="hidden" name="q_num" value="">
+
+
+
 
             </form>
-
+            <center>
+                <button class="btn btn-default submitbutton" onclick="sendqnum();" type="submit">분석하기</button>
+            </center>
 
             <div class="textarea" id="pre_set" style="display:none;">
                 <div id="q_index">
                 </div>
                 <input class="form-control" type="text" name="question" placeholder="문항을 입력하세요."/>
-                <textarea class="form-control" rows="10" name="text" placeholder="자기소개서를 입력하세요." id="test"></textarea>
+                <textarea class="form-control" rows="10" name="text" placeholder="자기소개서를 입력하세요."></textarea>
             </div>
 
 
@@ -205,6 +211,40 @@
             cnt--;
         }
     }
+
+    function sendqnum(){
+        // const txt = document.getElementsByName("text");
+        flag = 1
+        for(i=0;i<cnt;i++)
+        {
+            if(document.getElementsByName("text")[i].value.length < 300){
+                alert("자기소개서를 300자 이상 입력해주세요.");
+                flag = 0;
+                break;
+            }
+        }
+
+        if(flag == 1)
+        {
+            document.submit.q_num.value = cnt
+            document.submit.submit();
+            $("#submit").submit();
+        }
+
+        // if(document.getElementsByName("text")[0].value.length < 300){
+        //     alert("자기소개서를 300자 이상 입력해주세요.");
+        // }
+        // else{
+        //     document.submit.q_num.value = cnt
+        //     document.submit.submit();
+        //     $("#submit").submit();
+        // }
+    }
+
+
+    document.getElementById("q_num").innerHTML=cnt;
+
+
 </script>
 
 
