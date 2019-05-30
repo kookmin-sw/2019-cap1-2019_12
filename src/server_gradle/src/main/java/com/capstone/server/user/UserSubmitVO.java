@@ -11,8 +11,19 @@ public class UserSubmitVO {
     private List<String> question;
     private List<String> text;
     private List<String> timestamp;
+    private List<String> check;
 
+    public List<String> getCheck() {
+        return check;
+    }
 
+    public String getCheck(int n) {
+        return check.get(n);
+    }
+
+    public void setCheck(List<String> check) {
+        this.check = check;
+    }
 
     public List<String> getTimestamp() {
         return timestamp;

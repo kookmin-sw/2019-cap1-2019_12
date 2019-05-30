@@ -25,14 +25,59 @@ import java.util.*;
 @Controller
 public class CompareController {
 
-    @RequestMapping(value = "/compare", method = RequestMethod.GET)
-    public String compare(Principal principal, Model model) {
-        model.addAttribute("username", principal.getName());
-        return "compare";
-    }
+//    @RequestMapping(value = "/compare", method = RequestMethod.GET)
+//    public String compare(Principal principal, Model model) {
+//        model.addAttribute("username", principal.getName());
+//        return "compare";
+//    }
 
-    @RequestMapping(value = "/compare.getlist", method = RequestMethod.GET)
-    public String comparegetlist(Principal principal, Model model) {
+    @RequestMapping(value = "/compare", method = RequestMethod.GET)
+    public String comparegetlist(Principal principal, Model model) throws ParseException {
+
+
+        String testString1 = "{\"select_company\": \"hyundai\",\n" +
+                "                \"select_job\": \"architecture\",\n" +
+                "                \"timestamp\": \"2019.05.30.14.00.14\",\n" +
+                "                \"title\": \"현대 자소서\"\n" +
+                "    }";
+
+        String testString2 = "{\"select_company\": \"samsung\",\n" +
+                "                \"select_job\": \"architecture\",\n" +
+                "                \"timestamp\": \"2019.05.30.14.00.14\",\n" +
+                "                \"title\": \"삼성 자소서\"\n" +
+                "    }";
+
+        String testString3 = "{\"select_company\": \"CJ\",\n" +
+                "                \"select_job\": \"architecture\",\n" +
+                "                \"timestamp\": \"2019.05.30.14.00.14\",\n" +
+                "                \"title\": \"CJ 자소서\"\n" +
+                "    }";
+
+        String testString4 = "{\"select_company\": \"LG\",\n" +
+                "                \"select_job\": \"architecture\",\n" +
+                "                \"timestamp\": \"2019.05.30.14.00.14\",\n" +
+                "                \"title\": \"LG 자소서\"\n" +
+                "    }";
+
+        String testString5 = "{\"select_company\": \"SK\",\n" +
+                "                \"select_job\": \"architecture\",\n" +
+                "                \"timestamp\": \"2019.05.30.14.00.14\",\n" +
+                "                \"title\": \"SK 자소서\"\n" +
+                "    }";
+
+        JSONObject t1 = (JSONObject) new JSONParser().parse(testString1);
+        JSONObject t2 = (JSONObject) new JSONParser().parse(testString2);
+        JSONObject t3 = (JSONObject) new JSONParser().parse(testString3);
+        JSONObject t4 = (JSONObject) new JSONParser().parse(testString4);
+        JSONObject t5 = (JSONObject) new JSONParser().parse(testString5);
+
+        ArrayList<JSONObject> array = new ArrayList<>();
+        array.add(t1);
+        array.add(t2);
+        array.add(t3);
+        array.add(t4);
+        array.add(t5);
+
         model.addAttribute("username", principal.getName());
 
 //        DB 객체 생성
@@ -42,31 +87,31 @@ public class CompareController {
 
         DynamoDB dynamoDB = new DynamoDB(client);
 
-        Table table = dynamoDB.getTable("usertest");
-
-        HashMap<String, String> nameMap = new HashMap<String, String>();
-        nameMap.put("#ts", "timestamp");
-
-        HashMap<String, Object> valueMap = new HashMap<String, Object>();
-        valueMap.put(":times", "2019.05.30.20.22.10");
-
-        QuerySpec spec = new QuerySpec()
-                .withKeyConditionExpression("#ts = :times")
-                .withNameMap(nameMap)
-                .withValueMap(valueMap)
-//                .withValueMap(new ValueMap()
-//                        .withString(":v_timestamp", "2019.05.30.20.22.10"))
-                .withMaxPageSize(10)
-                .withScanIndexForward(false);
-
-        ItemCollection<QueryOutcome> items = table.query(spec);
-
-        Iterator<Item> iterator = items.iterator();
-        Item item = null;
-        while (iterator.hasNext()) {
-            item = iterator.next();
-            System.out.println(item.toJSONPretty());
-        }
+//        Table table = dynamoDB.getTable("compare");
+//
+//        HashMap<String, String> nameMap = new HashMap<String, String>();
+//        nameMap.put("#ts", "timestamp");
+//
+//        HashMap<String, Object> valueMap = new HashMap<String, Object>();
+//        valueMap.put(":times", "2019.05.30.14.00.14");
+//
+//        QuerySpec spec = new QuerySpec()
+//                .withKeyConditionExpression("#ts = :times")
+//                .withNameMap(nameMap)
+//                .withValueMap(valueMap)
+////                .withValueMap(new ValueMap()
+////                        .withString(":v_timestamp", "2019.05.30.20.22.10"))
+//                .withMaxPageSize(10)
+//                .withScanIndexForward(false);
+//
+//        ItemCollection<QueryOutcome> items = table.query(spec);
+//
+//        Iterator<Item> iterator = items.iterator();
+//        Item item = null;
+//        while (iterator.hasNext()) {
+//            item = iterator.next();
+//            System.out.println(item.toJSONPretty());
+//        }
 
 //        HashMap<String, Object> valueMap = new HashMap<String, Object>();
 //        valueMap.put(":id", "test1234");
@@ -85,7 +130,78 @@ public class CompareController {
 //            System.out.println(item.toString());
 //        }
 
+
+        for(int i=1;i<5+1;i++)
+        {
+//            userQ.add((JSONObject) user.get("q"+ i));
+
+
+            JSONObject list = array.get(i-1);
+
+            String company = (String) list.get("select_company");
+            String job = (String) list.get("select_job");
+            String timestamp = (String) list.get("timestamp");
+
+            System.out.println(timestamp);
+
+            company = convertCompany(company);
+            job = convertJob(job);
+            timestamp = timestamp.replaceAll("\\.", "-");
+
+            System.out.println(timestamp);
+
+            model.addAttribute("title"+i, list.get("title"));
+            model.addAttribute("select_company"+i,company);
+            model.addAttribute("select_job"+i, job);
+            model.addAttribute("timestamp"+i, timestamp);
+
+        }
+
         return "compare";
+    }
+
+    public String convertCompany(String company)
+    {
+        switch (company) {
+            case "hyundai":
+                company = "현대";
+                break;
+            case "samsung":
+                company = "삼성";
+                break;
+            case "sk":
+                company = "SK";
+                break;
+            case "cj":
+                company = "CJ";
+                break;
+            case "lg":
+                company = "LG";
+                break;
+        }
+        return company;
+    }
+
+    public String convertJob(String job)
+    {
+        switch (job) {
+            case "marketing":
+                job = "영업";
+                break;
+            case "production":
+                job = "생산";
+                break;
+            case "management":
+                job = "경영지원관리";
+                break;
+            case "architecture":
+                job = "건설";
+                break;
+            case "IT":
+                job = "IT";
+                break;
+        }
+        return job;
     }
 
 //    @RequestMapping(value = "/compare_result", method = RequestMethod.POST)

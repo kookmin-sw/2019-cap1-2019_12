@@ -6,10 +6,10 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
-import com.amazonaws.services.dynamodbv2.document.DynamoDB;
-import com.amazonaws.services.dynamodbv2.document.Item;
-import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.*;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.QuerySpec;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -19,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -30,24 +31,31 @@ public class DbTest {
 
         DynamoDB dynamoDB = new DynamoDB(client);
 
-        Table table = dynamoDB.getTable("usertest");
+        Table table = dynamoDB.getTable("compare");
+
         HashMap<String, String> nameMap = new HashMap<String, String>();
-        nameMap.put("#data", "Data");
-        nameMap.put("#timestamp", "timestamp");
-        nameMap.put("#email", "email");
+        nameMap.put("#ts", "timestamp");
 
-//        Get 쿼리문 설정
-        GetItemSpec spec = new GetItemSpec()
-//                .with
-                .withPrimaryKey("timestamp", "kyungkoh")
-                .withProjectionExpression("#email, #timestamp, #data")
-                .withNameMap(nameMap);
+        HashMap<String, Object> valueMap = new HashMap<String, Object>();
+        valueMap.put(":times", "2019.05.30.20.22.10");
 
-//        Item item = table.getItem("email", "kyungkoh");
-        Map item = (Map) table.getItem(spec);
-//        table.get
+        QuerySpec spec = new QuerySpec()
+                .withKeyConditionExpression("numstamp = :v_num")
+                .withValueMap(new ValueMap().withString(":v_num", "20190530140014"));
+//                .withValueMap(new ValueMap()
+//                        .withString(":v_timestamp", "2019.05.30.20.22.10"))
+//                .withMaxPageSize(10)
+//                .withScanIndexForward(false);
 
-        System.out.println(item);
+        ItemCollection<QueryOutcome> items = table.query(spec);
+        System.out.println(items);
+
+//        Iterator<Item> iterator = items.iterator();
+//        Item item = null;
+//        while (iterator.hasNext()) {
+//            item = iterator.next();
+//            System.out.println(item.toJSONPretty());
+//        }
 
 
     }

@@ -45,9 +45,11 @@ public class NLPRequest {
         for(int i=1; i<=userSubmitVO.getQ_num();i++)
         {
             question = "q" + i;
-            text = userSubmitVO.getText(i-1).replaceAll(System.getProperty("line.separator"), "");
+            text = userSubmitVO.getText(i-1).replaceAll(System.getProperty("line.separator"), " ");
             test.add(question, text);
+            System.out.println(text);
         }
+
 
 //        q1 = q1.replaceAll(System.getProperty("line.separator"), "");
 //        q2 = q2.replaceAll(System.getProperty("line.separator"), "");

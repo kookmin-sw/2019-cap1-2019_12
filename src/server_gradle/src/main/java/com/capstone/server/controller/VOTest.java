@@ -136,88 +136,13 @@ public class VOTest {
         Item itemuser = new Item()
                 .withPrimaryKey("timestamp",st)
                 .withNumber("numstamp", num_timestamp)
-                .withJSON("Data", String.valueOf(val))
+                .withJSON("Data", testresult)
                 .withString("email", "test1234")
                 .withString("title",userSubmitVO.getTitle())
                 .withString("select_job",userSubmitVO.getJob())
                 .withString("select_company",userSubmitVO.getCompany());
 
-        PutItemOutcome poutcome = table.putItem(item);
-
-
-
-//        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-//        String st = sdf.format(timestamp);
-//
-//        Table usertable = dynamoDB.getTable("usertest");
-//
-//        Item itemuser = new Item()
-//                .withPrimaryKey("timestamp",st)
-//                .withString("email", "test1234")
-//                .withJSON("Data", testresult)
-//                .withString("title",userSubmitVO.getTitle())
-//                .withString("select_job",userSubmitVO.getJob())
-//                .withString("select_company", userSubmitVO.getCompany());
-//
-//        PutItemOutcome poutcome = usertable.putItem(itemuser);
-
-
-
-//        System.out.println(testresult);
-//        구현용 teststring을 이용한 매핑
-
-//        String testresult = "{\"q1\": {\"global\": \"11.220942645283054517335585842375\", \"active\": \"8.904465996769065583293922827579\", \"challenge\": \"13.208342738930273441155804903246\", \"sincerity\": \"5.337106970312838427616952685639\", \"communication\": \"4.163658120678038088158245955128\", \"patient\": \"9.514154330526663372324946976732\", \"honesty\": \"4.065221600028484871813816425856\", \"responsibility\": \"32.292325595482594735585735179484\", \"creative\": \"5.892846762614977862426712817978\", \"teamwork\": \"5.400935239374012653001955186483\"}, \"q2\": {\"global\": \"9.334742987078794129729431006126\", \"active\": \"11.420470091807583656873248401098\", \"challenge\": \"16.755695676136280525270194630139\", \"sincerity\": \"15.150377289149286497149660135619\", \"communication\": \"3.198520117320909239566617543460\", \"patient\": \"7.355788778704646091455288114958\", \"honesty\": \"0.638206629596759777989234407869\", \"responsibility\": \"32.878466245843860349395981756970\", \"creative\": \"1.311919507879319990450994737330\", \"teamwork\": \"1.955812676482548306822195627319\"}, \"user\": {\"global\": \"8.977392725945424700739749823697\", \"active\": \"10.638922046513018315749832254369\", \"challenge\": \"15.970610983611804201132144953590\", \"sincerity\": \"8.616903181794546284777425171342\", \"communication\": \"3.658214994764242611324789322680\", \"patient\": \"6.090478175187458376171889540274\", \"honesty\": \"1.067237973765372327505929206382\", \"responsibility\": \"40.721437684325607619939546566457\", \"creative\": \"1.762871071533821387689044968283\", \"teamwork\": \"2.495931162558703508835833417834\"}, \"Holland\": {\"S\": \"5.043846294422790421663194138091\", \"E\": \"17.273460446496063269705700804479\", \"C\": \"5.258206443582459144181484589353\"}, \"company\": {\"samsung\": \"71.0\", \"hyundai\": \"20.0\", \"LG\": \"7.0\"}, \"choice_company\": {\"global\": \"96.650858111027503127843374386430\", \"active\": \"80.336793626358883102511754259467\", \"challenge\": \"116.191549564289658746929490007460\", \"sincerity\": \"40.620663472923062897734780563042\", \"communication\": \"53.128554902030074913454882334918\", \"patient\": \"78.197482510785121689877996686846\", \"honesty\": \"60.088878703572959238954354077578\", \"responsibility\": \"235.497398310155375611429917626083\", \"creative\": \"48.031493077668521607392904115841\", \"teamwork\": \"48.956529532795570958114694803953\"}, \"first_company\": {\"global\": \"81.966892247107765001601364929229\", \"active\": \"80.238008587340033272994332946837\", \"challenge\": \"129.536753764527475141221657395363\", \"sincerity\": \"40.436913069442312007595319300890\", \"communication\": \"38.465776721331643273060763021931\", \"patient\": \"100.852979908442264900259033311158\", \"honesty\": \"46.014866074227903425253316527233\", \"responsibility\": \"265.554388368225943395373178645968\", \"creative\": \"50.742923579938214118101313943043\", \"teamwork\": \"45.607917916616401043938822112978\"}}";
-
-//        String testresult = "{\n" +
-//                "  \"user\": {\n" +
-//                "    \"global\": \"42.77\",\n" +
-//                "    \"active\": \"47.16\",\n" +
-//                "    \"challenge\": \"12.52\",\n" +
-//                "    \"sincerity\": \"7.56\",\n" +
-//                "    \"communication\": \"27.12\",\n" +
-//                "    \"patient\": \"12.12\",\n" +
-//                "    \"honesty\": \"83.12\",\n" +
-//                "    \"responsibility\": \"11.12\",\n" +
-//                "    \"creative\": \"32.13\",\n" +
-//                "    \"teamwork\": \"0.41\"\n" +
-//                "  },\n" +
-//                "  \"Holland\": {\n" +
-//                "    \"S\": \"9.230954626345694080669090908486\",\n" +
-//                "    \"E\": \"15.855947952694323888067629013676\",\n" +
-//                "    \"C\": \"30.883344310185620429365371819586\"\n" +
-//                "  },\n" +
-//                "  \"company\": {\n" +
-//                "    \"CJ\": \"71\",\n" +
-//                "    \"hyundai\": \"91\",\n" +
-//                "    \"SK\": \"98\",\n" +
-//                "    \"samsung\": \"97\",\n" +
-//                "    \"LG\": \"10\"\n" +
-//                "  },\n" +
-//                "  \"choice_company\": {\n" +
-//                "    \"global\": \"15.120075545649813264503791288007\",\n" +
-//                "    \"active\": \"131.651558648623222325113601982594\",\n" +
-//                "    \"challenge\": \"101.487942076313657935315859504044\",\n" +
-//                "    \"sincerity\": \"25.043280813300039966406984603964\",\n" +
-//                "    \"communication\": \"49.057913638720151539018843322992\",\n" +
-//                "    \"patient\": \"24.861037275833705706418186309747\",\n" +
-//                "    \"honesty\": \"4.472471820222674310230104310904\",\n" +
-//                "    \"responsibility\": \"10.126530495645172713636839034734\",\n" +
-//                "    \"creative\": \"67.353443958855763185056275688112\",\n" +
-//                "    \"teamwork\": \"3.244215665280616722743189939138\"\n" +
-//                "  },\n" +
-//                "  \"first_company\": {\n" +
-//                "    \"global\": \"11.459025573741156378559935546946\",\n" +
-//                "    \"active\": \"21.529810615670271545241121202707\",\n" +
-//                "    \"challenge\": \"104.883226251792692096387327183038\",\n" +
-//                "    \"sincerity\": \"25.068460139101777173209484317340\",\n" +
-//                "    \"communication\": \"462.384366674848138245579320937395\",\n" +
-//                "    \"patient\": \"29.154970559822036335617667646147\",\n" +
-//                "    \"honesty\": \"4.496185592909177408671439479804\",\n" +
-//                "    \"responsibility\": \"1.047610343540322341837622843741\",\n" +
-//                "    \"creative\": \"69.992633540079012277601577807218\",\n" +
-//                "    \"teamwork\": \"29.5138039238148575105213922143\"\n" +
-//                "  }\n" +
-//                "}";
+        PutItemOutcome poutcome = table.putItem(itemuser);
 
         JSONObject user = (JSONObject) new JSONParser().parse(testresult);
 
@@ -319,16 +244,16 @@ public class VOTest {
         model.addAttribute("teamwork_user",          userUser.get("teamwork"));
 
 //        선택 기업 분석 결과
-        model.addAttribute("active_choice_company",            userChoicecompany.get("active"));
-        model.addAttribute("challenge_choice_company",         userChoicecompany.get("challenge"));
-        model.addAttribute("communication_choice_company",     userChoicecompany.get("communication"));
-        model.addAttribute("creative_choice_company",          userChoicecompany.get("creative"));
-        model.addAttribute("global_choice_company",            userChoicecompany.get("global"));
-        model.addAttribute("honesty_choice_company",           userChoicecompany.get("honesty"));
-        model.addAttribute("patient_choice_company",           userChoicecompany.get("patient"));
-        model.addAttribute("responsibility_choice_company",    userChoicecompany.get("responsibility"));
-        model.addAttribute("sincerity_choice_company",         userChoicecompany.get("sincerity"));
-        model.addAttribute("teamwork_choice_company",          userChoicecompany.get("teamwork"));
+        model.addAttribute("active_choice_company",            userUser.get("active"));
+        model.addAttribute("challenge_choice_company",         userUser.get("challenge"));
+        model.addAttribute("communication_choice_company",     userUser.get("communication"));
+        model.addAttribute("creative_choice_company",          userUser.get("creative"));
+        model.addAttribute("global_choice_company",            userUser.get("global"));
+        model.addAttribute("honesty_choice_company",           userUser.get("honesty"));
+        model.addAttribute("patient_choice_company",           userUser.get("patient"));
+        model.addAttribute("responsibility_choice_company",    userUser.get("responsibility"));
+        model.addAttribute("sincerity_choice_company",         userUser.get("sincerity"));
+        model.addAttribute("teamwork_choice_company",          userUser.get("teamwork"));
 
 
 //        1순위 기업
