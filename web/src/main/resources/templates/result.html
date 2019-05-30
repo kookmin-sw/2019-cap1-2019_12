@@ -106,7 +106,7 @@
                             <h6>길JOB이는 당신을 S유형이라고 생각했어요</h6>
                         </div>
                         <div class="result-text">
-                            <p>사회형은 다른 사람들과 함께 협력하여 일하는 것을 좋아하고 어려운 처지에 놓인 사람들의 복지에 관심이 있습니다.<span
+                            <p class = "result-txt">사회형은 다른 사람들과 함께 협력하여 일하는 것을 좋아하고 어려운 처지에 놓인 사람들의 복지에 관심이 있습니다.<span
                                     style="line-height:200%"></span><br>
                                 또 남을 돌보고 자신이 알고 있는 것을 다른 사람들에게 교육하는 일에 관심이 많습니다.
                                 <span style="line-height:200%"></span><br>다른 사람들과 적극적으로 대화하고 토론하는 것을 즐기며 사람들 간에 얽힌 문제를
@@ -121,7 +121,11 @@
                         <!-- <p>차트 영역</p> -->
                         <!-- 적합도 차트 -->
                         <div class = "select-chart-title">
-                            <h5><strong>[선택기업 핵심역량 그래프]</strong></h5>
+                            <div class = "select-title"><strong>[선택기업 핵심역량 그래프]</strong>
+                                <a href="#" data-toggle="popover" data-placement="bottom" data-content="선택한 기업과 사용자의 자기소개서가 핵심역량 별로 얼마나 일치하는지 보여주는 그래프입니다.">
+                                    <img src="img/question.png" width="23px" height="23px">
+                                  </a>
+                            </div>
                         </div>
                         <div class="select-chart-txt">
                             <p>abcd1234님은 LG를 선택하셨습니다.</p>
@@ -149,17 +153,25 @@
                     <hr>
 
                     <div class="company-chart-container">
-                        <div class="company-chart-title">
-                           <h5><strong>[추천 기업 순위 그래프]　　　　　　　　　　　　　　　　[삼성 핵심 역량 그래프] </strong></h5>
-                        </div>
+                       
                         <div class="company-chart">
                             <div class="row">
                                 <div class="BarChart col-md-6">
+                                    <div class = "bar-title"><strong>[추천 기업 순위 그래프]</strong>
+                                        <a href="#" data-toggle="popover" data-placement="bottom" data-content="사용자의 자기소개와 유사한 기업을 3순위로 보여주는 그래프입니다.">
+                                                <img src="img/question.png" width="23px" height="23px">
+                                              </a>
+                                    </div>
                                     <div id="BarChart">
                                     </div>
                                 </div>
 
                                 <div class="combiChart col-md-6">
+                                    <div class = "combi2-title"><strong>[삼성 핵심 역량 그래프]</strong>
+                                        <a href="#" data-toggle="popover" data-placement="bottom" data-content="1위로 뽑힌 기업과 사용자의 핵심역량 수치를 보여주는 그래프입니다.">
+                                                <img src="img/question.png" width="23px" height="23px">
+                                              </a>
+                                    </div>
                                     <div id="combinationChart2"> </div>
                                 </div>
                             </div>
@@ -187,7 +199,10 @@
 
                     <div class="job-chart-container">
                         <div class="job-chart-title">
-                            <h5><strong>[선택직무 핵심역량 그래프]</strong></h5>
+                            <strong>[선택직무 핵심역량 그래프]</strong>
+                            <a href="#" data-toggle="popover" data-placement="bottom" data-content="선택한 직무와 사용자의 자기소개서가 핵심역량별로 얼마나 일치하는지 보여주는 그래프입니다.">
+                                    <img src="img/question.png" width="23px" height="23px">
+                            </a>
                         </div>
                         <div class="job-chart">
                             <div class="row">
@@ -223,7 +238,10 @@
 
                     <div class="que-chart-container">
                         <div class="que-chart-title">
-                            <h5><strong>[문항별 직무 핵심역량 그래프]</strong></h5>
+                            <strong>[문항별 직무 핵심역량 그래프]</strong>
+                            <a href="#" data-toggle="popover" data-placement="bottom" data-content="문항 별로 직무 핵심역량을 보여주는 그래프입니다.">
+                                    <img src="img/question.png" width="23px" height="23px">
+                            </a>
                         
                         </div>
                         <div class="que-chart">
@@ -619,6 +637,14 @@
     options.theme = 'myTheme';
 
     tui.chart.barChart(container, data, options);
+
+    $(function(){
+    $('[data-toggle=popover]').popover({
+      trigger: 'focus',
+      html: true,
+    //   title: 'Toolbox'
+}) 
+});
 </script>
 
 </html>
