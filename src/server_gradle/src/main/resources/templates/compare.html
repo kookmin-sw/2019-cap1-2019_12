@@ -28,7 +28,42 @@
             document.write('<link rel="stylesheet" id="theme-style" th:href="@{/css/app.css}">');
         }
     </script>
+
+    <script type="text/javascript">
+        // function add_list(){
+        //     // pre_set 에 있는 내용을 읽어와서 처리..
+        //     for(cnt = 1; cnt<10; cnt++)
+        //     {
+        //         var newfield = document.createElement('div');
+        //         newfield.setAttribute('id', 'list' + cnt);
+        //         var div = document.createElement('div');
+        //         div.innerHTML = document.getElementById('pre_set').innerHTML;
+        //         document.getElementById('list').appendChild(newfield);
+        //         document.getElementById('list' + cnt).appendChild(div);
+        //     }
+        // };
+
+        $(document).ready(function() {
+            $('input[type="checkbox"][name="check"]').click(function on(){
+                if ($(this).prop('checked')) {
+                    $(this).prop('checked', true);
+                    $(this).parent('.result-item').css('border-color', '#4a8ac8');
+                }
+                else if($(this).prop('checked', false)) {
+                    $(this).parent('.result-item').css('border-color', '#F2F2F2');
+                }
+            });
+        });
+
+
+
+
+    </script>
+
+
+
 </head>
+
 
 <body>
 <div class="main-wrapper">
@@ -72,7 +107,7 @@
 
 
         <div class="container" id="page">
-
+            <form method="POST" action="/compare_result">
             <div class="compare-select card-block text-center">
                 <article>
                     <h3><strong>분석 결과 비교하기</strong></h3>
@@ -82,24 +117,24 @@
 
                 <div class="row select-job">
                     <div class="col-xs-offset-3 col-xs-3">
-                        <select class="form-control">
-                            <option>분석 직무 선택</option>
+                        <select class="form-control" name="job">
+                            <option>직무 선택</option>
                             <option>영업</option>
-                            <option>마케팅</option>
-                            <option>홍보</option>
                             <option>생산</option>
                             <option>IT</option>
+                            <option>경영지원관리</option>
+                            <option>건설</option>
                         </select>
                     </div>
 
                     <div class="col-xs-3 col-xs-3">
-                        <select class="form-control">
-                            <option>분석 기업 선택</option>
-                            <option>SK</option>
-                            <option>LG</option>
-                            <option>CJ</option>
-                            <option>현대</option>
+                        <select class="form-control" name="company">
+                            <option>기업 선택</option>
                             <option>삼성</option>
+                            <option>현대</option>
+                            <option>LG</option>
+                            <option>SK</option>
+                            <option>CJ</option>
                         </select>
                     </div>
 
@@ -108,8 +143,8 @@
 
                 <div class="row">
                     <div class="col-xs-offset-2 col-xs-8">
-                        <div class="result-list card-block" id="list1">
-                            <div class="result-item card-block row">
+                        <div class="result-list card-block" id="list">
+                            <!--<div class="result-item card-block row">
                                 <div class="col-xs-1">
                                     <input type="checkbox" aria-label="..." class="result-check" name="check">
                                 </div>
@@ -168,17 +203,20 @@
                                     <h6 class="result-text pull-left">IT</h6>
                                     <h6 class="result-text pull-right">2019-03-10 19:07</h6>
                                 </div>
-                            </div>
+                            </div>-->
 
                         </div>
                     </div>
                 </div>
-                <form method="POST" action="/compare_result">
+            </div>
+
                 <center>
                     <button class="btn btn-default comparebutton" type="submit">비교하기</button>
                 </center>
                 </form>
             </div>
+
+
 
 
 
@@ -210,6 +248,29 @@
         </div>
 
 
+    <div class="result-item card-block row" id="pre_set" style="display: none;">
+        <div class="col-xs-1">
+            <input type="checkbox" aria-label="..." class="result-check" name="check" th:value="${numstamp}">
+        </div>
+        <div class="col-xs-11">
+            <h5 style="text-align:left;" th:utext="${title}"></h5>
+            <h6 class="result-text pull-left" th:utext="${job}"></h6>
+            <h6 class="result-text pull-right" th:utext="${timestamp}"></h6>
+        </div>
+    </div>
+
+    <!--<div class="result-item card-block row" id="pre_set" style="display: none;">-->
+        <!--<div class="col-xs-1">-->
+            <!--<input type="checkbox" aria-label="..." class="result-check" name="check">-->
+        <!--</div>-->
+        <!--<div class="col-xs-11">-->
+            <!--<h5 style="text-align:left;">삼성 IT 자소서 1</h5>-->
+            <!--<h6 class="result-text pull-left">IT</h6>-->
+            <!--<h6 class="result-text pull-right">2019-03-10 19:07</h6>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
 
 
 
@@ -225,17 +286,63 @@
 <script src="assets/js/app.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('input[type="checkbox"][name="check"]').click(function(){
-            if ($(this).prop('checked')) {
-                $(this).prop('checked', true);
-                $(this).parents('.result-item').css('border-color', '#4a8ac8');
-            }
-            else if($(this).prop('checked', false)) {
-                $(this).parents('.result-item').css('border-color', '#F2F2F2');
-            }
-        });
-    });
+    window.onload = function() {
+
+        for(cnt = 1; cnt<10; cnt++)
+        {
+            var newfield = document.createElement('div');
+            newfield.setAttribute('id', 'list' + cnt);
+            newfield.setAttribute('class', 'result-item card-block row');
+            newfield.innerHTML = document.getElementById('pre_set').innerHTML;
+            document.getElementById('list').appendChild(newfield);
+        }
+
+    }
+
+    // function ch(){
+    //     if($('input:checkbox[name="check"]').is(":checked") ==  true)
+    //     {
+    //         if ($(this).prop('checked')) {
+    //             $(this).prop('checked', true);
+    //             $(this).parent('.result-item').css('border-color', '#4a8ac8');
+    //         }
+    //         else if($(this).prop('checked', false)) {
+    //             $(this).parent('.result-item').css('border-color', '#F2F2F2');
+    //         }
+    //     }
+    // };
+
+
+
+
+    // window.onload = function() {
+    //     $('input[type="checkbox"][name="check"]').click(function(){
+    //         if ($(this).prop('checked')) {
+    //             $(this).prop('checked', true);
+    //             $(this).parent('.result-item').css('border-color', '#4a8ac8');
+    //         }
+    //         else if($(this).prop('checked', false)) {
+    //             $(this).parent('.result-item').css('border-color', '#F2F2F2');
+    //         }
+    //     });
+    // };
+
+
+    // $(document).ready(function() {
+    //     $('input[type="checkbox"][name="check"]').click(function(){
+    //         if ($(this).prop('checked')) {
+    //             $(this).prop('checked', true);
+    //             $(this).parent('.result-item').css('border-color', '#4a8ac8');
+    //         }
+    //         else if($(this).prop('checked', false)) {
+    //             $(this).parent('.result-item').css('border-color', '#F2F2F2');
+    //         }
+    //     });
+    // });
+
+
+
+
 </script>
 
 

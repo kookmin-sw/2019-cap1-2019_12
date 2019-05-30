@@ -34,6 +34,12 @@
 
     <script src="Chart.js/Chart.js"></script>
 
+    <script th:inline="javascript">
+
+        var company = [[${company}]];
+        var job = [[${job}]];
+
+    </script>
 </head>
 
 <body>
@@ -99,11 +105,12 @@
                     <div class = "line-chart">
                         <div id = "combinationChart"></div>
 
-
-
                     </div>
 
                 </div>
+                <hr>
+
+
 
 
 
@@ -112,7 +119,7 @@
 
 
                 <div class = "bar-chart-container">
-                    <hr>
+
                     <div class = "bar-chart-title"><strong>[적합 기업 그래프]</strong></div>
 
                     <div class = "row">
@@ -128,13 +135,13 @@
                         <div class = "bar-chart2 col-md-6">
                             <div class = "bar-chart-txt light-gray-box text-center">
                                 <div class = "bar-chart-title">
-                                    <strong>삼성의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
+                                    <strong>[[${company}]]의 인재들은 이러한 역량을 가지고 있어요 </strong></p>
                                 </div>
-                                <p>
-                                    - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>
-                                    - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>
-                                    - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>
-                                    - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람
+                                <p th:utext="${talent_Company}">
+                                    <!-- - 꿈과 열정을 가지고 세계 최고에 도전하는 사람<br>-->
+                                    <!-- - 고객을 최우선으로 생각하고 끊임없이 혁신하는 사람<br>-->
+                                    <!-- - 팀워크를 이루며 자율적이로 창의적으로 일하는 사람<br>-->
+                                    <!-- - 꾸준히 실력을 배양하여 정정당당하게 경쟁하는 사람-->
                                 </p>
                             </div>
                         </div>
@@ -146,8 +153,8 @@
 
 
                 <div class  = "chart-job-compare">
-                    <div class = "result-main-text">
-                        <h6><strong>[직무 핵심역량 그래프]</strong></h6>
+                    <div class = "cresult-main-text">
+                        <strong>[직무 핵심역량 그래프]</strong>
                     </div>
                     <div class = "company-chart-container">
                         <div class = "row">
@@ -167,17 +174,18 @@
                     <div class = "result-txt-container">
                         <p class = "result-txt"></p>
                         <div class = "result-chart-txt light-gray-box ">
-                            <strong>IT 직무의 역량</strong><br><br>
-                            <p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>
-                            <p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구
-                                사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된
-                                SW아키텍처를 SW 개발에 적용하는 것을 보증하기 위하여
-                                계획, 실행, 통제 및 모니터링 하는 능력이다.</p>
-                            <p> - 애플리케이션 설계란 요구사항 확인을 통한 상세 분석 결과,
-                                소프트웨어 아키텍처 가이드라인 및 소프트웨어 아키텍처 산출물에 의거하여
-                                이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계,
-                                타 시스템 연동에 대하여 상세 설계하는 능력이다.
-                            </p>
+                            <strong>[[${job}]] 직무의 역량</strong><br><br>
+                            <p th:utext="${talent_Job}">
+                            <!--<p> - 고객의 요청을 적극적으로 분석과 논리를 바탕으로 일이 진행되고 결정되는 환경 </p>-->
+                            <!--<p> - SW아키텍처 수행 관리란 프로젝트에서 SW아키텍처 요구-->
+                                <!--사항을 파악하고, SW아키텍처를 설계 및 검증하여, 정의된-->
+                                <!--SW아키텍처를 SW 개발에 적용하는 것을 보증하기 위하여-->
+                                <!--계획, 실행, 통제 및 모니터링 하는 능력이다.</p>-->
+                            <!--<p> - 애플리케이션 설계란 요구사항 확인을 통한 상세 분석 결과,-->
+                                <!--소프트웨어 아키텍처 가이드라인 및 소프트웨어 아키텍처 산출물에 의거하여-->
+                                <!--이에 따른 애플리케이션 구현을 수행하기 위해 공통 모듈 설계,-->
+                                <!--타 시스템 연동에 대하여 상세 설계하는 능력이다.-->
+                            <!--</p>-->
                         </div>
                     </div>
                 </div>
@@ -200,8 +208,106 @@
 
 </body>
 
-<script>
+<script th:inline="javascript">
+    // 선택 기업 데이터 in DB
+    var active = [[${active}]];
+    var challenge = [[${challenge}]];
+    var communication = [[${communication}]];
+    var creative = [[${creative}]];
+    var global = [[${global}]];
+    var honesty = [[${honesty}]];
+    var patient = [[${patient}]];
+    var responsibility = [[${responsibility}]];
+    var sincerity = [[${sincerity}]];
+    var teamwork = [[${teamwork}]];
 
+    // 선택 직무 데이터 in DB
+    var active_Job = [[${active_Job}]];
+    var challenge_Job = [[${challenge_Job}]];
+    var communication_Job = [[${communication_Job}]];
+    var creative_Job = [[${creative_Job}]];
+    var global_Job = [[${global_Job}]];
+    var honesty_Job = [[${honesty_Job}]];
+    var patient_Job = [[${patient_Job}]];
+    var responsibility_Job = [[${responsibility_Job}]];
+    var sincerity_Job = [[${sincerity_Job}]];
+    var teamwork_Job = [[${teamwork_Job}]];
+
+    // 1번 기업 분석 데이터
+    var active_company_1= [[${active_company_1}]];
+    var challenge_company_1= [[${challenge_company_1}]];
+    var communication_company_1= [[${communication_company_1}]];
+    var creative_company_1= [[${creative_company_1}]];
+    var global_company_1= [[${global_company_1}]];
+    var honesty_company_1= [[${honesty_company_1}]];
+    var patient_company_1= [[${patient_company_1}]];
+    var responsibility_company_1= [[${responsibility_company_1}]];
+    var sincerity_company_1= [[${sincerity_company_1}]];
+    var teamwork_company_1= [[${teamwork_company_1}]];
+
+
+    // 1번 직무 분석 데이터
+    var active_Job_1 = [[${active_Job_1}]];
+    var challenge_Job_1 = [[${challenge_Job_1}]];
+    var communication_Job_1 = [[${communication_Job_1}]];
+    var creative_Job_1 = [[${creative_Job_1}]];
+    var global_Job_1 = [[${global_Job_1}]];
+    var honesty_Job_1 = [[${honesty_Job_1}]];
+    var patient_Job_1 = [[${patient_Job_1}]];
+    var responsibility_Job_1 = [[${responsibility_Job_1}]];
+    var sincerity_Job_1 = [[${sincerity_Job_1}]];
+    var teamwork_Job_1 = [[${teamwork_Job_1}]];
+
+    active_Job_1 = active_Job_1.substring(0,4);
+    challenge_Job_1 = challenge_Job_1.substring(0,4);
+    communication_Job_1 = communication_Job_1.substring(0,4);
+    creative_Job_1 = creative_Job_1.substring(0,4);
+    global_Job_1 = global_Job_1.substring(0,4);
+    honesty_Job_1 = honesty_Job_1.substring(0,4);
+    patient_Job_1 = patient_Job_1.substring(0,4);
+    responsibility_Job_1 = responsibility_Job_1.substring(0,4);
+    sincerity_Job_1 = sincerity_Job_1.substring(0,4);
+    teamwork_Job_1 = teamwork_Job_1.substring(0,4);
+
+    // 2번 기업 분석 데이터
+    var active_company_2= [[${active_company_2}]];
+    var challenge_company_2= [[${challenge_company_2}]];
+    var communication_company_2= [[${communication_company_2}]];
+    var creative_company_2= [[${creative_company_2}]];
+    var global_company_2= [[${global_company_2}]];
+    var honesty_company_2= [[${honesty_company_2}]];
+    var patient_company_2= [[${patient_company_2}]];
+    var responsibility_company_2= [[${responsibility_company_2}]];
+    var sincerity_company_2= [[${sincerity_company_2}]];
+    var teamwork_company_2= [[${teamwork_company_2}]];
+
+    // 2번 직무 분석 데이터
+    var active_Job_2 = [[${active_Job_2}]];
+    var challenge_Job_2 = [[${challenge_Job_2}]];
+    var communication_Job_2 = [[${communication_Job_2}]];
+    var creative_Job_2 = [[${creative_Job_2}]];
+    var global_Job_2 = [[${global_Job_2}]];
+    var honesty_Job_2 = [[${honesty_Job_2}]];
+    var patient_Job_2 = [[${patient_Job_2}]];
+    var responsibility_Job_2 = [[${responsibility_Job_2}]];
+    var sincerity_Job_2 = [[${sincerity_Job_2}]];
+    var teamwork_Job_2 = [[${teamwork_Job_2}]];
+
+    active_Job_2 = active_Job_2.substring(0,4);
+    challenge_Job_2 = challenge_Job_2.substring(0,4);
+    communication_Job_2 = communication_Job_2.substring(0,4);
+    creative_Job_2 = creative_Job_2.substring(0,4);
+    global_Job_2 = global_Job_2.substring(0,4);
+    honesty_Job_2 = honesty_Job_2.substring(0,4);
+    patient_Job_2 = patient_Job_2.substring(0,4);
+    responsibility_Job_2 = responsibility_Job_2.substring(0,4);
+    sincerity_Job_2 = sincerity_Job_2.substring(0,4);
+    teamwork_Job_2 = teamwork_Job_2.substring(0,4);
+
+
+
+
+    // 1번 직무 그래프
     var chart = bb.generate({
         data: {
             x: "x",
@@ -215,20 +321,43 @@
                     "인내심",
                     "창의",
                     "글로벌"],
-                ["IT", 330, 350, 200, 380, 150,130,200,30,280],
-                ["삼성 IT개발 1차 2019-03-30", 130, 100, 300, 200, 80,180,240,170,350],
-
+                [job,
+                    communication_Job,
+                    teamwork_Job,
+                    challenge_Job,
+                    active_Job,
+                    sincerity_Job,
+                    honesty_Job,
+                    patient_Job,
+                    creative_Job,
+                    global_Job,
+                    responsibility_Job],
+                ["삼성 IT개발 1차 2019-03-30",
+                    communication_Job_1,
+                    teamwork_Job_1,
+                    challenge_Job_1,
+                    active_Job_1,
+                    sincerity_Job_1,
+                    honesty_Job_1,
+                    patient_Job_1,
+                    creative_Job_1,
+                    global_Job_1,
+                    responsibility_Job_1],
             ],
             type: "radar",
             labels: true,
             colors : {
-                "IT" : "#FBB1C5",
+                "영업": "#FBB1C5",
+                "생산": "#FBB1C5",
+                "IT": "#FBB1C5",
+                "경영지원관리": "#FBB1C5",
+                "건설": "#FBB1C5",
                 "삼성 IT개발 1차 2019-03-30" : "#4a8ac8"
             },
         },
         radar: {
             axis: {
-                max: 400,
+                max: 30,
             },
             level: {
                 depth: 4,
@@ -257,19 +386,43 @@
                     "인내심",
                     "창의",
                     "글로벌"],
-                ["IT", 330, 350, 200, 380, 150,130,200,30,280],
-                ["삼성 IT개발 최종 2019-04-12", 180, 160, 320, 120, 90,100,200,190,230],
+                [job,
+                    communication_Job,
+                    teamwork_Job,
+                    challenge_Job,
+                    active_Job,
+                    sincerity_Job,
+                    honesty_Job,
+                    patient_Job,
+                    creative_Job,
+                    global_Job,
+                    responsibility_Job],
+                ["삼성 IT개발 최종 2019-04-12",
+                    communication_Job_2,
+                    teamwork_Job_2,
+                    challenge_Job_2,
+                    active_Job_2,
+                    sincerity_Job_2,
+                    honesty_Job_2,
+                    patient_Job_2,
+                    creative_Job_2,
+                    global_Job_2,
+                    responsibility_Job_2],
             ],
             type: "radar",
             labels: true,
             colors : {
-                "IT" : "#FBB1C5",
+                "영업": "#FBB1C5",
+                "생산": "#FBB1C5",
+                "IT": "#FBB1C5",
+                "경영지원관리": "#FBB1C5",
+                "건설": "#FBB1C5",
                 "삼성 IT개발 최종 2019-04-12" : "#4a8ac8"
             },
         },
         radar: {
             axis: {
-                max: 400,
+                max: 30,
             },
             level: {
                 depth: 4,
@@ -285,25 +438,68 @@
         bindto: "#RadarChart2"
     });
 
+    // 기업 역량 비교 그래프
     var chart = bb.generate({
         data: {
             columns: [
-                ["삼성 IT개발 1차 2019-03-30", 30, 20, 50, 40, 60, 50, 80, 45, 63, 78],
-                ["삼성 IT개발 최종 2019-04-12", 40, 10, 45, 64, 38, 59, 19, 35, 83, 54],
-                ["삼성", 200, 130, 180, 240, 130, 220, 111, 132, 222, 164],
+                ["삼성 IT개발 1차 2019-03-30",
+                    communication_company_1,
+                    teamwork_company_1,
+                    challenge_company_1,
+                    active_company_1,
+                    sincerity_company_1,
+                    honesty_company_1,
+                    patient_company_1,
+                    creative_company_1,
+                    global_company_1,
+                    responsibility_company_1],
+                ["삼성 IT개발 최종 2019-04-12",
+                    communication_company_2,
+                    teamwork_company_2,
+                    challenge_company_2,
+                    active_company_2,
+                    sincerity_company_2,
+                    honesty_company_2,
+                    patient_company_2,
+                    creative_company_2,
+                    global_company_2,
+                    responsibility_company_2],
+                [company,
+                    communication,
+                    teamwork,
+                    challenge,
+                    active,
+                    sincerity,
+                    honesty,
+                    patient,
+                    creative,
+                    global,
+                    responsibility],
             ],
             types: {
                 "삼성": "bar",
+                "현대": "bar",
+                "LG": "bar",
+                "SK": "bar",
+                "CJ": "bar",
                 "삼성 IT개발 1차 2019-03-30": "line",
                 "삼성 IT개발 최종 2019-04-12": "line"
             },
             colors: {
                 "삼성": "#fdd3de",
+                "현대": "#fdd3de",
+                "LG": "#fdd3de",
+                "SK": "#fdd3de",
+                "CJ": "#fdd3de",
                 "삼성 IT개발 1차 2019-03-30": "#4a8ac8",
                 "삼성 IT개발 최종 2019-04-12" : "0E1F2F"
             },
             axes: {
                 "삼성": "y",
+                "현대": "y",
+                "LG": "y",
+                "SK": "y",
+                "CJ": "y",
                 "삼성 IT개발 1차 2019-03-30": "y2",
                 "삼성 IT개발 최종 2019-04-12":"y2"
             }
@@ -348,13 +544,32 @@
         bindto: "#combinationChart"
     });
 
+    // 1번 추천 기업 순위 1, 2, 3
+    var n1_company_1 = [[${n1_company_1}]];
+    var n2_company_1 = [[${n2_company_1}]];
+    var n3_company_1 = [[${n3_company_1}]];
+
+    // 1번 추천 기업 별 수치
+    var n1_value_1 = [[${n1_value_1}]];
+    var n2_value_1 = [[${n2_value_1}]];
+    var n3_value_1 = [[${n3_value_1}]];
+
+    // 2번 추천 기업 순위 1, 2, 3
+    var n1_company_2 = [[${n1_company_2}]];
+    var n2_company_2 = [[${n2_company_2}]];
+    var n3_company_2 = [[${n3_company_2}]];
+
+    // 2번 추천 기업 별 수치
+    var n1_value_2 = [[${n1_value_2}]];
+    var n2_value_2 = [[${n2_value_2}]];
+    var n3_value_2 = [[${n3_value_2}]];
 
     var container = document.getElementById('bar-area');
     var data = {
         categories: ['삼성 IT개발 1차 2019-03-30', '삼성 IT개발 최종 2019-04-12'],
         series: [
             {
-                label: '삼성',
+                // label: n1_company_1,
                 name: '삼성',
                 data: [50,45]
             },

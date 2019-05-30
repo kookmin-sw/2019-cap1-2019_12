@@ -250,7 +250,7 @@
                         <div class="que-chart">
                             <div class="row">
                                 <div class="quelineChart1 text-center col-md-6">
-                                    <p>Q1. 본인의 경험 중 대상의 니즈를 파악하고 상황을 분석하여<br> 전략적으로 해결 방안을 제시한 경험에 대해 기술하시오</p>
+                                    <p>Q1. [[${question1}]]</p>
                                     <div id="pieChart1">
                                     </div>
                                 </div>
@@ -557,19 +557,31 @@
     });
 
 
+    var active_q1 = [[${active_q1}]];
+    var challenge_q1 = [[${challenge_q1}]];
+    var communication_q1 = [[${communication_q1}]];
+    var creative_q1 = [[${creative_q1}]];
+    var global_q1 = [[${global_q1}]];
+    var honesty_q1 = [[${honesty_q1}]];
+    var patient_q1 = [[${patient_q1}]];
+    var responsibility_q1 = [[${responsibility_q1}]];
+    var sincerity_q1 = [[${sincerity_q1}]];
+    var teamwork_q1 = [[${teamwork_q1}]];
+
     // 문항별 그래프
     var chart = bb.generate({
         data: {
             columns: [
-                ["소통", 30],
-                ["팀워크", 120],
-                ["도전", 100],
-                ["능동", 80],
-                ["성실", 160],
-                ["정직", 57],
-                ["인내심", 123],
-                ["창의", 76],
-                ["글로벌", 311]
+                ["소통", communication_q1],
+                ["팀워크", teamwork_q1],
+                ["도전", challenge_q1],
+                ["능동", active_q1],
+                ["성실", sincerity_q1],
+                ["정직", honesty_q1],
+                ["인내심", patient_q1],
+                ["창의", creative_q1],
+                ["글로벌", global_q1],
+                ["주인의식", responsibility_q1]
             ],
             type: "pie",
 
@@ -591,7 +603,6 @@
                 "#E0EBF5",
                 "#EFF5FA",
                 "#FFFFFF",
-
             ]
         },
         bindto: "#pieChart1"

@@ -136,7 +136,7 @@
 
             <div class="row" style="margin-bottom:-10px;">
                 <div class="col-xs-6">
-                    <input class="form-control" type="text" name="title" placeholder="저장될 자기소개서 제목을 입력하세요."/>
+                    <input class="form-control" type="text" name="title" id="title" placeholder="저장될 자기소개서 제목을 입력하세요."/>
                 </div>
                 <div class="col-xs-3 col-xs-offset-3">
                     <input type="button" style="margin-right:10px;" class="btn btn-primary" value="문항추가" onclick="add_item()">
@@ -193,16 +193,18 @@
 <script type="text/javascript">
     function add_item(){
         // pre_set 에 있는 내용을 읽어와서 처리..
-        cnt++;
-        var newfield = document.createElement('div');
-        newfield.setAttribute('id', 'field' + cnt);
-        var div = document.createElement('div');
-        var q = document.createElement('div');
-        div.innerHTML = document.getElementById('pre_set').innerHTML;
-        q.innerHTML = cnt + "번 문항"
-        document.getElementById('field').appendChild(newfield);
-        document.getElementById('field' + cnt).appendChild(q);
-        document.getElementById('field' + cnt).appendChild(div);
+        if(cnt < 5){
+            cnt++;
+            var newfield = document.createElement('div');
+            newfield.setAttribute('id', 'field' + cnt);
+            var div = document.createElement('div');
+            var q = document.createElement('div');
+            div.innerHTML = document.getElementById('pre_set').innerHTML;
+            q.innerHTML = cnt + "번 문항"
+            document.getElementById('field').appendChild(newfield);
+            document.getElementById('field' + cnt).appendChild(q);
+            document.getElementById('field' + cnt).appendChild(div);
+        }
     }
     function remove_item(obj){
         // obj.parentNode 를 이용하여 삭제
@@ -215,8 +217,21 @@
     function sendqnum(){
         // const txt = document.getElementsByName("text");
         flag = 1
+        if(document.getElementById("title").value.length==0)
+        {
+            alert("제목을 입력하세요.");
+            return;
+        }
+        if(cnt==0){
+            alert("문항을 추가하세요.");
+            flag = 0;
+            return;
+        }
         for(i=0;i<cnt;i++)
         {
+            if(document.getElementsByName("question")[i].value.length==0)
+                document.getElementsByName("question")[i].value = "문항을 입력하세요";
+
             if(document.getElementsByName("text")[i].value.length < 300){
                 alert("자기소개서를 300자 이상 입력해주세요.");
                 flag = 0;

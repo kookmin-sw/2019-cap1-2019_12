@@ -5,34 +5,31 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.document.spec.GetItemSpec;
-import com.capstone.server.dbtest.Resttest;
 import com.capstone.server.service.NLPRequest;
 import com.capstone.server.user.UserSubmitVO;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static java.lang.Float.parseFloat;
-import static jdk.nashorn.internal.objects.NativeFunction.function;
-
 
 @Controller
 public class VOTest {
+
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
 
     @RequestMapping(value="/votest", method=RequestMethod.POST)
     public String doTest(UserSubmitVO userSubmitVO, Model model, Principal principal) throws IOException, ParseException {
@@ -122,7 +119,50 @@ public class VOTest {
 //        JSONObject user = NLPRequest.main();
 
 //        System.out.println(userSubmitVO.getCompany());
+
         String testresult = NLPRequest.main(userSubmitVO);
+
+        JSONObject val = (JSONObject) new JSONParser().parse(testresult);
+
+        Table table = dynamoDB.getTable("compare");
+
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String st = sdf.format(timestamp);
+
+        String nst = st.replace(".","");
+        Long num_timestamp = Long.parseLong(nst);
+        //System.out.println(nst);
+
+        Item itemuser = new Item()
+                .withPrimaryKey("timestamp",st)
+                .withNumber("numstamp", num_timestamp)
+                .withJSON("Data", String.valueOf(val))
+                .withString("email", "test1234")
+                .withString("title",userSubmitVO.getTitle())
+                .withString("select_job",userSubmitVO.getJob())
+                .withString("select_company",userSubmitVO.getCompany());
+
+        PutItemOutcome poutcome = table.putItem(item);
+
+
+
+//        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//        String st = sdf.format(timestamp);
+//
+//        Table usertable = dynamoDB.getTable("usertest");
+//
+//        Item itemuser = new Item()
+//                .withPrimaryKey("timestamp",st)
+//                .withString("email", "test1234")
+//                .withJSON("Data", testresult)
+//                .withString("title",userSubmitVO.getTitle())
+//                .withString("select_job",userSubmitVO.getJob())
+//                .withString("select_company", userSubmitVO.getCompany());
+//
+//        PutItemOutcome poutcome = usertable.putItem(itemuser);
+
+
+
 //        System.out.println(testresult);
 //        구현용 teststring을 이용한 매핑
 
@@ -198,6 +238,10 @@ public class VOTest {
 //            userQ.add((JSONObject) user.get("q"+ i));
 
             JSONObject userQ = (JSONObject) user.get("q"+i);
+
+            String question = userSubmitVO.getQuestion(i-1);
+
+            model.addAttribute("question"+i, question);
 
             model.addAttribute("active_q"+i,            userQ.get("active"));
             model.addAttribute("challenge_q"+i,         userQ.get("challenge"));

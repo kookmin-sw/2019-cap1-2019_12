@@ -63,7 +63,8 @@ public class UserSubmitVO {
     }
 
     public String getQuestion(int n) {
-        return question.get(n);
+        if(question.get(n) == null) return "문항을 입력하세요";
+        else return question.get(n);
     }
 
     public String getText(int n) {
