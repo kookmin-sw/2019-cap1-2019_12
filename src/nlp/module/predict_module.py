@@ -77,6 +77,7 @@ def Percent(company_dict, user_text_dict):
 
 def companyPredict(model, text, company):
     #CJ / LG / SK / 현대 / 삼성
+    company = ["CJ","LG","SK","hyundai","samsung"]
     predict_company = model.decision_function([text]).tolist()
     predict_company_dict = {}
 
