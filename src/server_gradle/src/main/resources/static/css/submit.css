@@ -285,6 +285,11 @@ input[class="result-check"] {
   color : #4a8ac8;
   font-size : medium;
 }
+
+.select-title{
+  width : 300px;
+  font-size : 1.25rem;
+}
 .result-container {
   margin-bottom : 30px;
   height : auto ;
@@ -293,6 +298,10 @@ input[class="result-check"] {
 }
 .result-txt-container{
   padding-top : 15px;
+}
+
+.result-txt{
+  margin-bottom : 15px;
 }
 .result-container .header-text{
   padding-top : 15px;
@@ -307,10 +316,20 @@ input[class="result-check"] {
 }
 
 .result-text{
-  padding-top : 30px;
-  padding-left : 15px;
+  padding-top : 15px;
+  /* padding-left : 15px; */
   height : auto;
   font-size: 15px;
+}
+
+.bar-title{
+  font-size : 1.25rem;
+  margin-bottom : 15px;
+}
+
+.combi2-title{
+  font-size : 1.25rem;
+  margin-bottom : 15px;
 }
 
 .select-chart-container{
@@ -341,6 +360,7 @@ input[class="result-check"] {
   /* margin-left : 15px; */
   margin-right : 30px;
   margin-top : 15px;
+  margin-bottom : 15px;
 }
 .BarChart{
   padding-left : 30px;
@@ -378,6 +398,7 @@ input[class="result-check"] {
 .job-chart-title{
   margin-left : 15px;
   margin-top : 30px;
+  font-size :1.25rem;
 }
 .job-chart{
   margin-bottom : 15px;
@@ -400,6 +421,7 @@ input[class="result-check"] {
 .que-chart-title{
   margin-top : 30px;
   margin-left : 15px;
+  font-size : 1.25rem;
 }
 
 .que-chart{
@@ -413,7 +435,7 @@ input[class="result-check"] {
 
 .select-chart-title{
   /* margin-top : 15px; */
-  margin-bottom : 30px;
+  margin-bottom : 15px;
 }
 
 .select-chart-txt{
@@ -450,6 +472,7 @@ input[class="result-check"] {
 .line-chart-title{
   padding-top : 5px;
   padding-left : 15px;
+  font-size:1.25rem;
 }
 
 .result-container {
@@ -460,11 +483,12 @@ input[class="result-check"] {
   background-color : #fff;
 }
 .bar-chart-container{
-  margin-top :30px;
+  margin-top :20px;
 
 }
 .bar-chart-title {
   margin-left : 15px;
+  font-size:1.25rem;
 }
 .bar-chart-compare{
   margin-top : 15px;
@@ -495,4 +519,10 @@ input[class="result-check"] {
 
 .result-txt{
   margin-left : 30px;
+}
+
+.cresult-main-text{
+  margin-left : 15px;
+  margin-top :20px;
+  font-size : 1.25rem;
 }

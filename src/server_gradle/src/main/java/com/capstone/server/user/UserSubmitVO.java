@@ -10,6 +10,21 @@ public class UserSubmitVO {
     private Integer q_num;
     private List<String> question;
     private List<String> text;
+    private List<String> timestamp;
+
+
+
+    public List<String> getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(List<String> timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getTimestamp(int n) {
+        return timestamp.get(n);
+    }
 
     public Integer getQ_num() {
         return q_num;

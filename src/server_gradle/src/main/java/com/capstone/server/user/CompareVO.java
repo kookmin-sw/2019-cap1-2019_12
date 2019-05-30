@@ -2,7 +2,7 @@ package com.capstone.server.user;
 
 import java.util.List;
 
-public class CompareVO {
+public class CompareVO extends UserSubmitVO{
 
     private String company;
     private String job;

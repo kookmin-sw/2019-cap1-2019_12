@@ -181,6 +181,8 @@ public class VOTest {
 
         JSONObject user = (JSONObject) new JSONParser().parse(testresult);
 
+
+
         JSONObject userUser = (JSONObject) user.get("user");
         JSONObject userHolland = (JSONObject) user.get("Holland");
         JSONObject userCompany = (JSONObject) user.get("company");
@@ -380,7 +382,7 @@ public class VOTest {
 
 
 
-        return "result";
+        return "result"+userSubmitVO.getQ_num();
     }
 
     public String getUC(JSONObject jo,String c) {

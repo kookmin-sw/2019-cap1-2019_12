@@ -162,7 +162,7 @@ html {
 
 .third-content2{
     font-size : 14px;
-    margin-left : 130px;
+    padding-left : 205px;
 
 }
 
@@ -219,4 +219,8 @@ html {
 .intro{
     margin-top : 30px;
     margin-left: 170px;
+}
+
+.service-heading{
+    margin-top :10px;
 }
