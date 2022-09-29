@@ -41,7 +41,7 @@
   "deprecated": false,
   "description": "Encodings that map abstract data to visual representation.",
   "devDependencies": {
-    "d3-color": "1",
+    "d3-color": "3",
     "eslint": "5",
     "rollup": "0.64",
     "rollup-plugin-terser": "1",
